@@ -1,0 +1,311 @@
+---
+title: "SI 5 Count Model"
+author: "Chris Terry, Jinlin Chen & Owen Lewis"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(rstan)
+library(shinystan)
+library(knitr)
+library(scales)
+library(loo)
+library(cowplot)
+library(igraph)
+library(ggrepel)
+library(bayesplot)
+library(kableExtra)
+
+source('Scripts/Other Functions.R') 
+
+d_both <- read_csv('Data/d_both.csv')
+d_both <- mutate(d_both, ObsCount_Total =  ObsCount_Pairs*2)
+species <- c('BIR','PAL', 'PAN', 'PSA', 'SIM', 'SUL')
+```
+
+Here we assess a model that uses the raw count data ($x_{i,t+1}$), rather than the derived growth rate ($\lambda$) based analysis presented in the main text. This approach does not take into account the impact of variable generation time, but does allow the improved representation of increased variability at low counts. The core fo the model is still Berverton-Holt function:
+
+
+$$x_{i,t+1} \sim \dfrac{ R_{P,i}x_{i,t}}{1+\alpha_{ii}x_{i,t} + \alpha_{i,j}  x_{j,t}}$$
+
+However, the likelihood of a given observation, given the model is determined using a negative-binomial distribution, parameterised in terms of a fitted dispersion parameter $\phi_P$ for each parasitism treatment level:
+
+$$ \mathcal{L}(Obs) \sim NegBinom( x_{i,t+1}   , \phi_P) $$
+Weak priors were set to be:
+
+- $R_P \sim \mathcal{N}(\mu=10, \sigma=10)$
+- $\phi_P \sim Cauchy(0, \gamma=10)$
+- $\alpha_{ij} \sim \mathcal{N}(\mu=0, \sigma=1)$
+
+Because the two approaches use different input data, the likelihoods cannot be directly compared, but do provide a test of the robustness of our results to model uncertainty. 
+
+As with the main text, we test different levels of parameter flexibility in our model, to assess if the impact of predation can be detected on the competition terms. Difference in ELPD again supports 'Model 2', i.e. there is no detectable impact of parasitism on competition terms $\alpha$ (Table S5.1).  
+
+The resulting estimates of fitness differences closely accorded with the estimates from the model described in the main text (Fig.S5.1 a,b). However, although the niche differences were still strongly correlated between the modeling approaches, niche differences in the count model were always higher (Fig.S5.1 c). There is a general tendency for higher levels of intra-specific competition to be identified, resulting in negative niche differences being much rarer in the count model and  coexistence more likely outcome (Table S5.2). Further experimental work would be needed to determine if our assumption that development times are delayed by both con-specific and other species to an equivalent extent. 
+
+```{r}
+## Loading Models
+
+load('StanFits/fit_both_singleA')
+load('StanFits/fit_both_doubleA')
+
+load('StanFits/fit_both_doubleA_NegB')
+load('StanFits/fit_both_singleA_NegB')
+
+## Loading loo tests
+load('LOO/singleA_loo_NegB')
+load('LOO/doubleA_loo_NegB')
+
+```
+
+
+```{r}
+## Model comparison
+loo_compare( doubleA_loo_NegB,singleA_loo_NegB ) %>%
+  as.data.frame()%>%
+  select(  elpd_diff,  se_diff,p_loo, se_p_loo)%>%
+  kable(digits =4, col.names = c('$\\Delta$ ELPD', 'Standard Error of Difference',
+                                 'Effective Number of Parameters',  'Standard Error' ) ,
+        format = "latex", booktabs = TRUE , escape= FALSE)
+```
+
+```{r}
+# print(singleA_loo_NegB) # All Pareto k estimates are good (k < 0.5).
+```
+
+**Table S5.1** Results from comparison of models that fit directly to the observed count using expected log-pointwise predictive density. Model 2 that fit the same alpha terms in both treatments was better supported that a model that modeled a change in $\alpha$ terms between treatment (Model 1). All Pareto k estimates are acceptable (k < 0.5).
+
+
+```{r}
+# Comparison of fitted paremeter medians
+## Main text model
+
+draws_singleA<-extract(fit_both_singleA )
+
+HS_NiFi_draws<-CalcNicheFitDiffs_fromSTANfit(A_draws = draws_singleA$A,
+                                             R_draws = draws_singleA$r1)
+HP_NiFi_draws<-CalcNicheFitDiffs_fromSTANfit(A_draws = draws_singleA$A,
+                                             R_draws = draws_singleA$r2)
+
+AllValues_HS<- map_df(1:15, ExtractDiffs, HS_NiFi_draws   )
+AllValues_HP<- map_df(1:15, ExtractDiffs, HP_NiFi_draws   )
+
+bind_rows(mutate(AllValues_HS, Treatment = 'Safe'),
+          mutate(AllValues_HP, Treatment = 'Para')) %>%
+  mutate(Rho = 1- NicheDiff, 
+         Priority         = 1/Rho < FitnessDiff &  FitnessDiff < Rho   &  NicheDiff <0,
+         AboveBoundary_A1 = 1/Rho < FitnessDiff &  FitnessDiff > Rho   &  NicheDiff <0, 
+         BelowBoundary_B1 = 1/Rho > FitnessDiff                        &  NicheDiff <0, 
+         Coexistence      =   Rho < FitnessDiff &  FitnessDiff < 1/Rho &  NicheDiff >0,
+         AboveBoundary_A2 =                        FitnessDiff > 1/Rho &  NicheDiff >0,
+         BelowBoundary_B2 =   Rho > FitnessDiff                        &  NicheDiff >0, 
+         Check = AboveBoundary_A1+AboveBoundary_A2+BelowBoundary_B1+BelowBoundary_B2+Coexistence+Priority
+  )%>%
+  group_by(Combination, Treatment)%>%
+  summarise(MedianNicheDiff = median(NicheDiff),
+            MedianFitnessDiff = median(FitnessDiff),
+            MedianRho = median(Rho),
+            MedianStable =  MedianRho<MedianFitnessDiff & MedianFitnessDiff<(1/(MedianRho))  & MedianNicheDiff>0,
+            Above = mean(AboveBoundary_A1+AboveBoundary_A2)*100,
+            Below = mean(BelowBoundary_B1+BelowBoundary_B2)*100, 
+            Coexistence=mean(Coexistence)*100,
+            Priority=mean(Priority)*100,
+            Check = mean(Check))%>%
+  separate(Combination , into = c('Species 1', 'Species 2'), remove = FALSE) %>%
+  mutate(Model = 'Growth Rate Model')-> PosteriorLocation_MainTextModel
+```
+
+```{r}
+## Suplementary Count Model
+
+draws_singleA_NegB<-extract(fit_both_singleA_NegB )
+
+HS_NiFi_draws_NegB<-CalcNicheFitDiffs_fromSTANfit(A_draws = draws_singleA_NegB$A,
+                                                  R_draws = draws_singleA_NegB$r1)
+HP_NiFi_draws_NegB<-CalcNicheFitDiffs_fromSTANfit(A_draws = draws_singleA_NegB$A,
+                                                  R_draws = draws_singleA_NegB$r2)
+
+AllValues_HS_NegB<- map_df(1:15, ExtractDiffs, HS_NiFi_draws_NegB   )
+AllValues_HP_NegB<- map_df(1:15, ExtractDiffs, HP_NiFi_draws_NegB   )
+
+bind_rows(mutate(AllValues_HS_NegB, Treatment = 'Safe'),
+          mutate(AllValues_HP_NegB, Treatment = 'Para')) %>%
+  mutate(Rho = 1- NicheDiff, 
+         Priority         = 1/Rho < FitnessDiff &  FitnessDiff < Rho   &  NicheDiff <0,
+         AboveBoundary_A1 = 1/Rho < FitnessDiff &  FitnessDiff > Rho   &  NicheDiff <0, 
+         BelowBoundary_B1 = 1/Rho > FitnessDiff                        &  NicheDiff <0, 
+         Coexistence      =   Rho < FitnessDiff &  FitnessDiff < 1/Rho &  NicheDiff >0,
+         AboveBoundary_A2 =                        FitnessDiff > 1/Rho &  NicheDiff >0,
+         BelowBoundary_B2 =   Rho > FitnessDiff                        &  NicheDiff >0, 
+         Check = AboveBoundary_A1+AboveBoundary_A2+BelowBoundary_B1+BelowBoundary_B2+Coexistence+Priority
+  )%>%
+  group_by(Combination, Treatment)%>%
+  summarise(MedianNicheDiff = median(NicheDiff),
+            MedianFitnessDiff = median(FitnessDiff),
+            MedianRho = median(Rho),
+            MedianStable =  MedianRho<MedianFitnessDiff & MedianFitnessDiff<(1/(MedianRho))  & MedianNicheDiff>0,
+            Above = mean(AboveBoundary_A1+AboveBoundary_A2)*100,
+            Below = mean(BelowBoundary_B1+BelowBoundary_B2)*100, 
+            Coexistence=mean(Coexistence)*100,
+            Priority=mean(Priority)*100,
+            Check = mean(Check))%>%
+  separate(Combination , into = c('Species 1', 'Species 2'), remove = FALSE) %>%
+  mutate(Model = 'Count Model')-> PosteriorLocation_CountModel
+```
+
+
+```{r, fig.height=7, fig.width=4}
+## Putting together subplots
+bind_rows(PosteriorLocation_MainTextModel,
+          PosteriorLocation_CountModel) %>%
+  filter(Treatment ==  'Safe')%>% # Niche differences don't change, so jsut need one
+  select( Combination,Model, MedianFitnessDiff )%>%
+  spread(Model,MedianFitnessDiff ) %>%
+  ggplot(aes( `Count Model`, `Growth Rate Model`))+
+  geom_label_repel( aes(label = Combination), col = 'grey', size =1.5)+
+  geom_point()+
+  labs(subtitle = 'a. Fitness Differences,\nNo-parasitoid')+
+  geom_abline(slope = 1, linetype = 'dotted')-> FitnessDiffCompareSafe
+
+bind_rows(PosteriorLocation_MainTextModel,
+          PosteriorLocation_CountModel) %>%
+  filter(Treatment ==  'Para')%>% # Niche differences don't change, so jsut need one
+  select( Combination,Model, MedianFitnessDiff )%>%
+  spread(Model,MedianFitnessDiff ) %>%
+  ggplot(aes( `Count Model`, `Growth Rate Model`))+
+  geom_label_repel( aes(label = Combination), col = 'grey', size = 1.5)+
+  geom_point()+
+  labs(subtitle =  'b. Fitness Differences,\nParasitoid')+
+  geom_abline(slope = 1, linetype = 'dotted') -> FitnessDiffComparePara
+
+bind_rows(PosteriorLocation_MainTextModel,
+          PosteriorLocation_CountModel) %>%
+  filter(Treatment ==  'Safe')%>% # Niche differences don't change, so jsut need one
+  select( Combination,Model, MedianNicheDiff)%>%
+  spread(Model,MedianNicheDiff) %>%
+  ggplot(aes( `Count Model`, `Growth Rate Model`))+
+  geom_label_repel( aes(label = Combination), col = 'grey', size =1.5)+
+  geom_point()+
+  labs(subtitle = 'c. Niche Differences')+
+  geom_abline(slope = 1, linetype = 'dotted')-> NicheDiffCompare
+
+
+plot_grid(FitnessDiffCompareSafe,
+          FitnessDiffComparePara,
+          NicheDiffCompare ,
+          ncol =1)
+
+```
+
+**Figure S5.1** Correlation of key derived properties under two modelling assumptions - the inferred daily growth rate model presented in the main text, and the direct count model descibed in this appendix. a) and b) show a strong correlation for the fitness differences under both treatments. Niche differences calculated between the two models are still correlated, but are lower in the main-text model.   
+
+```{r}
+PosteriorLocation_CountModel%>%
+  arrange(Combination,desc(Treatment))%>%
+  ungroup()%>%
+  mutate( `Species 1` = recode(`Species 1`,
+                               BIR = 'birchii',
+                               PAL = 'pallidifrons',
+                               PAN = 'pandora',
+                               PSA = 'pseudoananassae',
+                               SIM = 'simulans',
+                               SUL = 'sulfurigaster')   ,
+          `Species 2` = recode(`Species 2`,
+                               BIR = 'birchii',
+                               PAL = 'pallidifrons',
+                               PAN = 'pandora',
+                               PSA = 'pseudoananassae',
+                               SIM = 'simulans',
+                               SUL = 'sulfurigaster')   ) %>%
+  select(-Combination,-Check, - MedianRho, - Model, 
+         `Species 1 Wins` = Above, 
+         `Species 2 Wins` = Below)%>%
+  mutate(Difference = Coexistence-lag(Coexistence))%>%
+  mutate(Difference = ifelse(Treatment== 'Safe', ' ',round(Difference,1)  ),
+         `Species 1`  = ifelse(Treatment== 'Para', ' ',`Species 1`  ),
+         `Species 2`  = ifelse(Treatment== 'Para', ' ',  `Species 2`   )) -> TableS5.2
+
+
+colnames(TableS5.2)<- c('Species 1',
+                        'Species 2',
+                        'Treatment'	,
+                        'Median Niche Difference',
+                        'Median Fitness Difference' ,
+                        'Coexist at Median',
+                         'Species 1 Wins'	,
+                        'Species 2 Wins',
+                        'Coexistence',	
+                        'Priority Effect'	,
+                        'Change in support for coexistence')
+
+TableS5.2%>% 
+  kable(digits = 2,"latex", booktabs = TRUE, ) %>%
+  column_spec(1, italic = TRUE, )%>%
+  column_spec(2, italic = TRUE)%>%
+  column_spec(4,  width = '2cm')%>%
+  column_spec(5,  width = '2cm')%>%
+  column_spec(6,  width = '1.5cm')%>%
+  column_spec(7,  width = '1.5cm')%>%
+  column_spec(8,  width = '1.5cm')%>%
+  column_spec(9,  width = '1.5cm')%>%
+  column_spec(10, width = '1.5cm')%>%
+  column_spec(11, width = '2cm')%>%
+  add_header_above(c(" "=6, "Posterior Support for:" = 4, " " = 1)) %>%
+  landscape()
+
+
+```
+
+
+**Table S5.2** (Previous page) Posterior support for different regions of the coexistence plane, using the 'count-model' described in the supplementary information. 
+
+
+```{r fig.height=6, fig.width=4}
+r_draw_matrix <- as.matrix(fit_both_singleA_NegB, pars = c('r1', 'r2') )  
+colnames(r_draw_matrix)<- paste(species, rep(c('\nSafe', '\nParasitism'),each=6))
+mcmc_areas(r_draw_matrix[, c(1,7,2,8,3,9,4,10,5,11,6,12)])+
+  xlab('Growth Rate (R)')+
+  yaxis_text(face = 'plain')
+```
+
+**Figure S5.2** Posterior distribution of growth rates under the two treatments. Shaded area shows 50% inner interval. 
+
+```{r fig.height=6, fig.width=5}
+A_draw_matrix <- as.matrix(fit_both_singleA_NegB, pars = c('A') )
+colnames(A_draw_matrix)<- paste('Effect of ', rep(species, each = 6),  'on', rep(species, 6))
+mcmc_intervals(A_draw_matrix)+
+  yaxis_text(face = 'plain')
+
+```
+
+**Figure S5.3** Posterior distribution of competition parameters fitted with the best fitting 'count model'. Thick bar shows 50% inner interval, line shows 90% interval, circle shows median value. 
+
+```{r warning = FALSE, message=FALSE}
+# fitting diagnostics 
+## distribution of est and obs
+yrep <- extract(fit_both_singleA_NegB, pars = c("y_sim"), permuted = TRUE)$y_sim
+yobs <- d_both$ObsCount_Total
+ppc_dens_overlay(yobs, yrep[1:100, ]) +
+  ggtitle(label ='',subtitle =  "a. Linear Scale")+
+  guides(col=FALSE)+
+  coord_cartesian(xlim = c(0,200)) -> NegBin_postpredA
+
+ppc_dens_overlay(yobs, yrep[1:100, ]) +
+  ggtitle(label ='',subtitle =  "b. Logarithmic scale")+
+  guides(col=FALSE)+
+  scale_x_log10()-> NegBin_postpredB
+
+plot_grid(NegBin_postpredA,NegBin_postpredB, ncol = 1 )
+
+```
+
+**Figure S5.4**   Compared to the main text model, the postererior predictions show that the count model is better able to model the low counts (the posterior predictions show humps corresponding to the low counts).
+
+
+

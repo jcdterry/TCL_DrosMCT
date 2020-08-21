@@ -1,0 +1,508 @@
+---
+title: "Analyses Included in the Main Text"
+output: 
+  html_document: 
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(rstan)
+library(shinystan)
+library(knitr)
+library(scales)
+library(loo)
+library(cowplot)
+library(igraph)
+library(ggrepel)
+
+source('Scripts/Other Functions.R')
+
+species <- c('BIR','PAL', 'PAN', 'PSA', 'SIM', 'SUL')
+
+cols = c('BIR' = 'skyblue', 
+         'PAL' = 'darkblue',
+         'PAN' = 'red',
+         'PSA'= 'darkgreen',  
+         'SIM' = 'purple', 
+         'SUL' = 'gold'  )
+
+# Loading model fits:
+
+load('StanFits/fit_both_singleA')
+load('StanFits/fit_both_doubleA')
+load('StanFits/fit_both_Comb_RandA')
+
+
+draws_singleA<-extract(fit_both_singleA )
+
+```
+
+This document reproduces the analyses and figures in the main text of the paper. It is included for reproducibility, and is not an 'appendix' containing additional information as such. 
+
+# Reproduction - susceptibility trade off
+
+```{r warning = FALSE}
+
+R_when_safe<- draws_singleA$r1
+R_with_para <- draws_singleA$r2
+
+CentralValue = data.frame(MeanR=colMeans(R_when_safe),
+                          MeanReductionPerc =colMeans(((R_when_safe-1)-(R_with_para-1))/(R_when_safe-1))*100,
+                          Cols = cols,
+                          Species = c("D. birchii",
+                                      "D. pallidifrons",
+                                      "D. pandora",
+                                      "D. pseudoananassae",
+                                      "D. simulans",
+                                      "D. sulfurigaster"))
+
+data.frame('Growth' =  as.vector(t(R_when_safe)),
+           'Defense'= as.vector(t(((R_when_safe-1)-(R_with_para-1))/(R_when_safe-1)))*100,
+           'Species' = names(cols),
+           'Cols' = cols)%>%
+  ggplot(aes(Growth,Defense))+
+  stat_ellipse(aes( col = Cols ))+
+  geom_point( aes( col = Cols ), alpha = 0.1, size = 0.1)+
+  geom_point(data = CentralValue,
+             aes(MeanR, MeanReductionPerc, fill = Cols ) , size =2, pch = 21)+
+  geom_label_repel(data = CentralValue,
+                   aes(MeanR, MeanReductionPerc,
+                       label = Species ),
+                   size =4, nudge_x = 0.015,
+                   fontface = 'italic')+
+  scale_color_identity()+
+  scale_fill_identity()+
+  xlab('Fecundity\nGrowth rate (r) without parasitoid')+
+  ylab('Susceptibility\n% reduction in rate of\nincrease (r-1) with parasitioid ')+
+  coord_cartesian(ylim = c(0,60),
+                  xlim = c(1.05, 1.35))
+
+
+ggsave('Plots/Figure2.png', width = 6, height =4)
+ggsave('Plots/Figure2.pdf', width = 6, height =4)
+
+
+cor.test(CentralValue$MeanReductionPerc,
+         CentralValue$MeanR,
+         method = 'spearman')
+
+cor.test(CentralValue$MeanReductionPerc,CentralValue$MeanR)
+
+```
+
+
+# Correlations between coefficents in fit
+very strong positive correlations between r_i and a_ii. High estimated growth rates paired with high intra-specific competition terms. Also Correlations between two sets of R's, must be mediated by alpha's
+
+```{r}
+draws_singleA<-extract(fit_both_singleA )
+
+r1 <-draws_singleA$r1
+r2 <- draws_singleA$r2 
+As <-draws_singleA$A
+
+r1_A_corr  <-  matrix(NA, 6,7)
+for(i in 1:6){
+  r1_A_corr[i,1:6]<-  cor(r1[,i], As[,((0:5)*6)+i])
+  r1_A_corr[i,7]<-  cor(r1[,i], r2[,i])
+  
+}
+colnames(r1_A_corr)<- c(paste0('a_i', 1:6 ), 'r2')
+rownames(r1_A_corr)<- paste0('r_', 1:6)
+kable(r1_A_corr, digits = 2)
+
+r1_A_corr[c(1, 8, 15, 22, 29, 36)] 
+mean(r1_A_corr[c(1, 8, 15, 22, 29, 36)] )
+
+```
+
+
+```{r}
+### Structure in alpha matrix
+mean_alpha_mat<-matrix(colMeans(As), 6,6)
+colMeans(mean_alpha_mat)*1000
+rowMeans(mean_alpha_mat)*1000
+```
+
+# Plotting Niche and Fitness Differences
+
+Using Model 2 ('single A')
+
+
+
+```{R}
+HS_NiFi_draws<-CalcNicheFitDiffs_fromSTANfit(A_draws = draws_singleA$A,
+                                             R_draws = draws_singleA$r1)
+HP_NiFi_draws<-CalcNicheFitDiffs_fromSTANfit(A_draws = draws_singleA$A,
+                                             R_draws = draws_singleA$r2)
+
+AllValues_HS<- map_df(1:15, ExtractDiffs, HS_NiFi_draws   )
+AllValues_HP<- map_df(1:15, ExtractDiffs, HP_NiFi_draws   )
+
+bind_rows(mutate(AllValues_HS, Treatment = 'Safe'),
+          mutate(AllValues_HP, Treatment = 'Para')) %>%
+  mutate(Rho = 1- NicheDiff, 
+         Priority         = 1/Rho < FitnessDiff &  FitnessDiff < Rho   &  NicheDiff <0,
+         AboveBoundary_A1 = 1/Rho < FitnessDiff &  FitnessDiff > Rho   &  NicheDiff <0, 
+         BelowBoundary_B1 = 1/Rho > FitnessDiff                        &  NicheDiff <0, 
+         Coexistence      =   Rho < FitnessDiff &  FitnessDiff < 1/Rho &  NicheDiff >0,
+         AboveBoundary_A2 =                        FitnessDiff > 1/Rho &  NicheDiff >0,
+         BelowBoundary_B2 =   Rho > FitnessDiff                        &  NicheDiff >0, 
+         Check = AboveBoundary_A1+AboveBoundary_A2+BelowBoundary_B1+BelowBoundary_B2+Coexistence+Priority
+  ) -> LongFormPosterior
+
+
+
+LongFormPosterior %>%
+  group_by(Combination, Treatment)%>%
+  summarise(MedianNicheDiff = median(NicheDiff),
+            MedianFitnessDiff = median(FitnessDiff),
+            MedianRho = median(Rho),
+            MedianStable =  MedianRho<MedianFitnessDiff & MedianFitnessDiff<(1/(MedianRho))  & MedianNicheDiff>0,
+            Above = mean(AboveBoundary_A1+AboveBoundary_A2)*100,
+            Below = mean(BelowBoundary_B1+BelowBoundary_B2)*100, 
+            Coexistence=mean(Coexistence)*100,
+            Priority=mean(Priority)*100,
+            Check = mean(Check))%>%
+  separate(Combination , into = c('Species 1', 'Species 2'), remove = FALSE) -> PosteriorLocation
+
+
+PosteriorLocation%>%
+  arrange(Combination,desc(Treatment))%>%
+  ungroup()%>%
+  mutate( `Species 1` = recode(`Species 1`,
+                               BIR = 'birchii',
+                               PAL = 'pallidifrons',
+                               PAN = 'pandora',
+                               PSA = 'pseudoananassae',
+                               SIM = 'simulans',
+                               SUL = 'sulfurigaster')   ,
+          `Species 2` = recode(`Species 2`,
+                               BIR = 'birchii',
+                               PAL = 'pallidifrons',
+                               PAN = 'pandora',
+                               PSA = 'pseudoananassae',
+                               SIM = 'simulans',
+                               SUL = 'sulfurigaster')   ) %>%
+  select(-Combination,-Check, - MedianRho,
+         `Species 1 Wins` = Above, 
+         `Species 2 Wins` = Below)%>%
+  mutate(Difference = Coexistence-lag(Coexistence))%>%
+  mutate(Difference = ifelse(Treatment== 'Safe', ' ',round(Difference,1)  ),
+         `Species 1`  = ifelse(Treatment== 'Para', ' ',`Species 1`  ),
+         `Species 2`  = ifelse(Treatment== 'Para', ' ',  `Species 2`   )) %>% 
+  kable(digits = 2) 
+
+PosteriorLocation%>%
+  select(Combination, Treatment , Coexistence)%>%
+  spread(Treatment, Coexistence) %>% 
+  ungroup()%>%
+  mutate(Improved = Para>Safe)-> ImprovedOrNotData
+
+ImprovedOrNotData%>%
+  kable(digits = 1)
+
+wilcox.test(ImprovedOrNotData$Para, ImprovedOrNotData$Safe, paired = TRUE) 
+
+t.test(ImprovedOrNotData$Para, ImprovedOrNotData$Safe, paired = TRUE) 
+
+PosteriorLocation%>%
+  group_by(Treatment)%>%
+  summarise(mean(Priority))
+
+print('Overall proportion of negative niche differences:')
+LongFormPosterior%>%
+  summarise(mean(Rho>1))
+```
+
+# Figure 3: Coexistence Plante plots
+
+```{R}
+## Data pre-prep
+ImprovedOrNotData%>%
+  mutate(Shift = Safe-Para )%>%
+  arrange(desc(Shift))-> OrderedCombs
+
+bind_rows(mutate(AllValues_HS, Treatment = 'Safe'),
+          mutate(AllValues_HP, Treatment = 'Para'))-> Both_TreatmentsValues
+
+Both_TreatmentsValues$CombinationOrdered <- factor(Both_TreatmentsValues$Combination,
+                                                   levels = OrderedCombs$Combination)
+
+BoundaryValues<-data.frame(x = seq(0,0.99,l=100), 
+                           y1 =   1/ (1-seq(0,0.99,l=100)),
+                           y2 = (1-seq(0,0.99,l=100)))      
+
+
+BoundaryValues_P<-data.frame(x = seq(0,-0.5,l=100), 
+                             y1 =   1/ (1-seq(0,-0.5,l=100)),
+                             y2 = (1-seq(0,-0.5,l=100)))      
+
+```
+
+## Explanatory diagram
+
+```{r}
+OneLine<- data.frame(x= c(rev(BoundaryValues$x),BoundaryValues$x),
+                     y= c(rev(BoundaryValues$y2),BoundaryValues$y1 ))
+
+
+
+Labels <- data.frame(Text = c('Priority\neffect',
+                              'Species i wins',
+                              'Species j wins',
+                              'Coexistence'),
+                     x = c(-0.3, 0.1, 0.1, 0.5),
+                     y = c(1.1, 3, 0.3, 1))
+
+BoundaryValues%>%
+  ggplot()+
+  geom_vline(xintercept = 0, linetype = 'dashed', col = 'grey')+
+  geom_ribbon(data = BoundaryValues,
+              aes(x = x, ymin = y2, ymax = y1), inherit.aes = FALSE, fill = 'grey75')+
+  geom_ribbon(data = BoundaryValues_P,
+              aes(x = x, ymin = y1, ymax = y2), inherit.aes = FALSE, fill = 'grey90')+
+  scale_y_log10(name = expression(paste("Fitness difference: ",kappa[i]/kappa[j])) )+
+  xlab(expression(paste("Niche Difference: ", 1-rho)))+
+  coord_fixed(xlim =c(-0.5, 1), ylim= c(0.25, 4))+
+  geom_path(data = OneLine,
+            aes(x, y), col = 'red', size = 1.5)+
+  geom_line(data = BoundaryValues,
+            aes(x, y2), col = 'red', size = 1.5)+
+  geom_text(data=Labels, aes(x,y, label =Text), size = 4)+
+  scale_fill_viridis_c(guide = FALSE )+
+  theme(strip.background = element_rect(fill = 'white'),
+        strip.placement = 'left',
+        strip.text = element_text(hjust = 0.1, vjust = 1),
+        panel.spacing = unit(2, 'lines'))-> Fig2_Explainer
+
+Fig2_Explainer
+
+```
+
+## Demonstration Species pair
+
+```{r}
+SpeciesToPlot <- 'SUL_SIM'
+
+Both_TreatmentsValues %>%
+  filter( Combination  ==SpeciesToPlot )%>%
+  mutate(Treatment = recode(Treatment, 
+                            Para = 'ii) With Parasitoids',
+                            Safe = 'i) Without Parasitoids') )%>%
+  ggplot(aes(NicheDiff,FitnessDiff ))+
+  geom_vline(xintercept = 0, linetype = 'dashed')+
+  geom_ribbon(data = BoundaryValues,
+              aes(x = x, ymin = y2, ymax = y1), inherit.aes = FALSE, fill = 'grey75')+
+  geom_ribbon(data = BoundaryValues_P,
+              aes(x = x, ymin = y1, ymax = y2), inherit.aes = FALSE, fill = 'grey90')+
+  stat_density_2d(aes(fill = ..level..), geom = "polygon", bins = 8)+
+  scale_y_log10(name = expression(paste("Fitness difference: ",kappa[i]/kappa[j])) )+
+  xlab(expression(paste("Niche Difference: ", 1-rho)))+
+  coord_fixed(xlim =c(-0.25, 1), ylim= c(0.2, 3))+
+  geom_path(data = OneLine,
+            aes(x, y), col = 'red', size = 1.5)+
+  geom_line(data = BoundaryValues,
+            aes(x, y2), col = 'red', size = 1.5)+
+  scale_fill_viridis_c(guide = FALSE )+
+  geom_point(data = filter(PosteriorLocation,  Combination  ==SpeciesToPlot )%>%
+               mutate(Treatment = recode(Treatment, 
+                                         Para = 'ii) With Parasitoids',
+                                         Safe = 'i) Without Parasitoids') ),
+             aes(MedianNicheDiff,MedianFitnessDiff ), col = 'black', shape  =4)+
+  facet_wrap(~Treatment, ncol=1)+
+  theme(strip.background = element_rect(fill = 'white'),
+        strip.placement = 'left',
+        strip.text = element_text(hjust = 0.1, vjust = 1),
+        panel.spacing = unit(2, 'lines'))-> SUL_SIMContourplot
+
+SUL_SIMContourplot+ 
+  ggtitle('b) Example Pair:\nD. sulfurigaster and D. simulans')+
+  theme(title = element_text(hjust = 0))
+
+```
+
+## Using different colour schemes
+
+
+```{r}
+
+Both_TreatmentsValues %>%
+  filter( Combination  ==SpeciesToPlot ,
+          Treatment == 'Para') %>%
+  mutate(Treatment = recode(Treatment, 
+                            Para = 'ii) With Parasitoids',
+                            Safe = 'i) Without Parasitoids') )%>%
+  ggplot(aes(NicheDiff,FitnessDiff ))+
+  geom_vline(xintercept = 0, linetype = 'dashed')+
+  geom_ribbon(data = BoundaryValues,
+              aes(x = x, ymin = y2, ymax = y1), inherit.aes = FALSE, fill = 'grey75')+
+  geom_ribbon(data = BoundaryValues_P,
+              aes(x = x, ymin = y1, ymax = y2), inherit.aes = FALSE, fill = 'grey90')+
+  stat_density_2d(aes(fill = ..level..), geom = "polygon", bins = 8)+
+  scale_y_log10(name = expression(paste("Fitness difference: ",kappa[i]/kappa[j])) )+
+  xlab(expression(paste("Niche Difference: ", 1-rho)))+
+  coord_fixed(xlim =c(-0.25, 1), ylim= c(0.2, 3))+
+  geom_path(data = OneLine,
+            aes(x, y), col = 'red', size = 1.5)+
+  geom_line(data = BoundaryValues,
+            aes(x, y2), col = 'red', size = 1.5)+
+  scale_fill_gradient(low = 'darkred', high= 'white', guide = FALSE,  )+
+  facet_wrap(~Treatment, ncol=1)+
+  theme(strip.background = element_rect(fill = 'white'),
+        strip.placement = 'left',
+        strip.text = element_text(hjust = 0.1, vjust = 1),
+        panel.spacing = unit(2, 'lines'))-> SULSIM_Para
+
+Both_TreatmentsValues %>%
+  filter( Combination  ==SpeciesToPlot ,
+          Treatment == 'Safe') %>%
+  mutate(Treatment = recode(Treatment, 
+                            Para = 'ii) With Parasitoids',
+                            Safe = 'i) Without Parasitoids') )%>%
+  ggplot(aes(NicheDiff,FitnessDiff ))+
+  geom_vline(xintercept = 0, linetype = 'dashed')+
+  geom_ribbon(data = BoundaryValues,
+              aes(x = x, ymin = y2, ymax = y1), inherit.aes = FALSE, fill = 'grey75')+
+  geom_ribbon(data = BoundaryValues_P,
+              aes(x = x, ymin = y1, ymax = y2), inherit.aes = FALSE, fill = 'grey90')+
+  stat_density_2d(aes(fill = ..level..), geom = "polygon", bins = 8)+
+  scale_y_log10(name = expression(paste("Fitness difference: ",kappa[i]/kappa[j])) )+
+  xlab(expression(paste("Niche Difference: ", 1-rho)))+
+  coord_fixed(xlim =c(-0.25, 1), ylim= c(0.2, 3))+
+  geom_path(data = OneLine,
+            aes(x, y), col = 'red', size = 1.5)+
+  geom_line(data = BoundaryValues,
+            aes(x, y2), col = 'red', size = 1.5)+
+  scale_fill_gradient(low = 'blue', high= 'white', guide = FALSE,  )+
+  facet_wrap(~Treatment, ncol=1)+
+  theme(strip.background = element_rect(fill = 'white'),
+        strip.placement = 'left',
+        strip.text = element_text(hjust = 0.1, vjust = 1),
+        panel.spacing = unit(2, 'lines'))-> SULSIM_Safe
+
+SUL_SIMContourplot <- plot_grid(SULSIM_Safe, SULSIM_Para, ncol = 1 )
+
+```
+
+
+## Contour Plots
+```{r fig.height=10, fig.width=6, warning=FALSE}
+TidyName<-  function(name){
+  parts<- str_split_fixed(name, '_', 2)  
+  nicename<- paste0('italic(i):~', parts[,1], '~italic(j):~',  parts[,2])
+  return(nicename)
+}
+
+sorter<-   mutate(OrderedCombs, Combination=TidyName(Combination) )
+sorter$numerals <- str_replace_all(formatOL(sorter$Combination, type = 'roman'), pattern = ' ', replacement = '~')
+```
+
+```{R}
+Both_TreatmentsValues %>%
+  mutate(Combination=TidyName(Combination) )%>%
+  left_join(sorter, by = "Combination") %>%
+  filter(NicheDiff>-1)%>%
+  ggplot(aes(NicheDiff,FitnessDiff ))+
+  geom_ribbon(data = BoundaryValues,
+              aes(x = x, ymin = y2, ymax = y1), inherit.aes = FALSE, fill = 'grey75')+
+  geom_ribbon(data = BoundaryValues_P,
+              aes(x = x, ymin = y1, ymax = y2), inherit.aes = FALSE, fill = 'grey90')+
+  stat_density_2d(aes(col =Treatment),bins = 3)+
+  scale_y_log10()+
+  scale_colour_manual(values = c('darkred', 'blue'), labels = c('With Parasitoid', 'No Parasitoid'), name = 'Treatment')+
+  facet_wrap(~Combination, ncol = 3, labeller = label_parsed)+
+  coord_cartesian(xlim = c(-0.25, 1), ylim = c(0.1, 10))+
+  # geom_point(data = mutate(ungroup(PosteriorLocation),Combination=TidyName(Combination) ),
+  #           aes(MedianNicheDiff,MedianFitnessDiff, col = Treatment  ), shape  =4)+         # Plotting medians as little crosses 
+  theme(strip.background = element_rect(fill = 'white'),
+        strip.text = element_text(hjust = 0.1, vjust = 1),
+        panel.spacing = unit(2, 'lines'),
+        axis.line.y = element_blank(),
+        axis.ticks.y = element_blank())+
+  ylab(expression(paste("Fitness difference: ",kappa[i]/kappa[j])))+
+  xlab(expression(paste("Niche Difference: ", 1-rho)))+
+  ggtitle('c) All Species Combinations')+
+  theme(legend.position = "bottom", title = element_text(hjust = 0))-> ContourPlot
+
+ContourPlot
+
+```
+
+```{r fig.height=10, fig.width=10}
+### Combining plots to make figure 3
+
+LeftOfPlot<- plot_grid(Fig2_Explainer,
+                       SUL_SIMContourplot,
+                       ncol =1, rel_heights = c(1,2),
+                       labels= c('a) Guide to coexistence plane', 'b) Example Pair: D. sulfurigaster and D. simulans'),
+                       scale = 0.8)
+
+CombinedFig2 <- plot_grid(LeftOfPlot, ContourPlot, rel_widths = c(2,3) )   
+ggsave('Plots/CombinedFigure3.png', width = 10, height = 10)
+ggsave('Plots/CombinedFigure3.pdf', width = 10, height = 10)
+
+```
+
+
+## All combinations as density plots
+
+```{r fig.height=10, fig.width=7, warning=FALSE}
+
+PlotSetOfContours<- function(Both_TreatmentsValues){
+  
+  Both_TreatmentsValues %>%
+    mutate(Treatment = recode(Treatment, 
+                              Para = 'ii) With Parasitoids',
+                              Safe = 'i) Without Parasitoids') )%>%
+    filter(NicheDiff>-0.5)%>%
+    ggplot(aes(NicheDiff,FitnessDiff ))+
+    geom_ribbon(data = BoundaryValues,
+                aes(x = x, ymin = y2, ymax = y1), inherit.aes = FALSE, fill = 'grey75')+
+    geom_ribbon(data = BoundaryValues_P,
+                aes(x = x, ymin = y1, ymax = y2), inherit.aes = FALSE, fill = 'grey90')+
+    stat_density_2d(aes(fill = ..level..), geom = "polygon")+
+    scale_y_log10(limits = c(0.1, 10))+
+    geom_line(data = BoundaryValues,
+              aes(x, y1), col = 'red')+
+    geom_line(data = BoundaryValues,
+              aes(x, y2), col = 'red')+
+    scale_fill_viridis_c(guide = FALSE )+
+    facet_grid(CombinationOrdered~Treatment)+
+    theme(strip.background = element_rect(fill = 'white'),
+          strip.placement = 'left',
+          strip.text = element_text(hjust = 0.1, vjust = 1),
+          panel.spacing = unit(2, 'lines'))-> ContourSet
+  return(ContourSet)
+}
+
+### Splitting into three plots for clarity. 
+CombinationVector<-unique(Both_TreatmentsValues$Combination)
+
+ContourSet1 <- PlotSetOfContours(filter(Both_TreatmentsValues,Combination %in% CombinationVector[1:5]))
+ContourSet2 <- PlotSetOfContours(filter(Both_TreatmentsValues,Combination %in% CombinationVector[6:10]))
+ContourSet3 <- PlotSetOfContours(filter(Both_TreatmentsValues,Combination %in% CombinationVector[11:15]))
+
+ContourSet1
+ContourSet2
+ContourSet3
+
+# ggsave( 'Plots/ContourSet1.pdf',ContourSet1, width = 8, height =10, units = 'in', dpi = 500 )
+# ggsave( 'Plots/ContourSet2.pdf',ContourSet2, width = 8, height =10, units = 'in', dpi = 500 )
+# ggsave( 'Plots/ContourSet3.pdf',ContourSet3, width = 8, height =10, units = 'in', dpi = 500 )
+# 
+# ggsave( 'Plots/ContourSet1.png',ContourSet1, width = 8, height =10, units = 'in', dpi = 500 )
+# ggsave( 'Plots/ContourSet2.png',ContourSet2, width = 8, height =10, units = 'in', dpi = 500 )
+# ggsave( 'Plots/ContourSet3.png',ContourSet3, width = 8, height =10, units = 'in', dpi = 500 )
+```
+
+
+

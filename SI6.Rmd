@@ -1,0 +1,162 @@
+---
+title: "SI 6 - Impact of predation on intransitivity"
+author: "Chris Terry, Jinlin Chen & Owen Lewis"
+output:
+  pdf_document: default
+---
+As a demonstration of how the Bayesian approach can be extended to multi-species coexistence analysis, we assessed the impact of parasitism on intransitivty within competitive hierarchies. We largely followed the approach of Godoy *et al.* (2017) and examine two methods of determining winners of pairwise competition. These are both ‘pure’ intransitivity approaches in the sense of Gallien *et al.* (2017) in that we look at the effect of intransitivty isolated from other mechanisms. In the first method, the winner is simply defined as the species with the higher relative fitness (main text eq. 5), without reference to niche differences. However, where species are predicted to coexist, defining an outright winner like this has less meaning. Therefore, in a second approach, a winner is only declared where one species would be pushed extinct at equilibrium. In cases of negative niche differences, where priority effects are possible, for simplicity the species with the highest relative fitness is labelled the winner, even if it is possible that it could be excluded by the other species. 
+
+To calculate intransitivity of the community, the number of closed loop triplets was compared to the number of triplets showing an ordered hierarchy. This was done across the full set of draws from the posterior distribution of parameters, to generate a posterior distribution of intransitive competition fraction. 
+
+In our study, predation had a negligible impact on the level of intransitivity (Fig. S6.1). If using fitness differences directly to determine each tournament winner, the system shows a strongly hierarchical structure. However, if we exclude cases of coexistence, this is no longer the case, and the observed fraction of intransitivity is not distinguishable from a random expectation. 
+
+Approaches to measure intransitivity have been much discussed (Soliveres and Allan 2017), although much of the discussion has focused on measuring intransitivity given a set of known tournament results (Laird & Schamp 2018). Our approach of taking an average degree of intransitivity across the set of posterior draws is a first step at incorporating data-driven uncertainty in the ‘victor’, but there is likely considerable room for further development.
+
+
+```{r echo = FALSE, message = FALSE}
+library(tidyverse)
+library(knitr)
+library(igraph)
+library(rstan)
+library(ggpubr)
+library(kableExtra)
+
+load('StanFits/fit_both_singleA')
+draws_singleA<-rstan::extract(fit_both_singleA )
+```
+
+```{r echo = FALSE}
+CalcIntransitivity<-function(A_draws,R_draws ){
+  ### Arranging 
+  A <- array(t(A_draws), dim = c(6,6, nrow(A_draws)))
+  r <-R_draws
+  R<- r-1 # Shift to intrinsic growth rate from reproductive value
+  n = nrow(r)
+  
+  CompetitionWinner = array(NA, c(6,6,n  ))
+  FitnessDiffWinner = CompetitionWinner
+  
+  
+  ### Vectorised over draws in third dimension of array
+  for(i in 1:6){
+    for(j in 1:6){
+      if(i ==j){ 
+        CompetitionWinner[i,j,]<- 0
+      }else{
+        sp<- c(i, j)
+        NoWinner<-map_lgl(1:n, function(draw){all(solve(A[sp,sp,draw], R[draw, sp])>0)})
+        WasSp_i_Winner<- map_lgl(1:n, function(draw){solve(A[sp,sp,draw], R[draw, sp])[1]>0})
+        CompetitionWinner[i,j,]<-WasSp_i_Winner 
+        CompetitionWinner[i,j,NoWinner] <-0  
+        FitnessDiffWinner[i,j,] <-  ((R[,i]/R[,j])   *  sqrt(  (A[j,j,]*A[j,i,]) / (A[i,i,]*A[i,j,])) )>1
+      }
+      cat('.')
+    }
+  }
+  
+  ### Using 'Method 1'
+  map_df(1:n, function(d){
+    tmp <- FitnessDiffWinner[,,d]  
+    triads<-triad_census(graph_from_adjacency_matrix(tmp))  ## Use igraph to count the number of triads that are transisitve or intransitive. 
+    data.frame(NumTriplets_Trans= triads[9],
+               NumTriplets_Int= triads[10])
+    
+  })%>%
+    mutate(NumTrips = NumTriplets_Trans+NumTriplets_Int,
+           FracTripletsIntransitive =   NumTriplets_Int/NumTrips) ->TripletCounts_Meth1
+  
+  ### Using 'Method 2'
+  map_df(1:n, function(d){
+    tmp <- CompetitionWinner[,,d]  
+    triads<-triad_census(graph_from_adjacency_matrix(tmp))
+    data.frame(NumTriplets_Trans= triads[9],
+               NumTriplets_Int= triads[10])
+    
+  })%>%
+    mutate(NumTrips = NumTriplets_Trans+NumTriplets_Int,
+           FracTripletsIntransitive =   NumTriplets_Int/NumTrips) ->TripletCounts_Meth2
+  
+
+  return(list(Meth1 = TripletCounts_Meth1,
+              Meth2 = TripletCounts_Meth2 ))
+}
+
+```
+
+
+```{r, include=FALSE}
+
+SafeIntrans<-CalcIntransitivity(draws_singleA$A,draws_singleA$r1 )
+ParaIntrans<-CalcIntransitivity(A_draws = draws_singleA$A,R_draws = draws_singleA$r2 )
+
+
+### Random baseline
+
+n= 1000
+randomwinners <- array(FALSE, dim = c(6,6,n))
+
+for(i in 1:6){
+  for(j in 1:6){
+    if(lower.tri(randomwinners[,,1])[i,j]){
+        randomwinners[i,j, ] <- rbernoulli(n)
+        randomwinners[j,i, ] <- !randomwinners[i,j, ] 
+    }
+  }
+}
+
+### Using 'Method 1'
+map_df(1:n, function(d){
+  tmp <- randomwinners[,,d]  
+  triads<-triad_census(graph_from_adjacency_matrix(tmp))  ## Use igraph to count the number of triads that are transisitve or intransitive. 
+  data.frame(NumTriplets_Trans= triads[9],
+             NumTriplets_Int= triads[10])
+  
+})%>%
+  mutate(NumTrips = NumTriplets_Trans+NumTriplets_Int,
+         FracTripletsIntransitive =   NumTriplets_Int/NumTrips) ->TripletCounts_Meth1_RANDOM
+
+# mean(TripletCounts_Meth1_RANDOM$FracTripletsIntransitive)
+
+```
+
+```{r echo=FALSE, fig.height=3, fig.width=4, warning=FALSE}
+data.frame(Safe_Method1= SafeIntrans$Meth1$FracTripletsIntransitive,
+          Safe_Method2=  SafeIntrans$Meth2$FracTripletsIntransitive,
+           Parasitoid_Method1=ParaIntrans$Meth1$FracTripletsIntransitive,
+            Parasitoid_Method2= ParaIntrans$Meth2$FracTripletsIntransitive)%>%
+  gather('Measure', 'Intransitive Fraction')%>%
+  separate(Measure, into=c('Treatment', 'Tournament Method'))%>%
+  ggplot(aes(x= `Tournament Method`, y=`Intransitive Fraction`, col = Treatment))+
+  geom_boxplot()+
+  scale_color_manual(values = c('red', 'black'),
+                     labels = c('Parasitoid','No-Parasitoid'))+
+  geom_hline(yintercept = 0.25, linetype = 'dotted')+
+  theme_pubr()
+```
+
+**Figure S6.1** Posterior distribution of the fraction of intransitive triplets. Dotted line shows expectation from completely random tournament results. 
+```{r, echo = FALSE}
+data.frame( Safe =c(mean(SafeIntrans$Meth1$FracTripletsIntransitive, na.rm=TRUE),
+                    mean(SafeIntrans$Meth2$FracTripletsIntransitive, na.rm=TRUE)),
+            Para = c(mean(ParaIntrans$Meth1$FracTripletsIntransitive, na.rm=TRUE),
+                     mean(ParaIntrans$Meth2$FracTripletsIntransitive, na.rm=TRUE)))%>%
+  magrittr::set_rownames(c('Intransitivity by Method 1', 'Intransitivity by Method 2'))%>%
+    magrittr::set_colnames(c('No-Parasitoid', 'Parasitoid'))%>%
+  kable(digits=3, format = "latex", booktabs = TRUE )%>%
+  kable_styling()
+```
+
+**Table S6.1** Mean fraction of intransitive triplets between treatments.
+
+
+### References
+
+Gallien, L., Zimmermann, N. E., Levine, J. M. & Adler, P. B. The effects of intransitive competition on coexistence. Ecol. Lett. 20, 791–800 (2017).
+
+Godoy, O., Stouffer, D. B., Kraft, N. J. B. B. & Levine, J. M. Intransitivity is infrequent and fails to promote annual plant coexistence without pairwise niche differences. Ecology 98, 1193–1200 (2017).
+
+Laird, R. A. & Schamp, B. S. Exploring the performance of intransitivity indices in predicting coexistence in multispecies systems. J. Ecol. 106, 815–825 (2018).
+
+Soliveres, S. & Allan, E. Everything you always wanted to know about intransitive competition but were afraid to ask. J. Ecol. 106, 807–814 (2018).
+
+

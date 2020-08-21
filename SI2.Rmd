@@ -1,0 +1,201 @@
+---
+title: "SI 2 - Model Design - Allee Effect, Sex Ratio & Emergence Time"
+author: "Chris Terry, Jinlin Chen & Owen Lewis"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(knitr)
+library(cowplot)
+library(ggpubr)
+
+# Loading raw data:
+Clean_IntraData<- read_csv('Data/Clean_IntraData.csv')
+CleanInterData<- read_csv('Data/CleanInterData.csv')
+
+species <- c('BIR','PAL', 'PAN', 'PSA', 'SIM', 'SUL')
+
+cols = c('BIR' = 'skyblue', 
+         'PAL' = 'darkblue',
+         'PAN' = 'red',
+         'PSA'= 'darkgreen',  
+         'SIM' = 'purple', 
+         'SUL' = 'gold'  )
+```
+
+# Sex Ratio
+
+```{r, message=FALSE, warning = FALSE}
+
+Clean_IntraData %>%
+  filter(Treatment  %in% c('Hot Para', 'Hot Safe'))%>%
+  rowwise()%>%
+  mutate(TotMales = sum(Male1, Male2, Male3, Male4, na.rm = TRUE),
+         TotFemales = sum(Female1, Female2, Female3, Female4, na.rm = TRUE),
+         TotalFounders= Sp1_Dens)%>%
+  select(Sp = Sp1, Sp_Dens= Sp1_Dens,TotalFounders,tubeID, Treatment, TotMales, TotFemales) -> intra_sexratio
+
+CleanInterData %>%
+  filter(Treatment  %in% c('Hot Para', 'Hot Safe'),
+         !is.na(FemaleSp1))%>% 
+  mutate(TotMales = MaleSp1,
+         TotFemales = FemaleSp1,
+        TotalFounders = Sp1Dens +Sp2Dens)%>%
+  select(Sp = Sp1, Sp_Dens= Sp1Dens, TotalFounders, tubeID, Treatment, TotMales, TotFemales) -> inter1_sexratio
+
+CleanInterData %>%
+  filter(Treatment  %in% c('Hot Para', 'Hot Safe'),
+         !is.na(FemaleSp1))%>% 
+  mutate(TotMales = MaleSp2,
+         TotFemales = FemaleSp2,
+        TotalFounders = Sp1Dens +Sp2Dens)%>%
+  select(Sp=  Sp2, Sp_Dens= Sp2Dens, TotalFounders, tubeID, Treatment, TotMales, TotFemales) -> inter2_sexratio
+
+AllSexRatioData <- bind_rows(intra_sexratio,inter1_sexratio, inter2_sexratio )
+
+```
+
+```{r, warning=FALSE, message = FALSE}
+AllSexRatioData%>%
+  ggplot(aes(TotMales, TotFemales))+
+  geom_abline(slope=1, col = 'red', size =1.5, linetype = 'dotted')+
+  geom_point(alpha = 0.5)+
+  facet_wrap(~Sp)+
+  coord_fixed()+ 
+  scale_x_log10()+
+  scale_y_log10()+
+  theme(panel.background =  element_blank())+
+  xlab('Males')+
+  ylab('Females')
+```
+
+**Figure S2.1.** Consistent sex-ratio of emergent adults, facetted by species. Across all six species, a binomial GLM estimated only a very slight bias ($\beta$ coefficient = 0.065) towards females.   
+
+```{r include=FALSE}
+glm(  cbind(TotMales, TotFemales)~Sp* TotalFounders ,
+         family = 'binomial' ,data=AllSexRatioData) %>% summary
+
+glm(  cbind(TotMales, TotFemales)~1,
+        family = 'binomial' ,data=AllSexRatioData) %>% summary
+```
+
+# Allee Effects
+
+
+```{r}
+Clean_IntraData%>%
+  filter(Sp1_Dens <4)%>%
+  filter(Treatment  %in% c('Hot Para', 'Hot Safe'))%>%
+  select(Sp1, Sp1_Dens, GrandTotal, Treatment)%>%
+  group_by(Sp1,Sp1_Dens, Treatment)%>%
+  summarise(MeanTotalPerFounder = mean(GrandTotal/Sp1_Dens))%>%
+  mutate(Treatment = recode(Treatment, 
+                            'Hot Safe'='No-Parasitoid',
+                            'Hot Para'= 'Parasitoid'))-> AlleeEffectData
+
+AlleeEffectData %>%
+  group_by(Sp1, Treatment)%>%
+  spread(Sp1_Dens, MeanTotalPerFounder)%>%
+  rename( `Per-Founder Total (Single Founder)` = `1`,
+          `Per-Founder Total (Three Founders)`=   `3`) -> AlleeEffectData2
+
+# kable(AlleeEffectData2, digits = 2)
+
+# AlleeEffectData2 %>%
+#   group_by(Treatment)%>%
+#   summarise( `Mean Percentage Change For Singleton` = 100*mean((`Per-Founder Total (Single Founder)`- `Per-Founder Total (Three Founders)`)/ `Per-Founder Total (Three Founders)`)) %>%
+#   kable(digits = 2)
+
+AlleeEffectData%>%
+  ggplot(aes(fill=factor(Sp1_Dens), Sp1, MeanTotalPerFounder))+
+  geom_bar(stat = 'identity', position = 'dodge')+
+  scale_fill_viridis_d(name = 'Number of\nFounder Pairs')+
+  ylab('Mean Total Offspring\nPer Founder Pair')+
+  xlab('Species')+
+  facet_wrap(~Treatment)
+  
+```
+
+**Figure S2.2.** Per-female offspring is consistently lower for singleton founder pairs than triplets in the monoculture trials.
+
+# Emergence Time Model
+
+Model used to infer mean emergence time from starting densities, based on counts from the single-species tubes, was selected based on backwards stepwise-selection with AIC. 
+
+```{r}
+Clean_IntraData%>%
+  arrange(tubeID)%>%
+  filter(Temp == 'Hot')%>%
+  mutate(Dens0 = Sp1_Dens,
+         SpID = Sp1)%>%
+  filter(GrandTotal >0) -> EmergenceTimeData
+
+lm(data = EmergenceTimeData,
+   MeanEmergence ~ Dens0 * SpID*Treatment)-> Mod_StartCount_all
+
+tmp<-step(Mod_StartCount_all) #  Suggests dropping tree-way interaction
+
+Mod_StartCount <- lm(data = EmergenceTimeData,
+   MeanEmergence ~ Dens0 + SpID + Treatment + Dens0:SpID + Dens0:Treatment + SpID:Treatment)
+
+summary(Mod_StartCount)
+
+lm(data = EmergenceTimeData,
+   MeanEmergence ~ GrandTotal * SpID*Treatment)-> Mod_EndCount
+# Using end counts is similar accuracy, but harder to extrapolate
+
+#summary(Mod_EndCount)
+```
+
+```{r}
+Predictions<- predict(Mod_StartCount,EmergenceTimeData )
+
+SingleSpeciesPredictionData <-data.frame('Predicted Emergence' = Predictions,
+           'Observed Mean Emergence' = EmergenceTimeData$MeanEmergence,
+           'Sp' = EmergenceTimeData$Sp1,
+           'Density' = EmergenceTimeData$Dens0,
+           'Treatment' =EmergenceTimeData$Treatment )%>%
+  mutate(Treatment = recode(Treatment, 
+                             'Hot Safe'='No-Parasitoid',
+                            'Hot Para'= 'Parasitoid'))
+
+SingleSpeciesPredictionData %>%
+  ggplot(aes(Predicted.Emergence,Observed.Mean.Emergence, col=Sp ))+
+  geom_point()+
+  geom_abline(slope=1)+
+  facet_wrap(~Treatment)+
+  coord_fixed()+
+  scale_colour_manual(values = cols, name = 'Species')+
+  ylab('Observed Mean Emegence (days)')+
+  xlab('Predicted Emergence (days)')
+
+```
+
+**Figure S2.3** Quality of fit of emergence time model for monocultures, facetted by treatment. 
+
+```{r}
+
+
+SingleSpeciesPredictionData%>%
+  ggplot(aes(y= Observed.Mean.Emergence, x=Density,  col=Sp ))+
+  geom_point()+
+  geom_line(aes(y= Predicted.Emergence))+
+  facet_wrap(~Treatment)+
+  ggtitle('Emergence Time vs Starting Density')+
+  scale_colour_manual(values = cols, name = 'Species')+
+ ylab('Observed Mean Emegence (days)')+
+  xlab('Starting Density')
+
+
+```
+
+**Figure S2.4** Effect of number of founders on emergence time. 
+
+
+

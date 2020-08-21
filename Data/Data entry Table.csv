@@ -1,0 +1,1981 @@
+tubeID,Sp1,Sp2,Sp1_Dens,Sp2_Dens,Repeat,Treatment,Block,Combn,Column,Row,Tray,RowBlock,Rows_Box,Cols_Box,BoxNum
+463,PAL,   ,1,NA,g,Cold Para,A,PAL   ,1,1,1,Lower,9,7,2
+529,PAL,   ,9,NA,a,Cold Para,A,PAL   ,1,2,1,Lower,8,4,2
+466,PAL,   ,1,NA,j,Cold Para,A,PAL   ,1,3,1,Lower,8,6,2
+556,PAL,   ,15,NA,d,Cold Para,A,PAL   ,1,4,1,Lower,12,2,2
+532,PAL,   ,9,NA,d,Cold Para,A,PAL   ,1,5,1,Lower,9,1,2
+553,PAL,   ,15,NA,a,Cold Para,A,PAL   ,1,6,1,Upper,10,4,1
+508,PAL,   ,3,NA,d,Cold Para,A,PAL   ,1,7,1,Upper,11,2,1
+457,PAL,   ,1,NA,a,Cold Para,A,PAL   ,1,8,1,Upper,12,2,1
+460,PAL,   ,1,NA,d,Cold Para,A,PAL   ,1,9,1,Upper,13,2,1
+505,PAL,   ,3,NA,a,Cold Para,A,PAL   ,1,10,1,Upper,12,1,1
+1069,PAN,   ,9,NA,a,Cold Para,A,PAN   ,2,1,1,Lower,11,3,2
+1006,PAN,   ,1,NA,j,Cold Para,A,PAN   ,2,2,1,Lower,11,6,2
+1093,PAN,   ,15,NA,a,Cold Para,A,PAN   ,2,3,1,Lower,12,7,2
+1045,PAN,   ,3,NA,a,Cold Para,A,PAN   ,2,4,1,Lower,10,3,2
+997,PAN,   ,1,NA,a,Cold Para,A,PAN   ,2,5,1,Lower,9,2,2
+1072,PAN,   ,9,NA,d,Cold Para,A,PAN   ,2,6,1,Upper,12,5,1
+1000,PAN,   ,1,NA,d,Cold Para,A,PAN   ,2,7,1,Upper,11,4,1
+1096,PAN,   ,15,NA,d,Cold Para,A,PAN   ,2,8,1,Upper,10,7,1
+1048,PAN,   ,3,NA,d,Cold Para,A,PAN   ,2,9,1,Upper,10,5,1
+1003,PAN,   ,1,NA,g,Cold Para,A,PAN   ,2,10,1,Upper,12,6,1
+1120,PSA,   ,1,NA,d,Cold Para,A,PSA   ,3,1,1,Lower,10,5,2
+1165,PSA,   ,3,NA,a,Cold Para,A,PSA   ,3,2,1,Lower,9,5,2
+1123,PSA,   ,1,NA,g,Cold Para,A,PSA   ,3,3,1,Lower,8,5,2
+1192,PSA,   ,9,NA,d,Cold Para,A,PSA   ,3,4,1,Lower,9,6,2
+1189,PSA,   ,9,NA,a,Cold Para,A,PSA   ,3,5,1,Lower,11,5,2
+1702,SUL,   ,1,NA,j,Cold Para,A,SUL   ,3,6,1,Upper,10,1,1
+1696,SUL,   ,1,NA,d,Cold Para,A,SUL   ,3,7,1,Upper,10,2,1
+1789,SUL,   ,15,NA,a,Cold Para,A,SUL   ,3,8,1,Upper,13,3,1
+1699,SUL,   ,1,NA,g,Cold Para,A,SUL   ,3,9,1,Upper,9,6,1
+1765,SUL,   ,9,NA,a,Cold Para,A,SUL   ,3,10,1,Upper,11,6,1
+1369,SIM,   ,3,NA,a,Cold Para,A,SIM   ,4,1,1,Lower,10,7,2
+1393,SIM,   ,9,NA,a,Cold Para,A,SIM   ,4,2,1,Lower,10,1,2
+1417,SIM,   ,15,NA,a,Cold Para,A,SIM   ,4,3,1,Lower,10,2,2
+1420,SIM,   ,15,NA,d,Cold Para,A,SIM   ,4,4,1,Lower,12,5,2
+1330,SIM,   ,1,NA,j,Cold Para,A,SIM   ,4,5,1,Lower,10,6,2
+1321,SIM,   ,1,NA,a,Cold Para,A,SIM   ,4,6,1,Upper,13,1,1
+1396,SIM,   ,9,NA,d,Cold Para,A,SIM   ,4,7,1,Upper,11,5,1
+1372,SIM,   ,3,NA,d,Cold Para,A,SIM   ,4,8,1,Upper,13,7,1
+1327,SIM,   ,1,NA,g,Cold Para,A,SIM   ,4,9,1,Upper,13,4,1
+1324,SIM,   ,1,NA,d,Cold Para,A,SIM   ,4,10,1,Upper,9,5,1
+97,BIR,   ,15,NA,a,Cold Para,A,BIR   ,5,1,1,Lower,11,7,2
+100,BIR,   ,15,NA,d,Cold Para,A,BIR   ,5,2,1,Lower,12,1,2
+10,BIR,   ,1,NA,j,Cold Para,A,BIR   ,5,3,1,Lower,10,4,2
+73,BIR,   ,9,NA,a,Cold Para,A,BIR   ,5,4,1,Lower,12,3,2
+1,BIR,   ,1,NA,a,Cold Para,A,BIR   ,5,5,1,Lower,8,7,2
+4,BIR,   ,1,NA,d,Cold Para,A,BIR   ,5,6,1,Upper,10,6,1
+49,BIR,   ,3,NA,a,Cold Para,A,BIR   ,5,7,1,Upper,11,3,1
+7,BIR,   ,1,NA,g,Cold Para,A,BIR   ,5,8,1,Upper,12,7,1
+76,BIR,   ,9,NA,d,Cold Para,A,BIR   ,5,9,1,Upper,13,5,1
+52,BIR,   ,3,NA,d,Cold Para,A,BIR   ,5,10,1,Upper,11,1,1
+1693,SUL,   ,1,NA,a,Cold Para,A,SUL   ,6,1,1,Lower,11,1,2
+1741,SUL,   ,3,NA,a,Cold Para,A,SUL   ,6,2,1,Lower,9,3,2
+1792,SUL,   ,15,NA,d,Cold Para,A,SUL   ,6,3,1,Lower,12,6,2
+1744,SUL,   ,3,NA,d,Cold Para,A,SUL   ,6,4,1,Lower,12,4,2
+1768,SUL,   ,9,NA,d,Cold Para,A,SUL   ,6,5,1,Lower,11,2,2
+1168,PSA,   ,3,NA,d,Cold Para,A,PSA   ,6,6,1,Upper,11,7,1
+1117,PSA,   ,1,NA,a,Cold Para,A,PSA   ,6,7,1,Upper,12,3,1
+1126,PSA,   ,1,NA,j,Cold Para,A,PSA   ,6,8,1,Upper,9,7,1
+1216,PSA,   ,15,NA,d,Cold Para,A,PSA   ,6,9,1,Upper,13,6,1
+1213,PSA,   ,15,NA,a,Cold Para,A,PSA   ,6,10,1,Upper,10,3,1
+1537,SIM,PSA,3,6,a,Cold Para,A,SIMPSA,2,2,2, ,5,6,2
+1549,SIM,PSA,3,9,a,Cold Para,A,SIMPSA,2,3,2, ,8,2,2
+1597,SIM,PSA,12,3,a,Cold Para,A,SIMPSA,2,4,2, ,5,5,2
+1573,SIM,PSA,6,3,a,Cold Para,A,SIMPSA,2,5,2, ,5,1,2
+1561,SIM,PSA,3,12,a,Cold Para,A,SIMPSA,2,6,2, ,5,2,2
+1525,SIM,PSA,3,3,a,Cold Para,A,SIMPSA,2,7,2, ,5,3,2
+1585,SIM,PSA,9,3,a,Cold Para,A,SIMPSA,2,8,2, ,5,7,2
+1453,SIM,PAN,3,6,a,Cold Para,A,SIMPAN,3,2,2, ,7,2,2
+1501,SIM,PAN,9,3,a,Cold Para,A,SIMPAN,3,3,2, ,7,5,2
+1513,SIM,PAN,12,3,a,Cold Para,A,SIMPAN,3,4,2, ,7,1,2
+1489,SIM,PAN,6,3,a,Cold Para,A,SIMPAN,3,5,2, ,7,6,2
+1441,SIM,PAN,3,3,a,Cold Para,A,SIMPAN,3,6,2, ,7,7,2
+1465,SIM,PAN,3,9,a,Cold Para,A,SIMPAN,3,7,2, ,7,3,2
+1477,SIM,PAN,3,12,a,Cold Para,A,SIMPAN,3,8,2, ,8,3,2
+685,PAL,PAN,3,9,a,Cold Para,A,PALPAN,4,2,2, ,7,1,1
+673,PAL,PAN,3,6,a,Cold Para,A,PALPAN,4,3,2, ,9,3,1
+721,PAL,PAN,9,3,a,Cold Para,A,PALPAN,4,4,2, ,7,7,1
+733,PAL,PAN,12,3,a,Cold Para,A,PALPAN,4,5,2, ,7,5,1
+661,PAL,PAN,3,3,a,Cold Para,A,PALPAN,4,6,2, ,7,3,1
+697,PAL,PAN,3,12,a,Cold Para,A,PALPAN,4,7,2, ,7,2,1
+709,PAL,PAN,6,3,a,Cold Para,A,PALPAN,4,8,2, ,7,6,1
+1945,SUL,PSA,6,3,a,Cold Para,A,SULPSA,5,2,2, ,4,6,1
+1957,SUL,PSA,9,3,a,Cold Para,A,SULPSA,5,3,2, ,4,5,1
+1897,SUL,PSA,3,3,a,Cold Para,A,SULPSA,5,4,2, ,4,1,1
+1969,SUL,PSA,12,3,a,Cold Para,A,SULPSA,5,5,2, ,4,4,1
+1933,SUL,PSA,3,12,a,Cold Para,A,SULPSA,5,6,2, ,4,3,1
+1909,SUL,PSA,3,6,a,Cold Para,A,SULPSA,5,7,2, ,4,2,1
+1921,SUL,PSA,3,9,a,Cold Para,A,SULPSA,5,8,2, ,4,7,1
+169,BIR,PAN,6,3,a,Cold Para,A,BIRPAN,6,2,2, ,2,6,1
+157,BIR,PAN,3,12,a,Cold Para,A,BIRPAN,6,3,2, ,2,2,1
+121,BIR,PAN,3,3,a,Cold Para,A,BIRPAN,6,4,2, ,2,3,1
+145,BIR,PAN,3,9,a,Cold Para,A,BIRPAN,6,5,2, ,2,1,1
+193,BIR,PAN,12,3,a,Cold Para,A,BIRPAN,6,6,2, ,2,7,1
+133,BIR,PAN,3,6,a,Cold Para,A,BIRPAN,6,7,2, ,2,5,1
+181,BIR,PAN,9,3,a,Cold Para,A,BIRPAN,6,8,2, ,9,1,1
+793,PAL,PSA,6,3,a,Cold Para,A,PALPSA,7,2,2, ,5,3,1
+781,PAL,PSA,3,12,a,Cold Para,A,PALPSA,7,3,2, ,5,1,1
+757,PAL,PSA,3,6,a,Cold Para,A,PALPSA,7,4,2, ,5,7,1
+745,PAL,PSA,3,3,a,Cold Para,A,PALPSA,7,5,2, ,5,5,1
+817,PAL,PSA,12,3,a,Cold Para,A,PALPSA,7,6,2, ,5,2,1
+805,PAL,PSA,9,3,a,Cold Para,A,PALPSA,7,7,2, ,5,6,1
+769,PAL,PSA,3,9,a,Cold Para,A,PALPSA,7,8,2, ,9,2,1
+961,PAL,SUL,6,3,a,Cold Para,A,PALSUL,8,2,2, ,1,7,2
+937,PAL,SUL,3,9,a,Cold Para,A,PALSUL,8,3,2, ,1,6,2
+913,PAL,SUL,3,3,a,Cold Para,A,PALSUL,8,4,2, ,1,1,2
+973,PAL,SUL,9,3,a,Cold Para,A,PALSUL,8,5,2, ,1,3,2
+985,PAL,SUL,12,3,a,Cold Para,A,PALSUL,8,6,2, ,1,2,2
+925,PAL,SUL,3,6,a,Cold Para,A,PALSUL,8,7,2, ,1,5,2
+949,PAL,SUL,3,12,a,Cold Para,A,PALSUL,8,8,2, ,1,4,2
+865,PAL,SIM,3,12,a,Cold Para,A,PALSIM,1,2,3, ,1,1,1
+853,PAL,SIM,3,9,a,Cold Para,A,PALSIM,1,3,3, ,1,4,1
+901,PAL,SIM,12,3,a,Cold Para,A,PALSIM,1,4,3, ,1,6,1
+829,PAL,SIM,3,3,a,Cold Para,A,PALSIM,1,5,3, ,1,2,1
+841,PAL,SIM,3,6,a,Cold Para,A,PALSIM,1,6,3, ,1,3,1
+889,PAL,SIM,9,3,a,Cold Para,A,PALSIM,1,7,3, ,1,7,1
+877,PAL,SIM,6,3,a,Cold Para,A,PALSIM,1,8,3, ,1,5,1
+601,PAL,BIR,3,9,a,Cold Para,A,PALBIR,2,2,3, ,6,7,1
+625,PAL,BIR,6,3,a,Cold Para,A,PALBIR,2,3,3, ,6,4,1
+637,PAL,BIR,9,3,a,Cold Para,A,PALBIR,2,4,3, ,6,5,1
+613,PAL,BIR,3,12,a,Cold Para,A,PALBIR,2,5,3, ,6,2,1
+649,PAL,BIR,12,3,a,Cold Para,A,PALBIR,2,6,3, ,6,3,1
+577,PAL,BIR,3,3,a,Cold Para,A,PALBIR,2,7,3, ,6,1,1
+589,PAL,BIR,3,6,a,Cold Para,A,PALBIR,2,8,3, ,6,6,1
+433,BIR,SUL,9,3,a,Cold Para,A,BIRSUL,3,2,3, ,3,6,2
+409,BIR,SUL,3,12,a,Cold Para,A,BIRSUL,3,3,3, ,3,1,2
+397,BIR,SUL,3,9,a,Cold Para,A,BIRSUL,3,4,3, ,3,4,2
+421,BIR,SUL,6,3,a,Cold Para,A,BIRSUL,3,5,3, ,3,3,2
+385,BIR,SUL,3,6,a,Cold Para,A,BIRSUL,3,6,3, ,3,2,2
+445,BIR,SUL,12,3,a,Cold Para,A,BIRSUL,3,7,3, ,3,7,2
+373,BIR,SUL,3,3,a,Cold Para,A,BIRSUL,3,8,3, ,3,5,2
+1885,SUL,PAN,12,3,a,Cold Para,A,SULPAN,4,2,3, ,2,3,2
+1873,SUL,PAN,9,3,a,Cold Para,A,SULPAN,4,3,3, ,2,1,2
+1861,SUL,PAN,6,3,a,Cold Para,A,SULPAN,4,4,3, ,2,6,2
+1813,SUL,PAN,3,3,a,Cold Para,A,SULPAN,4,5,3, ,2,7,2
+1837,SUL,PAN,3,9,a,Cold Para,A,SULPAN,4,6,3, ,2,5,2
+1849,SUL,PAN,3,12,a,Cold Para,A,SULPAN,4,7,3, ,8,1,2
+1825,SUL,PAN,3,6,a,Cold Para,A,SULPAN,4,8,3, ,2,2,2
+1669,SIM,SUL,9,3,a,Cold Para,A,SIMSUL,5,2,3, ,3,2,1
+1633,SIM,SUL,3,9,a,Cold Para,A,SIMSUL,5,3,3, ,3,7,1
+1621,SIM,SUL,3,6,a,Cold Para,A,SIMSUL,5,4,3, ,3,4,1
+1609,SIM,SUL,3,3,a,Cold Para,A,SIMSUL,5,5,3, ,3,1,1
+1645,SIM,SUL,3,12,a,Cold Para,A,SIMSUL,5,6,3, ,3,3,1
+1657,SIM,SUL,6,3,a,Cold Para,A,SIMSUL,5,7,3, ,3,5,1
+1681,SIM,SUL,12,3,a,Cold Para,A,SIMSUL,5,8,3, ,3,6,1
+1237,PSA,PAN,3,3,a,Cold Para,A,PSAPAN,6,2,3, ,4,7,2
+1273,PSA,PAN,3,12,a,Cold Para,A,PSAPAN,6,3,3, ,4,1,2
+1285,PSA,PAN,6,3,a,Cold Para,A,PSAPAN,6,4,3, ,4,3,2
+1309,PSA,PAN,12,3,a,Cold Para,A,PSAPAN,6,5,3, ,4,4,2
+1249,PSA,PAN,3,6,a,Cold Para,A,PSAPAN,6,6,3, ,4,5,2
+1261,PSA,PAN,3,9,a,Cold Para,A,PSAPAN,6,7,3, ,4,2,2
+1297,PSA,PAN,9,3,a,Cold Para,A,PSAPAN,6,8,3, ,4,6,2
+253,BIR,PSA,6,3,a,Cold Para,A,BIRPSA,7,2,3, ,6,1,2
+217,BIR,PSA,3,6,a,Cold Para,A,BIRPSA,7,3,3, ,6,2,2
+229,BIR,PSA,3,9,a,Cold Para,A,BIRPSA,7,4,3, ,6,3,2
+205,BIR,PSA,3,3,a,Cold Para,A,BIRPSA,7,5,3, ,6,4,2
+277,BIR,PSA,12,3,a,Cold Para,A,BIRPSA,7,6,3, ,6,5,2
+241,BIR,PSA,3,12,a,Cold Para,A,BIRPSA,7,7,3, ,6,6,2
+265,BIR,PSA,9,3,a,Cold Para,A,BIRPSA,7,8,3, ,6,7,2
+361,BIR,SIM,12,3,a,Cold Para,A,BIRSIM,8,2,3, ,8,5,1
+301,BIR,SIM,3,6,a,Cold Para,A,BIRSIM,8,3,3, ,8,7,1
+313,BIR,SIM,3,9,a,Cold Para,A,BIRSIM,8,4,3, ,8,4,1
+325,BIR,SIM,3,12,a,Cold Para,A,BIRSIM,8,5,3, ,8,1,1
+349,BIR,SIM,9,3,a,Cold Para,A,BIRSIM,8,6,3, ,8,3,1
+337,BIR,SIM,6,3,a,Cold Para,A,BIRSIM,8,7,3, ,8,6,1
+289,BIR,SIM,3,3,a,Cold Para,A,BIRSIM,8,8,3, ,8,2,1
+1138,PSA,   ,1,NA,j,Cold Safe,A,PSA   ,1,1,1,Lower,12,6,2
+1174,PSA,   ,3,NA,d,Cold Safe,A,PSA   ,1,2,1,Lower,8,5,2
+1198,PSA,   ,9,NA,d,Cold Safe,A,PSA   ,1,3,1,Lower,9,5,2
+1195,PSA,   ,9,NA,a,Cold Safe,A,PSA   ,1,4,1,Lower,9,3,2
+1132,PSA,   ,1,NA,d,Cold Safe,A,PSA   ,1,5,1,Lower,10,1,2
+1378,SIM,   ,3,NA,d,Cold Safe,A,SIM   ,1,6,1,Upper,10,4,1
+1402,SIM,   ,9,NA,d,Cold Safe,A,SIM   ,1,7,1,Upper,11,7,1
+1375,SIM,   ,3,NA,a,Cold Safe,A,SIM   ,1,8,1,Upper,11,3,1
+1423,SIM,   ,15,NA,a,Cold Safe,A,SIM   ,1,9,1,Upper,13,3,1
+1342,SIM,   ,1,NA,j,Cold Safe,A,SIM   ,1,10,1,Upper,10,1,1
+16,BIR,   ,1,NA,d,Cold Safe,A,BIR   ,2,1,1,Lower,12,5,2
+22,BIR,   ,1,NA,j,Cold Safe,A,BIR   ,2,2,1,Lower,11,1,2
+106,BIR,   ,15,NA,d,Cold Safe,A,BIR   ,2,3,1,Lower,9,6,2
+82,BIR,   ,9,NA,d,Cold Safe,A,BIR   ,2,4,1,Lower,11,5,2
+19,BIR,   ,1,NA,g,Cold Safe,A,BIR   ,2,5,1,Lower,8,7,2
+1102,PAN,   ,15,NA,d,Cold Safe,A,PAN   ,2,6,1,Upper,12,2,1
+1075,PAN,   ,9,NA,a,Cold Safe,A,PAN   ,2,7,1,Upper,12,7,1
+1015,PAN,   ,1,NA,g,Cold Safe,A,PAN   ,2,8,1,Upper,11,4,1
+1009,PAN,   ,1,NA,a,Cold Safe,A,PAN   ,2,9,1,Upper,10,2,1
+1012,PAN,   ,1,NA,d,Cold Safe,A,PAN   ,2,10,1,Upper,13,2,1
+1798,SUL,   ,15,NA,d,Cold Safe,A,SUL   ,3,1,1,Lower,10,3,2
+1705,SUL,   ,1,NA,a,Cold Safe,A,SUL   ,3,2,1,Lower,10,6,2
+1714,SUL,   ,1,NA,j,Cold Safe,A,SUL   ,3,3,1,Lower,11,3,2
+1711,SUL,   ,1,NA,g,Cold Safe,A,SUL   ,3,4,1,Lower,8,6,2
+1771,SUL,   ,9,NA,a,Cold Safe,A,SUL   ,3,5,1,Lower,11,6,2
+1219,PSA,   ,15,NA,a,Cold Safe,A,PSA   ,3,6,1,Upper,12,3,1
+1171,PSA,   ,3,NA,a,Cold Safe,A,PSA   ,3,7,1,Upper,10,7,1
+1129,PSA,   ,1,NA,a,Cold Safe,A,PSA   ,3,8,1,Upper,12,1,1
+1135,PSA,   ,1,NA,g,Cold Safe,A,PSA   ,3,9,1,Upper,10,6,1
+1222,PSA,   ,15,NA,d,Cold Safe,A,PSA   ,3,10,1,Upper,13,1,1
+1333,SIM,   ,1,NA,a,Cold Safe,A,SIM   ,4,1,1,Lower,10,5,2
+1339,SIM,   ,1,NA,g,Cold Safe,A,SIM   ,4,2,1,Lower,12,3,2
+1426,SIM,   ,15,NA,d,Cold Safe,A,SIM   ,4,3,1,Lower,12,2,2
+1336,SIM,   ,1,NA,d,Cold Safe,A,SIM   ,4,4,1,Lower,12,7,2
+1399,SIM,   ,9,NA,a,Cold Safe,A,SIM   ,4,5,1,Lower,10,2,2
+13,BIR,   ,1,NA,a,Cold Safe,A,BIR   ,4,6,1,Upper,12,6,1
+55,BIR,   ,3,NA,a,Cold Safe,A,BIR   ,4,7,1,Upper,11,2,1
+58,BIR,   ,3,NA,d,Cold Safe,A,BIR   ,4,8,1,Upper,9,5,1
+103,BIR,   ,15,NA,a,Cold Safe,A,BIR   ,4,9,1,Upper,13,5,1
+79,BIR,   ,9,NA,a,Cold Safe,A,BIR   ,4,10,1,Upper,13,6,1
+478,PAL,   ,1,NA,j,Cold Safe,A,PAL   ,5,1,1,Lower,10,7,2
+514,PAL,   ,3,NA,d,Cold Safe,A,PAL   ,5,2,1,Lower,10,4,2
+559,PAL,   ,15,NA,a,Cold Safe,A,PAL   ,5,3,1,Lower,9,1,2
+562,PAL,   ,15,NA,d,Cold Safe,A,PAL   ,5,4,1,Lower,12,1,2
+469,PAL,   ,1,NA,a,Cold Safe,A,PAL   ,5,5,1,Lower,9,7,2
+475,PAL,   ,1,NA,g,Cold Safe,A,PAL   ,5,6,1,Upper,11,1,1
+535,PAL,   ,9,NA,a,Cold Safe,A,PAL   ,5,7,1,Upper,10,5,1
+511,PAL,   ,3,NA,a,Cold Safe,A,PAL   ,5,8,1,Upper,13,4,1
+472,PAL,   ,1,NA,d,Cold Safe,A,PAL   ,5,9,1,Upper,10,3,1
+538,PAL,   ,9,NA,d,Cold Safe,A,PAL   ,5,10,1,Upper,12,5,1
+1018,PAN,   ,1,NA,j,Cold Safe,A,PAN   ,6,1,1,Lower,11,2,2
+1099,PAN,   ,15,NA,a,Cold Safe,A,PAN   ,6,2,1,Lower,9,2,2
+1051,PAN,   ,3,NA,a,Cold Safe,A,PAN   ,6,3,1,Lower,12,4,2
+1078,PAN,   ,9,NA,d,Cold Safe,A,PAN   ,6,4,1,Lower,8,4,2
+1054,PAN,   ,3,NA,d,Cold Safe,A,PAN   ,6,5,1,Lower,11,7,2
+1747,SUL,   ,3,NA,a,Cold Safe,A,SUL   ,6,6,1,Upper,13,7,1
+1774,SUL,   ,9,NA,d,Cold Safe,A,SUL   ,6,7,1,Upper,9,6,1
+1750,SUL,   ,3,NA,d,Cold Safe,A,SUL   ,6,8,1,Upper,9,7,1
+1708,SUL,   ,1,NA,d,Cold Safe,A,SUL   ,6,9,1,Upper,11,5,1
+1795,SUL,   ,15,NA,a,Cold Safe,A,SUL   ,6,10,1,Upper,11,6,1
+988,PAL,SUL,12,3,a,Cold Safe,A,PALSUL,2,2,2, ,2,7,1
+928,PAL,SUL,3,6,a,Cold Safe,A,PALSUL,2,3,2, ,9,1,1
+976,PAL,SUL,9,3,a,Cold Safe,A,PALSUL,2,4,2, ,2,2,1
+964,PAL,SUL,6,3,a,Cold Safe,A,PALSUL,2,5,2, ,2,5,1
+916,PAL,SUL,3,3,a,Cold Safe,A,PALSUL,2,6,2, ,2,1,1
+952,PAL,SUL,3,12,a,Cold Safe,A,PALSUL,2,7,2, ,2,3,1
+940,PAL,SUL,3,9,a,Cold Safe,A,PALSUL,2,8,2, ,2,6,1
+640,PAL,BIR,9,3,a,Cold Safe,A,PALBIR,3,2,2, ,9,3,1
+616,PAL,BIR,3,12,a,Cold Safe,A,PALBIR,3,3,2, ,7,6,1
+604,PAL,BIR,3,9,a,Cold Safe,A,PALBIR,3,4,2, ,7,7,1
+592,PAL,BIR,3,6,a,Cold Safe,A,PALBIR,3,5,2, ,7,5,1
+628,PAL,BIR,6,3,a,Cold Safe,A,PALBIR,3,6,2, ,7,3,1
+580,PAL,BIR,3,3,a,Cold Safe,A,PALBIR,3,7,2, ,7,1,1
+652,PAL,BIR,12,3,a,Cold Safe,A,PALBIR,3,8,2, ,7,2,1
+292,BIR,SIM,3,3,a,Cold Safe,A,BIRSIM,4,2,2, ,5,2,1
+328,BIR,SIM,3,12,a,Cold Safe,A,BIRSIM,4,3,2, ,5,3,1
+340,BIR,SIM,6,3,a,Cold Safe,A,BIRSIM,4,4,2, ,5,7,1
+364,BIR,SIM,12,3,a,Cold Safe,A,BIRSIM,4,5,2, ,5,5,1
+352,BIR,SIM,9,3,a,Cold Safe,A,BIRSIM,4,6,2, ,5,1,1
+316,BIR,SIM,3,9,a,Cold Safe,A,BIRSIM,4,7,2, ,5,6,1
+304,BIR,SIM,3,6,a,Cold Safe,A,BIRSIM,4,8,2, ,9,2,1
+1684,SIM,SUL,12,3,a,Cold Safe,A,SIMSUL,5,2,2, ,5,1,2
+1660,SIM,SUL,6,3,a,Cold Safe,A,SIMSUL,5,3,2, ,8,2,2
+1636,SIM,SUL,3,9,a,Cold Safe,A,SIMSUL,5,4,2, ,5,5,2
+1648,SIM,SUL,3,12,a,Cold Safe,A,SIMSUL,5,5,2, ,5,7,2
+1612,SIM,SUL,3,3,a,Cold Safe,A,SIMSUL,5,6,2, ,5,3,2
+1672,SIM,SUL,9,3,a,Cold Safe,A,SIMSUL,5,7,2, ,5,2,2
+1624,SIM,SUL,3,6,a,Cold Safe,A,SIMSUL,5,8,2, ,5,6,2
+1288,PSA,PAN,6,3,a,Cold Safe,A,PSAPAN,6,2,2, ,3,1,1
+1252,PSA,PAN,3,6,a,Cold Safe,A,PSAPAN,6,3,2, ,3,2,1
+1276,PSA,PAN,3,12,a,Cold Safe,A,PSAPAN,6,4,2, ,3,6,1
+1300,PSA,PAN,9,3,a,Cold Safe,A,PSAPAN,6,5,2, ,3,3,1
+1312,PSA,PAN,12,3,a,Cold Safe,A,PSAPAN,6,6,2, ,3,4,1
+1264,PSA,PAN,3,9,a,Cold Safe,A,PSAPAN,6,7,2, ,3,7,1
+1240,PSA,PAN,3,3,a,Cold Safe,A,PSAPAN,6,8,2, ,3,5,1
+1600,SIM,PSA,12,3,a,Cold Safe,A,SIMPSA,7,2,2, ,2,7,2
+1528,SIM,PSA,3,3,a,Cold Safe,A,SIMPSA,7,3,2, ,2,5,2
+1576,SIM,PSA,6,3,a,Cold Safe,A,SIMPSA,7,4,2, ,2,3,2
+1564,SIM,PSA,3,12,a,Cold Safe,A,SIMPSA,7,5,2, ,2,1,2
+1588,SIM,PSA,9,3,a,Cold Safe,A,SIMPSA,7,6,2, ,2,6,2
+1552,SIM,PSA,3,9,a,Cold Safe,A,SIMPSA,7,7,2, ,8,1,2
+1540,SIM,PSA,3,6,a,Cold Safe,A,SIMPSA,7,8,2, ,2,2,2
+892,PAL,SIM,9,3,a,Cold Safe,A,PALSIM,8,2,2, ,7,7,2
+832,PAL,SIM,3,3,a,Cold Safe,A,PALSIM,8,3,2, ,8,3,2
+880,PAL,SIM,6,3,a,Cold Safe,A,PALSIM,8,4,2, ,7,2,2
+856,PAL,SIM,3,9,a,Cold Safe,A,PALSIM,8,5,2, ,7,6,2
+904,PAL,SIM,12,3,a,Cold Safe,A,PALSIM,8,6,2, ,7,3,2
+844,PAL,SIM,3,6,a,Cold Safe,A,PALSIM,8,7,2, ,7,1,2
+868,PAL,SIM,3,12,a,Cold Safe,A,PALSIM,8,8,2, ,7,5,2
+1912,SUL,PSA,3,6,a,Cold Safe,A,SULPSA,1,2,3, ,1,4,2
+1960,SUL,PSA,9,3,a,Cold Safe,A,SULPSA,1,3,3, ,1,2,2
+1972,SUL,PSA,12,3,a,Cold Safe,A,SULPSA,1,4,3, ,1,6,2
+1900,SUL,PSA,3,3,a,Cold Safe,A,SULPSA,1,5,3, ,1,3,2
+1924,SUL,PSA,3,9,a,Cold Safe,A,SULPSA,1,6,3, ,1,1,2
+1936,SUL,PSA,3,12,a,Cold Safe,A,SULPSA,1,7,3, ,1,7,2
+1948,SUL,PSA,6,3,a,Cold Safe,A,SULPSA,1,8,3, ,1,5,2
+1828,SUL,PAN,3,6,a,Cold Safe,A,SULPAN,2,2,3, ,4,7,1
+1888,SUL,PAN,12,3,a,Cold Safe,A,SULPAN,2,3,3, ,4,3,1
+1840,SUL,PAN,3,9,a,Cold Safe,A,SULPAN,2,4,3, ,4,6,1
+1816,SUL,PAN,3,3,a,Cold Safe,A,SULPAN,2,5,3, ,4,1,1
+1852,SUL,PAN,3,12,a,Cold Safe,A,SULPAN,2,6,3, ,4,5,1
+1876,SUL,PAN,9,3,a,Cold Safe,A,SULPAN,2,7,3, ,4,4,1
+1864,SUL,PAN,6,3,a,Cold Safe,A,SULPAN,2,8,3, ,4,2,1
+400,BIR,SUL,3,9,a,Cold Safe,A,BIRSUL,3,2,3, ,1,6,1
+376,BIR,SUL,3,3,a,Cold Safe,A,BIRSUL,3,3,3, ,1,5,1
+412,BIR,SUL,3,12,a,Cold Safe,A,BIRSUL,3,4,3, ,1,7,1
+448,BIR,SUL,12,3,a,Cold Safe,A,BIRSUL,3,5,3, ,1,3,1
+388,BIR,SUL,3,6,a,Cold Safe,A,BIRSUL,3,6,3, ,1,2,1
+424,BIR,SUL,6,3,a,Cold Safe,A,BIRSUL,3,7,3, ,1,4,1
+436,BIR,SUL,9,3,a,Cold Safe,A,BIRSUL,3,8,3, ,1,1,1
+808,PAL,PSA,9,3,a,Cold Safe,A,PALPSA,4,2,3, ,6,3,1
+820,PAL,PSA,12,3,a,Cold Safe,A,PALPSA,4,3,3, ,6,4,1
+796,PAL,PSA,6,3,a,Cold Safe,A,PALPSA,4,4,3, ,6,7,1
+772,PAL,PSA,3,9,a,Cold Safe,A,PALPSA,4,5,3, ,6,6,1
+748,PAL,PSA,3,3,a,Cold Safe,A,PALPSA,4,6,3, ,6,2,1
+760,PAL,PSA,3,6,a,Cold Safe,A,PALPSA,4,7,3, ,6,5,1
+784,PAL,PSA,3,12,a,Cold Safe,A,PALPSA,4,8,3, ,6,1,1
+1468,SIM,PAN,3,9,a,Cold Safe,A,SIMPAN,5,2,3, ,8,7,1
+1492,SIM,PAN,6,3,a,Cold Safe,A,SIMPAN,5,3,3, ,8,2,1
+1480,SIM,PAN,3,12,a,Cold Safe,A,SIMPAN,5,4,3, ,8,3,1
+1456,SIM,PAN,3,6,a,Cold Safe,A,SIMPAN,5,5,3, ,8,4,1
+1516,SIM,PAN,12,3,a,Cold Safe,A,SIMPAN,5,6,3, ,8,1,1
+1504,SIM,PAN,9,3,a,Cold Safe,A,SIMPAN,5,7,3, ,8,5,1
+1444,SIM,PAN,3,3,a,Cold Safe,A,SIMPAN,5,8,3, ,8,6,1
+184,BIR,PAN,9,3,a,Cold Safe,A,BIRPAN,6,2,3, ,6,2,2
+148,BIR,PAN,3,9,a,Cold Safe,A,BIRPAN,6,3,3, ,6,6,2
+172,BIR,PAN,6,3,a,Cold Safe,A,BIRPAN,6,4,3, ,6,1,2
+136,BIR,PAN,3,6,a,Cold Safe,A,BIRPAN,6,5,3, ,6,3,2
+124,BIR,PAN,3,3,a,Cold Safe,A,BIRPAN,6,6,3, ,6,7,2
+196,BIR,PAN,12,3,a,Cold Safe,A,BIRPAN,6,7,3, ,6,4,2
+160,BIR,PAN,3,12,a,Cold Safe,A,BIRPAN,6,8,3, ,6,5,2
+724,PAL,PAN,9,3,a,Cold Safe,A,PALPAN,7,2,3, ,4,4,2
+712,PAL,PAN,6,3,a,Cold Safe,A,PALPAN,7,3,3, ,4,1,2
+664,PAL,PAN,3,3,a,Cold Safe,A,PALPAN,7,4,3, ,4,2,2
+688,PAL,PAN,3,9,a,Cold Safe,A,PALPAN,7,5,3, ,4,7,2
+700,PAL,PAN,3,12,a,Cold Safe,A,PALPAN,7,6,3, ,4,6,2
+736,PAL,PAN,12,3,a,Cold Safe,A,PALPAN,7,7,3, ,4,5,2
+676,PAL,PAN,3,6,a,Cold Safe,A,PALPAN,7,8,3, ,4,3,2
+244,BIR,PSA,3,12,a,Cold Safe,A,BIRPSA,8,2,3, ,3,3,2
+256,BIR,PSA,6,3,a,Cold Safe,A,BIRPSA,8,3,3, ,3,6,2
+208,BIR,PSA,3,3,a,Cold Safe,A,BIRPSA,8,4,3, ,3,4,2
+232,BIR,PSA,3,9,a,Cold Safe,A,BIRPSA,8,5,3, ,3,5,2
+268,BIR,PSA,9,3,a,Cold Safe,A,BIRPSA,8,6,3, ,3,7,2
+280,BIR,PSA,12,3,a,Cold Safe,A,BIRPSA,8,7,3, ,3,2,2
+220,BIR,PSA,3,6,a,Cold Safe,A,BIRPSA,8,8,3, ,3,1,2
+1105,PAN,   ,15,NA,a,Hot Para,A,PAN   ,1,1,1,Lower,10,2,2
+1108,PAN,   ,15,NA,d,Hot Para,A,PAN   ,1,2,1,Lower,12,3,2
+1027,PAN,   ,1,NA,g,Hot Para,A,PAN   ,1,3,1,Lower,10,5,2
+1084,PAN,   ,9,NA,d,Hot Para,A,PAN   ,1,4,1,Lower,12,7,2
+1057,PAN,   ,3,NA,a,Hot Para,A,PAN   ,1,5,1,Lower,8,7,2
+1081,PAN,   ,9,NA,a,Hot Para,A,PAN   ,1,6,1,Upper,10,5,1
+1024,PAN,   ,1,NA,d,Hot Para,A,PAN   ,1,7,1,Upper,10,2,1
+1021,PAN,   ,1,NA,a,Hot Para,A,PAN   ,1,8,1,Upper,10,6,1
+1060,PAN,   ,3,NA,d,Hot Para,A,PAN   ,1,9,1,Upper,10,4,1
+1030,PAN,   ,1,NA,j,Hot Para,A,PAN   ,1,10,1,Upper,12,3,1
+490,PAL,   ,1,NA,j,Hot Para,A,PAL   ,2,1,1,Lower,9,1,2
+568,PAL,   ,15,NA,d,Hot Para,A,PAL   ,2,2,1,Lower,12,4,2
+484,PAL,   ,1,NA,d,Hot Para,A,PAL   ,2,3,1,Lower,12,2,2
+565,PAL,   ,15,NA,a,Hot Para,A,PAL   ,2,4,1,Lower,8,6,2
+520,PAL,   ,3,NA,d,Hot Para,A,PAL   ,2,5,1,Lower,11,5,2
+487,PAL,   ,1,NA,g,Hot Para,A,PAL   ,2,6,1,Upper,12,5,1
+541,PAL,   ,9,NA,a,Hot Para,A,PAL   ,2,7,1,Upper,12,1,1
+544,PAL,   ,9,NA,d,Hot Para,A,PAL   ,2,8,1,Upper,11,2,1
+481,PAL,   ,1,NA,a,Hot Para,A,PAL   ,2,9,1,Upper,11,5,1
+517,PAL,   ,3,NA,a,Hot Para,A,PAL   ,2,10,1,Upper,12,6,1
+1726,SUL,   ,1,NA,j,Hot Para,A,SUL   ,3,1,1,Lower,9,2,2
+1717,SUL,   ,1,NA,a,Hot Para,A,SUL   ,3,2,1,Lower,10,4,2
+1723,SUL,   ,1,NA,g,Hot Para,A,SUL   ,3,3,1,Lower,9,6,2
+1804,SUL,   ,15,NA,d,Hot Para,A,SUL   ,3,4,1,Lower,11,7,2
+1780,SUL,   ,9,NA,d,Hot Para,A,SUL   ,3,5,1,Lower,11,1,2
+1354,SIM,   ,1,NA,j,Hot Para,A,SIM   ,3,6,1,Upper,10,1,1
+1429,SIM,   ,15,NA,a,Hot Para,A,SIM   ,3,7,1,Upper,13,4,1
+1408,SIM,   ,9,NA,d,Hot Para,A,SIM   ,3,8,1,Upper,13,2,1
+1432,SIM,   ,15,NA,d,Hot Para,A,SIM   ,3,9,1,Upper,9,7,1
+1405,SIM,   ,9,NA,a,Hot Para,A,SIM   ,3,10,1,Upper,13,7,1
+85,BIR,   ,9,NA,a,Hot Para,A,BIR   ,4,1,1,Lower,10,1,2
+34,BIR,   ,1,NA,j,Hot Para,A,BIR   ,4,2,1,Lower,11,6,2
+28,BIR,   ,1,NA,d,Hot Para,A,BIR   ,4,3,1,Lower,10,7,2
+25,BIR,   ,1,NA,a,Hot Para,A,BIR   ,4,4,1,Lower,10,6,2
+112,BIR,   ,15,NA,d,Hot Para,A,BIR   ,4,5,1,Lower,11,2,2
+1756,SUL,   ,3,NA,d,Hot Para,A,SUL   ,4,6,1,Upper,13,1,1
+1753,SUL,   ,3,NA,a,Hot Para,A,SUL   ,4,7,1,Upper,11,7,1
+1777,SUL,   ,9,NA,a,Hot Para,A,SUL   ,4,8,1,Upper,12,2,1
+1801,SUL,   ,15,NA,a,Hot Para,A,SUL   ,4,9,1,Upper,12,7,1
+1720,SUL,   ,1,NA,d,Hot Para,A,SUL   ,4,10,1,Upper,9,6,1
+1384,SIM,   ,3,NA,d,Hot Para,A,SIM   ,5,1,1,Lower,8,5,2
+1345,SIM,   ,1,NA,a,Hot Para,A,SIM   ,5,2,1,Lower,12,1,2
+1381,SIM,   ,3,NA,a,Hot Para,A,SIM   ,5,3,1,Lower,12,6,2
+1351,SIM,   ,1,NA,g,Hot Para,A,SIM   ,5,4,1,Lower,9,5,2
+1348,SIM,   ,1,NA,d,Hot Para,A,SIM   ,5,5,1,Lower,8,4,2
+1228,PSA,   ,15,NA,d,Hot Para,A,PSA   ,5,6,1,Upper,10,3,1
+1201,PSA,   ,9,NA,a,Hot Para,A,PSA   ,5,7,1,Upper,9,5,1
+1180,PSA,   ,3,NA,d,Hot Para,A,PSA   ,5,8,1,Upper,13,6,1
+1147,PSA,   ,1,NA,g,Hot Para,A,PSA   ,5,9,1,Upper,13,3,1
+1204,PSA,   ,9,NA,d,Hot Para,A,PSA   ,5,10,1,Upper,11,6,1
+1150,PSA,   ,1,NA,j,Hot Para,A,PSA   ,6,1,1,Lower,10,3,2
+1177,PSA,   ,3,NA,a,Hot Para,A,PSA   ,6,2,1,Lower,11,3,2
+1141,PSA,   ,1,NA,a,Hot Para,A,PSA   ,6,3,1,Lower,12,5,2
+1144,PSA,   ,1,NA,d,Hot Para,A,PSA   ,6,4,1,Lower,9,7,2
+1225,PSA,   ,15,NA,a,Hot Para,A,PSA   ,6,5,1,Lower,9,3,2
+109,BIR,   ,15,NA,a,Hot Para,A,BIR   ,6,6,1,Upper,13,5,1
+61,BIR,   ,3,NA,a,Hot Para,A,BIR   ,6,7,1,Upper,11,1,1
+64,BIR,   ,3,NA,d,Hot Para,A,BIR   ,6,8,1,Upper,11,4,1
+31,BIR,   ,1,NA,g,Hot Para,A,BIR   ,6,9,1,Upper,11,3,1
+88,BIR,   ,9,NA,d,Hot Para,A,BIR   ,6,10,1,Upper,10,7,1
+1495,SIM,PAN,6,3,a,Hot Para,A,SIMPAN,2,2,2, ,4,5,1
+1483,SIM,PAN,3,12,a,Hot Para,A,SIMPAN,2,3,2, ,4,1,1
+1507,SIM,PAN,9,3,a,Hot Para,A,SIMPAN,2,4,2, ,4,4,1
+1459,SIM,PAN,3,6,a,Hot Para,A,SIMPAN,2,5,2, ,4,7,1
+1519,SIM,PAN,12,3,a,Hot Para,A,SIMPAN,2,6,2, ,4,2,1
+1471,SIM,PAN,3,9,a,Hot Para,A,SIMPAN,2,7,2, ,4,3,1
+1447,SIM,PAN,3,3,a,Hot Para,A,SIMPAN,2,8,2, ,4,6,1
+379,BIR,SUL,3,3,a,Hot Para,A,BIRSUL,3,2,2, ,5,6,1
+391,BIR,SUL,3,6,a,Hot Para,A,BIRSUL,3,3,2, ,5,2,1
+403,BIR,SUL,3,9,a,Hot Para,A,BIRSUL,3,4,2, ,9,2,1
+451,BIR,SUL,12,3,a,Hot Para,A,BIRSUL,3,5,2, ,5,5,1
+439,BIR,SUL,9,3,a,Hot Para,A,BIRSUL,3,6,2, ,5,3,1
+415,BIR,SUL,3,12,a,Hot Para,A,BIRSUL,3,7,2, ,5,1,1
+427,BIR,SUL,6,3,a,Hot Para,A,BIRSUL,3,8,2, ,5,7,1
+667,PAL,PAN,3,3,a,Hot Para,A,PALPAN,4,2,2, ,1,6,1
+715,PAL,PAN,6,3,a,Hot Para,A,PALPAN,4,3,2, ,1,7,1
+691,PAL,PAN,3,9,a,Hot Para,A,PALPAN,4,4,2, ,1,2,1
+679,PAL,PAN,3,6,a,Hot Para,A,PALPAN,4,5,2, ,1,4,1
+739,PAL,PAN,12,3,a,Hot Para,A,PALPAN,4,6,2, ,1,3,1
+727,PAL,PAN,9,3,a,Hot Para,A,PALPAN,4,7,2, ,1,5,1
+703,PAL,PAN,3,12,a,Hot Para,A,PALPAN,4,8,2, ,1,1,1
+847,PAL,SIM,3,6,a,Hot Para,A,PALSIM,5,2,2, ,4,6,2
+895,PAL,SIM,9,3,a,Hot Para,A,PALSIM,5,3,2, ,4,7,2
+835,PAL,SIM,3,3,a,Hot Para,A,PALSIM,5,4,2, ,4,2,2
+883,PAL,SIM,6,3,a,Hot Para,A,PALSIM,5,5,2, ,4,4,2
+907,PAL,SIM,12,3,a,Hot Para,A,PALSIM,5,6,2, ,4,1,2
+859,PAL,SIM,3,9,a,Hot Para,A,PALSIM,5,7,2, ,4,3,2
+871,PAL,SIM,3,12,a,Hot Para,A,PALSIM,5,8,2, ,4,5,2
+283,BIR,PSA,12,3,a,Hot Para,A,BIRPSA,6,2,2, ,6,6,1
+271,BIR,PSA,9,3,a,Hot Para,A,BIRPSA,6,3,2, ,6,3,1
+223,BIR,PSA,3,6,a,Hot Para,A,BIRPSA,6,4,2, ,6,1,1
+259,BIR,PSA,6,3,a,Hot Para,A,BIRPSA,6,5,2, ,6,4,1
+211,BIR,PSA,3,3,a,Hot Para,A,BIRPSA,6,6,2, ,6,2,1
+247,BIR,PSA,3,12,a,Hot Para,A,BIRPSA,6,7,2, ,6,5,1
+235,BIR,PSA,3,9,a,Hot Para,A,BIRPSA,6,8,2, ,6,7,1
+1819,SUL,PAN,3,3,a,Hot Para,A,SULPAN,7,2,2, ,6,1,2
+1831,SUL,PAN,3,6,a,Hot Para,A,SULPAN,7,3,2, ,6,7,2
+1855,SUL,PAN,3,12,a,Hot Para,A,SULPAN,7,4,2, ,6,4,2
+1843,SUL,PAN,3,9,a,Hot Para,A,SULPAN,7,5,2, ,6,6,2
+1891,SUL,PAN,12,3,a,Hot Para,A,SULPAN,7,6,2, ,6,5,2
+1867,SUL,PAN,6,3,a,Hot Para,A,SULPAN,7,7,2, ,6,2,2
+1879,SUL,PAN,9,3,a,Hot Para,A,SULPAN,7,8,2, ,6,3,2
+967,PAL,SUL,6,3,a,Hot Para,A,PALSUL,8,2,2, ,7,2,1
+991,PAL,SUL,12,3,a,Hot Para,A,PALSUL,8,3,2, ,7,7,1
+955,PAL,SUL,3,12,a,Hot Para,A,PALSUL,8,4,2, ,7,6,1
+943,PAL,SUL,3,9,a,Hot Para,A,PALSUL,8,5,2, ,7,1,1
+931,PAL,SUL,3,6,a,Hot Para,A,PALSUL,8,6,2, ,9,3,1
+919,PAL,SUL,3,3,a,Hot Para,A,PALSUL,8,7,2, ,7,3,1
+979,PAL,SUL,9,3,a,Hot Para,A,PALSUL,8,8,2, ,7,5,1
+823,PAL,PSA,12,3,a,Hot Para,A,PALPSA,1,2,3, ,8,3,1
+751,PAL,PSA,3,3,a,Hot Para,A,PALPSA,1,3,3, ,8,2,1
+763,PAL,PSA,3,6,a,Hot Para,A,PALPSA,1,4,3, ,8,6,1
+787,PAL,PSA,3,12,a,Hot Para,A,PALPSA,1,5,3, ,8,1,1
+775,PAL,PSA,3,9,a,Hot Para,A,PALPSA,1,6,3, ,8,4,1
+811,PAL,PSA,9,3,a,Hot Para,A,PALPSA,1,7,3, ,8,7,1
+799,PAL,PSA,6,3,a,Hot Para,A,PALPSA,1,8,3, ,8,5,1
+1687,SIM,SUL,12,3,a,Hot Para,A,SIMSUL,2,2,3, ,2,5,1
+1615,SIM,SUL,3,3,a,Hot Para,A,SIMSUL,2,3,3, ,2,6,1
+1675,SIM,SUL,9,3,a,Hot Para,A,SIMSUL,2,4,3, ,2,3,1
+1627,SIM,SUL,3,6,a,Hot Para,A,SIMSUL,2,5,3, ,2,2,1
+1651,SIM,SUL,3,12,a,Hot Para,A,SIMSUL,2,6,3, ,9,1,1
+1639,SIM,SUL,3,9,a,Hot Para,A,SIMSUL,2,7,3, ,2,1,1
+1663,SIM,SUL,6,3,a,Hot Para,A,SIMSUL,2,8,3, ,2,7,1
+1903,SUL,PSA,3,3,a,Hot Para,A,SULPSA,3,2,3, ,7,5,2
+1939,SUL,PSA,3,12,a,Hot Para,A,SULPSA,3,3,3, ,7,6,2
+1927,SUL,PSA,3,9,a,Hot Para,A,SULPSA,3,4,3, ,7,7,2
+1975,SUL,PSA,12,3,a,Hot Para,A,SULPSA,3,5,3, ,7,1,2
+1951,SUL,PSA,6,3,a,Hot Para,A,SULPSA,3,6,3, ,8,3,2
+1963,SUL,PSA,9,3,a,Hot Para,A,SULPSA,3,7,3, ,7,2,2
+1915,SUL,PSA,3,6,a,Hot Para,A,SULPSA,3,8,3, ,7,3,2
+595,PAL,BIR,3,6,a,Hot Para,A,PALBIR,4,2,3, ,3,4,2
+643,PAL,BIR,9,3,a,Hot Para,A,PALBIR,4,3,3, ,3,1,2
+631,PAL,BIR,6,3,a,Hot Para,A,PALBIR,4,4,3, ,3,6,2
+655,PAL,BIR,12,3,a,Hot Para,A,PALBIR,4,5,3, ,3,5,2
+607,PAL,BIR,3,9,a,Hot Para,A,PALBIR,4,6,3, ,3,2,2
+619,PAL,BIR,3,12,a,Hot Para,A,PALBIR,4,7,3, ,3,3,2
+583,PAL,BIR,3,3,a,Hot Para,A,PALBIR,4,8,3, ,3,7,2
+1255,PSA,PAN,3,6,a,Hot Para,A,PSAPAN,5,2,3, ,5,7,2
+1279,PSA,PAN,3,12,a,Hot Para,A,PSAPAN,5,3,3, ,5,6,2
+1303,PSA,PAN,9,3,a,Hot Para,A,PSAPAN,5,4,3, ,5,3,2
+1291,PSA,PAN,6,3,a,Hot Para,A,PSAPAN,5,5,3, ,5,2,2
+1243,PSA,PAN,3,3,a,Hot Para,A,PSAPAN,5,6,3, ,5,5,2
+1267,PSA,PAN,3,9,a,Hot Para,A,PSAPAN,5,7,3, ,8,2,2
+1315,PSA,PAN,12,3,a,Hot Para,A,PSAPAN,5,8,3, ,5,1,2
+343,BIR,SIM,6,3,a,Hot Para,A,BIRSIM,6,2,3, ,3,4,1
+355,BIR,SIM,9,3,a,Hot Para,A,BIRSIM,6,3,3, ,3,1,1
+319,BIR,SIM,3,9,a,Hot Para,A,BIRSIM,6,4,3, ,3,3,1
+295,BIR,SIM,3,3,a,Hot Para,A,BIRSIM,6,5,3, ,3,6,1
+307,BIR,SIM,3,6,a,Hot Para,A,BIRSIM,6,6,3, ,3,7,1
+367,BIR,SIM,12,3,a,Hot Para,A,BIRSIM,6,7,3, ,3,2,1
+331,BIR,SIM,3,12,a,Hot Para,A,BIRSIM,6,8,3, ,3,5,1
+1591,SIM,PSA,9,3,a,Hot Para,A,SIMPSA,7,2,3, ,2,2,2
+1579,SIM,PSA,6,3,a,Hot Para,A,SIMPSA,7,3,3, ,2,5,2
+1543,SIM,PSA,3,6,a,Hot Para,A,SIMPSA,7,4,3, ,2,7,2
+1567,SIM,PSA,3,12,a,Hot Para,A,SIMPSA,7,5,3, ,8,1,2
+1531,SIM,PSA,3,3,a,Hot Para,A,SIMPSA,7,6,3, ,2,1,2
+1603,SIM,PSA,12,3,a,Hot Para,A,SIMPSA,7,7,3, ,2,6,2
+1555,SIM,PSA,3,9,a,Hot Para,A,SIMPSA,7,8,3, ,2,3,2
+139,BIR,PAN,3,6,a,Hot Para,A,BIRPAN,8,2,3, ,1,7,2
+175,BIR,PAN,6,3,a,Hot Para,A,BIRPAN,8,3,3, ,1,6,2
+187,BIR,PAN,9,3,a,Hot Para,A,BIRPAN,8,4,3, ,1,5,2
+199,BIR,PAN,12,3,a,Hot Para,A,BIRPAN,8,5,3, ,1,4,2
+163,BIR,PAN,3,12,a,Hot Para,A,BIRPAN,8,6,3, ,1,2,2
+127,BIR,PAN,3,3,a,Hot Para,A,BIRPAN,8,7,3, ,1,1,2
+151,BIR,PAN,3,9,a,Hot Para,A,BIRPAN,8,8,3, ,1,3,2
+94,BIR,   ,9,NA,d,Hot Safe,A,BIR   ,1,1,1,Lower,10,1,2
+118,BIR,   ,15,NA,d,Hot Safe,A,BIR   ,1,2,1,Lower,12,7,2
+115,BIR,   ,15,NA,a,Hot Safe,A,BIR   ,1,3,1,Lower,9,5,2
+67,BIR,   ,3,NA,a,Hot Safe,A,BIR   ,1,4,1,Lower,9,2,2
+43,BIR,   ,1,NA,g,Hot Safe,A,BIR   ,1,5,1,Lower,8,7,2
+547,PAL,   ,9,NA,a,Hot Safe,A,PAL   ,1,6,1,Upper,12,7,1
+526,PAL,   ,3,NA,d,Hot Safe,A,PAL   ,1,7,1,Upper,13,6,1
+523,PAL,   ,3,NA,a,Hot Safe,A,PAL   ,1,8,1,Upper,10,2,1
+493,PAL,   ,1,NA,a,Hot Safe,A,PAL   ,1,9,1,Upper,11,1,1
+571,PAL,   ,15,NA,a,Hot Safe,A,PAL   ,1,10,1,Upper,9,6,1
+1234,PSA,   ,15,NA,d,Hot Safe,A,PSA   ,2,1,1,Lower,8,4,2
+1156,PSA,   ,1,NA,d,Hot Safe,A,PSA   ,2,2,1,Lower,12,1,2
+1186,PSA,   ,3,NA,d,Hot Safe,A,PSA   ,2,3,1,Lower,12,5,2
+1162,PSA,   ,1,NA,j,Hot Safe,A,PSA   ,2,4,1,Lower,12,6,2
+1207,PSA,   ,9,NA,a,Hot Safe,A,PSA   ,2,5,1,Lower,10,3,2
+1438,SIM,   ,15,NA,d,Hot Safe,A,SIM   ,2,6,1,Upper,11,4,1
+1411,SIM,   ,9,NA,a,Hot Safe,A,SIM   ,2,7,1,Upper,12,1,1
+1414,SIM,   ,9,NA,d,Hot Safe,A,SIM   ,2,8,1,Upper,11,5,1
+1387,SIM,   ,3,NA,a,Hot Safe,A,SIM   ,2,9,1,Upper,10,1,1
+1357,SIM,   ,1,NA,a,Hot Safe,A,SIM   ,2,10,1,Upper,12,2,1
+1759,SUL,   ,3,NA,a,Hot Safe,A,SUL   ,3,1,1,Lower,9,1,2
+1735,SUL,   ,1,NA,g,Hot Safe,A,SUL   ,3,2,1,Lower,11,3,2
+1732,SUL,   ,1,NA,d,Hot Safe,A,SUL   ,3,3,1,Lower,11,5,2
+1786,SUL,   ,9,NA,d,Hot Safe,A,SUL   ,3,4,1,Lower,9,6,2
+1729,SUL,   ,1,NA,a,Hot Safe,A,SUL   ,3,5,1,Lower,9,3,2
+1762,SUL,   ,3,NA,d,Hot Safe,A,SUL   ,3,6,1,Upper,10,5,1
+1810,SUL,   ,15,NA,d,Hot Safe,A,SUL   ,3,7,1,Upper,13,1,1
+1783,SUL,   ,9,NA,a,Hot Safe,A,SUL   ,3,8,1,Upper,13,2,1
+1807,SUL,   ,15,NA,a,Hot Safe,A,SUL   ,3,9,1,Upper,12,6,1
+1738,SUL,   ,1,NA,j,Hot Safe,A,SUL   ,3,10,1,Upper,11,2,1
+1066,PAN,   ,3,NA,d,Hot Safe,A,PAN   ,4,1,1,Lower,10,7,2
+1042,PAN,   ,1,NA,j,Hot Safe,A,PAN   ,4,2,1,Lower,11,1,2
+1090,PAN,   ,9,NA,d,Hot Safe,A,PAN   ,4,3,1,Lower,12,2,2
+1063,PAN,   ,3,NA,a,Hot Safe,A,PAN   ,4,4,1,Lower,8,6,2
+1114,PAN,   ,15,NA,d,Hot Safe,A,PAN   ,4,5,1,Lower,10,5,2
+37,BIR,   ,1,NA,a,Hot Safe,A,BIR   ,4,6,1,Upper,11,7,1
+40,BIR,   ,1,NA,d,Hot Safe,A,BIR   ,4,7,1,Upper,11,6,1
+91,BIR,   ,9,NA,a,Hot Safe,A,BIR   ,4,8,1,Upper,10,6,1
+46,BIR,   ,1,NA,j,Hot Safe,A,BIR   ,4,9,1,Upper,13,3,1
+70,BIR,   ,3,NA,d,Hot Safe,A,BIR   ,4,10,1,Upper,13,5,1
+1390,SIM,   ,3,NA,d,Hot Safe,A,SIM   ,5,1,1,Lower,11,7,2
+1360,SIM,   ,1,NA,d,Hot Safe,A,SIM   ,5,2,1,Lower,12,4,2
+1435,SIM,   ,15,NA,a,Hot Safe,A,SIM   ,5,3,1,Lower,8,5,2
+1363,SIM,   ,1,NA,g,Hot Safe,A,SIM   ,5,4,1,Lower,10,4,2
+1366,SIM,   ,1,NA,j,Hot Safe,A,SIM   ,5,5,1,Lower,10,6,2
+1231,PSA,   ,15,NA,a,Hot Safe,A,PSA   ,5,6,1,Upper,10,3,1
+1153,PSA,   ,1,NA,a,Hot Safe,A,PSA   ,5,7,1,Upper,11,3,1
+1210,PSA,   ,9,NA,d,Hot Safe,A,PSA   ,5,8,1,Upper,10,4,1
+1183,PSA,   ,3,NA,a,Hot Safe,A,PSA   ,5,9,1,Upper,10,7,1
+1159,PSA,   ,1,NA,g,Hot Safe,A,PSA   ,5,10,1,Upper,9,5,1
+499,PAL,   ,1,NA,g,Hot Safe,A,PAL   ,6,1,1,Lower,11,6,2
+574,PAL,   ,15,NA,d,Hot Safe,A,PAL   ,6,2,1,Lower,11,2,2
+550,PAL,   ,9,NA,d,Hot Safe,A,PAL   ,6,3,1,Lower,9,7,2
+496,PAL,   ,1,NA,d,Hot Safe,A,PAL   ,6,4,1,Lower,10,2,2
+502,PAL,   ,1,NA,j,Hot Safe,A,PAL   ,6,5,1,Lower,12,3,2
+1036,PAN,   ,1,NA,d,Hot Safe,A,PAN   ,6,6,1,Upper,12,5,1
+1111,PAN,   ,15,NA,a,Hot Safe,A,PAN   ,6,7,1,Upper,9,7,1
+1033,PAN,   ,1,NA,a,Hot Safe,A,PAN   ,6,8,1,Upper,13,7,1
+1087,PAN,   ,9,NA,a,Hot Safe,A,PAN   ,6,9,1,Upper,12,3,1
+1039,PAN,   ,1,NA,g,Hot Safe,A,PAN   ,6,10,1,Upper,13,4,1
+1834,SUL,PAN,3,6,a,Hot Safe,A,SULPAN,2,2,2, ,3,2,2
+1894,SUL,PAN,12,3,a,Hot Safe,A,SULPAN,2,3,2, ,3,1,2
+1846,SUL,PAN,3,9,a,Hot Safe,A,SULPAN,2,4,2, ,3,6,2
+1822,SUL,PAN,3,3,a,Hot Safe,A,SULPAN,2,5,2, ,3,7,2
+1858,SUL,PAN,3,12,a,Hot Safe,A,SULPAN,2,6,2, ,3,5,2
+1882,SUL,PAN,9,3,a,Hot Safe,A,SULPAN,2,7,2, ,3,3,2
+1870,SUL,PAN,6,3,a,Hot Safe,A,SULPAN,2,8,2, ,3,4,2
+994,PAL,SUL,12,3,a,Hot Safe,A,PALSUL,3,2,2, ,1,5,2
+946,PAL,SUL,3,9,a,Hot Safe,A,PALSUL,3,3,2, ,1,7,2
+970,PAL,SUL,6,3,a,Hot Safe,A,PALSUL,3,4,2, ,1,4,2
+934,PAL,SUL,3,6,a,Hot Safe,A,PALSUL,3,5,2, ,1,2,2
+922,PAL,SUL,3,3,a,Hot Safe,A,PALSUL,3,6,2, ,1,6,2
+982,PAL,SUL,9,3,a,Hot Safe,A,PALSUL,3,7,2, ,1,3,2
+958,PAL,SUL,3,12,a,Hot Safe,A,PALSUL,3,8,2, ,1,1,2
+1318,PSA,PAN,12,3,a,Hot Safe,A,PSAPAN,4,2,2, ,6,1,2
+1270,PSA,PAN,3,9,a,Hot Safe,A,PSAPAN,4,3,2, ,6,3,2
+1246,PSA,PAN,3,3,a,Hot Safe,A,PSAPAN,4,4,2, ,6,7,2
+1282,PSA,PAN,3,12,a,Hot Safe,A,PSAPAN,4,5,2, ,6,6,2
+1306,PSA,PAN,9,3,a,Hot Safe,A,PSAPAN,4,6,2, ,6,5,2
+1258,PSA,PAN,3,6,a,Hot Safe,A,PSAPAN,4,7,2, ,6,2,2
+1294,PSA,PAN,6,3,a,Hot Safe,A,PSAPAN,4,8,2, ,6,4,2
+610,PAL,BIR,3,9,a,Hot Safe,A,PALBIR,5,2,2, ,4,6,1
+646,PAL,BIR,9,3,a,Hot Safe,A,PALBIR,5,3,2, ,4,5,1
+586,PAL,BIR,3,3,a,Hot Safe,A,PALBIR,5,4,2, ,4,1,1
+658,PAL,BIR,12,3,a,Hot Safe,A,PALBIR,5,5,2, ,4,7,1
+598,PAL,BIR,3,6,a,Hot Safe,A,PALBIR,5,6,2, ,4,2,1
+622,PAL,BIR,3,12,a,Hot Safe,A,PALBIR,5,7,2, ,4,4,1
+634,PAL,BIR,6,3,a,Hot Safe,A,PALBIR,5,8,2, ,4,3,1
+142,BIR,PAN,3,6,a,Hot Safe,A,BIRPAN,6,2,2, ,7,5,1
+154,BIR,PAN,3,9,a,Hot Safe,A,BIRPAN,6,3,2, ,7,1,1
+178,BIR,PAN,6,3,a,Hot Safe,A,BIRPAN,6,4,2, ,7,7,1
+130,BIR,PAN,3,3,a,Hot Safe,A,BIRPAN,6,5,2, ,9,3,1
+202,BIR,PAN,12,3,a,Hot Safe,A,BIRPAN,6,6,2, ,7,3,1
+166,BIR,PAN,3,12,a,Hot Safe,A,BIRPAN,6,7,2, ,7,6,1
+190,BIR,PAN,9,3,a,Hot Safe,A,BIRPAN,6,8,2, ,7,2,1
+262,BIR,PSA,6,3,a,Hot Safe,A,BIRPSA,7,2,2, ,1,1,1
+250,BIR,PSA,3,12,a,Hot Safe,A,BIRPSA,7,3,2, ,1,5,1
+274,BIR,PSA,9,3,a,Hot Safe,A,BIRPSA,7,4,2, ,1,3,1
+238,BIR,PSA,3,9,a,Hot Safe,A,BIRPSA,7,5,2, ,1,4,1
+214,BIR,PSA,3,3,a,Hot Safe,A,BIRPSA,7,6,2, ,1,6,1
+286,BIR,PSA,12,3,a,Hot Safe,A,BIRPSA,7,7,2, ,1,2,1
+226,BIR,PSA,3,6,a,Hot Safe,A,BIRPSA,7,8,2, ,1,7,1
+730,PAL,PAN,9,3,a,Hot Safe,A,PALPAN,8,2,2, ,5,2,2
+682,PAL,PAN,3,6,a,Hot Safe,A,PALPAN,8,3,2, ,5,3,2
+742,PAL,PAN,12,3,a,Hot Safe,A,PALPAN,8,4,2, ,5,5,2
+706,PAL,PAN,3,12,a,Hot Safe,A,PALPAN,8,5,2, ,8,2,2
+670,PAL,PAN,3,3,a,Hot Safe,A,PALPAN,8,6,2, ,5,6,2
+694,PAL,PAN,3,9,a,Hot Safe,A,PALPAN,8,7,2, ,5,1,2
+718,PAL,PAN,6,3,a,Hot Safe,A,PALPAN,8,8,2, ,5,7,2
+1474,SIM,PAN,3,9,a,Hot Safe,A,SIMPAN,1,2,3, ,3,2,1
+1510,SIM,PAN,9,3,a,Hot Safe,A,SIMPAN,1,3,3, ,3,7,1
+1462,SIM,PAN,3,6,a,Hot Safe,A,SIMPAN,1,4,3, ,3,4,1
+1486,SIM,PAN,3,12,a,Hot Safe,A,SIMPAN,1,5,3, ,3,6,1
+1522,SIM,PAN,12,3,a,Hot Safe,A,SIMPAN,1,6,3, ,3,3,1
+1498,SIM,PAN,6,3,a,Hot Safe,A,SIMPAN,1,7,3, ,3,1,1
+1450,SIM,PAN,3,3,a,Hot Safe,A,SIMPAN,1,8,3, ,3,5,1
+430,BIR,SUL,6,3,a,Hot Safe,A,BIRSUL,2,2,3, ,2,6,1
+406,BIR,SUL,3,9,a,Hot Safe,A,BIRSUL,2,3,3, ,2,3,1
+418,BIR,SUL,3,12,a,Hot Safe,A,BIRSUL,2,4,3, ,2,5,1
+382,BIR,SUL,3,3,a,Hot Safe,A,BIRSUL,2,5,3, ,2,2,1
+442,BIR,SUL,9,3,a,Hot Safe,A,BIRSUL,2,6,3, ,2,7,1
+394,BIR,SUL,3,6,a,Hot Safe,A,BIRSUL,2,7,3, ,2,1,1
+454,BIR,SUL,12,3,a,Hot Safe,A,BIRSUL,2,8,3, ,9,1,1
+886,PAL,SIM,6,3,a,Hot Safe,A,PALSIM,3,2,3, ,5,2,1
+862,PAL,SIM,3,9,a,Hot Safe,A,PALSIM,3,3,3, ,5,3,1
+838,PAL,SIM,3,3,a,Hot Safe,A,PALSIM,3,4,3, ,5,5,1
+910,PAL,SIM,12,3,a,Hot Safe,A,PALSIM,3,5,3, ,5,1,1
+850,PAL,SIM,3,6,a,Hot Safe,A,PALSIM,3,6,3, ,5,6,1
+874,PAL,SIM,3,12,a,Hot Safe,A,PALSIM,3,7,3, ,5,7,1
+898,PAL,SIM,9,3,a,Hot Safe,A,PALSIM,3,8,3, ,9,2,1
+334,BIR,SIM,3,12,a,Hot Safe,A,BIRSIM,4,2,3, ,6,4,1
+358,BIR,SIM,9,3,a,Hot Safe,A,BIRSIM,4,3,3, ,6,1,1
+322,BIR,SIM,3,9,a,Hot Safe,A,BIRSIM,4,4,3, ,6,2,1
+370,BIR,SIM,12,3,a,Hot Safe,A,BIRSIM,4,5,3, ,6,6,1
+346,BIR,SIM,6,3,a,Hot Safe,A,BIRSIM,4,6,3, ,6,7,1
+298,BIR,SIM,3,3,a,Hot Safe,A,BIRSIM,4,7,3, ,6,5,1
+310,BIR,SIM,3,6,a,Hot Safe,A,BIRSIM,4,8,3, ,6,3,1
+766,PAL,PSA,3,6,a,Hot Safe,A,PALPSA,5,2,3, ,7,7,2
+754,PAL,PSA,3,3,a,Hot Safe,A,PALPSA,5,3,3, ,8,3,2
+790,PAL,PSA,3,12,a,Hot Safe,A,PALPSA,5,4,3, ,7,5,2
+802,PAL,PSA,6,3,a,Hot Safe,A,PALPSA,5,5,3, ,7,1,2
+814,PAL,PSA,9,3,a,Hot Safe,A,PALPSA,5,6,3, ,7,2,2
+778,PAL,PSA,3,9,a,Hot Safe,A,PALPSA,5,7,3, ,7,3,2
+826,PAL,PSA,12,3,a,Hot Safe,A,PALPSA,5,8,3, ,7,6,2
+1666,SIM,SUL,6,3,a,Hot Safe,A,SIMSUL,6,2,3, ,4,6,2
+1678,SIM,SUL,9,3,a,Hot Safe,A,SIMSUL,6,3,3, ,4,1,2
+1690,SIM,SUL,12,3,a,Hot Safe,A,SIMSUL,6,4,3, ,4,2,2
+1630,SIM,SUL,3,6,a,Hot Safe,A,SIMSUL,6,5,3, ,4,5,2
+1618,SIM,SUL,3,3,a,Hot Safe,A,SIMSUL,6,6,3, ,4,3,2
+1654,SIM,SUL,3,12,a,Hot Safe,A,SIMSUL,6,7,3, ,4,7,2
+1642,SIM,SUL,3,9,a,Hot Safe,A,SIMSUL,6,8,3, ,4,4,2
+1570,SIM,PSA,3,12,a,Hot Safe,A,SIMPSA,7,2,3, ,2,2,2
+1546,SIM,PSA,3,6,a,Hot Safe,A,SIMPSA,7,3,3, ,2,6,2
+1558,SIM,PSA,3,9,a,Hot Safe,A,SIMPSA,7,4,3, ,2,1,2
+1594,SIM,PSA,9,3,a,Hot Safe,A,SIMPSA,7,5,3, ,2,5,2
+1606,SIM,PSA,12,3,a,Hot Safe,A,SIMPSA,7,6,3, ,2,3,2
+1582,SIM,PSA,6,3,a,Hot Safe,A,SIMPSA,7,7,3, ,8,1,2
+1534,SIM,PSA,3,3,a,Hot Safe,A,SIMPSA,7,8,3, ,2,7,2
+1918,SUL,PSA,3,6,a,Hot Safe,A,SULPSA,8,2,3, ,8,6,1
+1906,SUL,PSA,3,3,a,Hot Safe,A,SULPSA,8,3,3, ,8,7,1
+1942,SUL,PSA,3,12,a,Hot Safe,A,SULPSA,8,4,3, ,8,1,1
+1978,SUL,PSA,12,3,a,Hot Safe,A,SULPSA,8,5,3, ,8,5,1
+1966,SUL,PSA,9,3,a,Hot Safe,A,SULPSA,8,6,3, ,8,2,1
+1930,SUL,PSA,3,9,a,Hot Safe,A,SULPSA,8,7,3, ,8,3,1
+1954,SUL,PSA,6,3,a,Hot Safe,A,SULPSA,8,8,3, ,8,4,1
+1769,SUL,   ,9,NA,e,Cold Para,B,SUL   ,1,1,1,Lower,12,2,2
+1694,SUL,   ,1,NA,b,Cold Para,B,SUL   ,1,2,1,Lower,12,5,2
+1700,SUL,   ,1,NA,h,Cold Para,B,SUL   ,1,3,1,Lower,9,1,2
+1766,SUL,   ,9,NA,b,Cold Para,B,SUL   ,1,4,1,Lower,8,4,2
+1703,SUL,   ,1,NA,k,Cold Para,B,SUL   ,1,5,1,Lower,10,6,2
+557,PAL,   ,15,NA,e,Cold Para,B,PAL   ,1,6,1,Upper,9,6,1
+554,PAL,   ,15,NA,b,Cold Para,B,PAL   ,1,7,1,Upper,13,5,1
+530,PAL,   ,9,NA,b,Cold Para,B,PAL   ,1,8,1,Upper,11,2,1
+506,PAL,   ,3,NA,b,Cold Para,B,PAL   ,1,9,1,Upper,13,2,1
+533,PAL,   ,9,NA,e,Cold Para,B,PAL   ,1,10,1,Upper,9,5,1
+461,PAL,   ,1,NA,e,Cold Para,B,PAL   ,2,1,1,Lower,8,5,2
+509,PAL,   ,3,NA,e,Cold Para,B,PAL   ,2,2,1,Lower,10,4,2
+467,PAL,   ,1,NA,k,Cold Para,B,PAL   ,2,3,1,Lower,9,2,2
+464,PAL,   ,1,NA,h,Cold Para,B,PAL   ,2,4,1,Lower,11,1,2
+458,PAL,   ,1,NA,b,Cold Para,B,PAL   ,2,5,1,Lower,9,5,2
+1193,PSA,   ,9,NA,e,Cold Para,B,PSA   ,2,6,1,Upper,10,4,1
+1118,PSA,   ,1,NA,b,Cold Para,B,PSA   ,2,7,1,Upper,12,1,1
+1121,PSA,   ,1,NA,e,Cold Para,B,PSA   ,2,8,1,Upper,10,7,1
+1217,PSA,   ,15,NA,e,Cold Para,B,PSA   ,2,9,1,Upper,11,1,1
+1214,PSA,   ,15,NA,b,Cold Para,B,PSA   ,2,10,1,Upper,10,1,1
+1001,PAN,   ,1,NA,e,Cold Para,B,PAN   ,3,1,1,Lower,10,7,2
+1073,PAN,   ,9,NA,e,Cold Para,B,PAN   ,3,2,1,Lower,11,3,2
+1097,PAN,   ,15,NA,e,Cold Para,B,PAN   ,3,3,1,Lower,12,3,2
+1046,PAN,   ,3,NA,b,Cold Para,B,PAN   ,3,4,1,Lower,9,7,2
+1004,PAN,   ,1,NA,h,Cold Para,B,PAN   ,3,5,1,Lower,12,1,2
+1094,PAN,   ,15,NA,b,Cold Para,B,PAN   ,3,6,1,Upper,10,3,1
+1049,PAN,   ,3,NA,e,Cold Para,B,PAN   ,3,7,1,Upper,10,5,1
+1070,PAN,   ,9,NA,b,Cold Para,B,PAN   ,3,8,1,Upper,11,7,1
+1007,PAN,   ,1,NA,k,Cold Para,B,PAN   ,3,9,1,Upper,12,2,1
+998,PAN,   ,1,NA,b,Cold Para,B,PAN   ,3,10,1,Upper,11,4,1
+1169,PSA,   ,3,NA,e,Cold Para,B,PSA   ,4,1,1,Lower,12,7,2
+1127,PSA,   ,1,NA,k,Cold Para,B,PSA   ,4,2,1,Lower,11,7,2
+1124,PSA,   ,1,NA,h,Cold Para,B,PSA   ,4,3,1,Lower,8,6,2
+1190,PSA,   ,9,NA,b,Cold Para,B,PSA   ,4,4,1,Lower,12,6,2
+1166,PSA,   ,3,NA,b,Cold Para,B,PSA   ,4,5,1,Lower,9,6,2
+53,BIR,   ,3,NA,e,Cold Para,B,BIR   ,4,6,1,Upper,13,7,1
+50,BIR,   ,3,NA,b,Cold Para,B,BIR   ,4,7,1,Upper,12,7,1
+5,BIR,   ,1,NA,e,Cold Para,B,BIR   ,4,8,1,Upper,13,4,1
+74,BIR,   ,9,NA,b,Cold Para,B,BIR   ,4,9,1,Upper,11,5,1
+8,BIR,   ,1,NA,h,Cold Para,B,BIR   ,4,10,1,Upper,12,3,1
+77,BIR,   ,9,NA,e,Cold Para,B,BIR   ,5,1,1,Lower,10,5,2
+98,BIR,   ,15,NA,b,Cold Para,B,BIR   ,5,2,1,Lower,11,6,2
+2,BIR,   ,1,NA,b,Cold Para,B,BIR   ,5,3,1,Lower,11,2,2
+101,BIR,   ,15,NA,e,Cold Para,B,BIR   ,5,4,1,Lower,10,2,2
+11,BIR,   ,1,NA,k,Cold Para,B,BIR   ,5,5,1,Lower,10,1,2
+1745,SUL,   ,3,NA,e,Cold Para,B,SUL   ,5,6,1,Upper,13,3,1
+1742,SUL,   ,3,NA,b,Cold Para,B,SUL   ,5,7,1,Upper,9,7,1
+1697,SUL,   ,1,NA,e,Cold Para,B,SUL   ,5,8,1,Upper,12,5,1
+1793,SUL,   ,15,NA,e,Cold Para,B,SUL   ,5,9,1,Upper,11,6,1
+1790,SUL,   ,15,NA,b,Cold Para,B,SUL   ,5,10,1,Upper,13,1,1
+1370,SIM,   ,3,NA,b,Cold Para,B,SIM   ,6,1,1,Lower,10,3,2
+1418,SIM,   ,15,NA,b,Cold Para,B,SIM   ,6,2,1,Lower,9,3,2
+1331,SIM,   ,1,NA,k,Cold Para,B,SIM   ,6,3,1,Lower,11,5,2
+1397,SIM,   ,9,NA,e,Cold Para,B,SIM   ,6,4,1,Lower,12,4,2
+1373,SIM,   ,3,NA,e,Cold Para,B,SIM   ,6,5,1,Lower,8,7,2
+1394,SIM,   ,9,NA,b,Cold Para,B,SIM   ,6,6,1,Upper,10,6,1
+1421,SIM,   ,15,NA,e,Cold Para,B,SIM   ,6,7,1,Upper,10,2,1
+1325,SIM,   ,1,NA,e,Cold Para,B,SIM   ,6,8,1,Upper,13,6,1
+1322,SIM,   ,1,NA,b,Cold Para,B,SIM   ,6,9,1,Upper,12,6,1
+1328,SIM,   ,1,NA,h,Cold Para,B,SIM   ,6,10,1,Upper,11,3,1
+686,PAL,PAN,3,9,b,Cold Para,B,PALPAN,2,2,2, ,5,6,1
+722,PAL,PAN,9,3,b,Cold Para,B,PALPAN,2,3,2, ,9,2,1
+674,PAL,PAN,3,6,b,Cold Para,B,PALPAN,2,4,2, ,5,3,1
+698,PAL,PAN,3,12,b,Cold Para,B,PALPAN,2,5,2, ,5,1,1
+734,PAL,PAN,12,3,b,Cold Para,B,PALPAN,2,6,2, ,5,2,1
+710,PAL,PAN,6,3,b,Cold Para,B,PALPAN,2,7,2, ,5,5,1
+662,PAL,PAN,3,3,b,Cold Para,B,PALPAN,2,8,2, ,5,7,1
+746,PAL,PSA,3,3,b,Cold Para,B,PALPSA,3,2,2, ,1,2,2
+782,PAL,PSA,3,12,b,Cold Para,B,PALPSA,3,3,2, ,1,3,2
+806,PAL,PSA,9,3,b,Cold Para,B,PALPSA,3,4,2, ,1,7,2
+770,PAL,PSA,3,9,b,Cold Para,B,PALPSA,3,5,2, ,1,5,2
+794,PAL,PSA,6,3,b,Cold Para,B,PALPSA,3,6,2, ,1,4,2
+758,PAL,PSA,3,6,b,Cold Para,B,PALPSA,3,7,2, ,1,6,2
+818,PAL,PSA,12,3,b,Cold Para,B,PALPSA,3,8,2, ,1,1,2
+158,BIR,PAN,3,12,b,Cold Para,B,BIRPAN,4,2,2, ,5,6,2
+134,BIR,PAN,3,6,b,Cold Para,B,BIRPAN,4,3,2, ,5,2,2
+170,BIR,PAN,6,3,b,Cold Para,B,BIRPAN,4,4,2, ,5,7,2
+122,BIR,PAN,3,3,b,Cold Para,B,BIRPAN,4,5,2, ,5,3,2
+194,BIR,PAN,12,3,b,Cold Para,B,BIRPAN,4,6,2, ,5,5,2
+182,BIR,PAN,9,3,b,Cold Para,B,BIRPAN,4,7,2, ,8,2,2
+146,BIR,PAN,3,9,b,Cold Para,B,BIRPAN,4,8,2, ,5,1,2
+1874,SUL,PAN,9,3,b,Cold Para,B,SULPAN,5,2,2, ,6,1,2
+1814,SUL,PAN,3,3,b,Cold Para,B,SULPAN,5,3,2, ,6,4,2
+1862,SUL,PAN,6,3,b,Cold Para,B,SULPAN,5,4,2, ,6,6,2
+1850,SUL,PAN,3,12,b,Cold Para,B,SULPAN,5,5,2, ,6,2,2
+1826,SUL,PAN,3,6,b,Cold Para,B,SULPAN,5,6,2, ,6,5,2
+1838,SUL,PAN,3,9,b,Cold Para,B,SULPAN,5,7,2, ,6,3,2
+1886,SUL,PAN,12,3,b,Cold Para,B,SULPAN,5,8,2, ,6,7,2
+1274,PSA,PAN,3,12,b,Cold Para,B,PSAPAN,6,2,2, ,3,6,2
+1298,PSA,PAN,9,3,b,Cold Para,B,PSAPAN,6,3,2, ,3,7,2
+1238,PSA,PAN,3,3,b,Cold Para,B,PSAPAN,6,4,2, ,3,4,2
+1262,PSA,PAN,3,9,b,Cold Para,B,PSAPAN,6,5,2, ,3,3,2
+1286,PSA,PAN,6,3,b,Cold Para,B,PSAPAN,6,6,2, ,3,2,2
+1310,PSA,PAN,12,3,b,Cold Para,B,PSAPAN,6,7,2, ,3,1,2
+1250,PSA,PAN,3,6,b,Cold Para,B,PSAPAN,6,8,2, ,3,5,2
+266,BIR,PSA,9,3,b,Cold Para,B,BIRPSA,7,2,2, ,3,3,1
+254,BIR,PSA,6,3,b,Cold Para,B,BIRPSA,7,3,2, ,3,5,1
+206,BIR,PSA,3,3,b,Cold Para,B,BIRPSA,7,4,2, ,3,2,1
+278,BIR,PSA,12,3,b,Cold Para,B,BIRPSA,7,5,2, ,3,7,1
+242,BIR,PSA,3,12,b,Cold Para,B,BIRPSA,7,6,2, ,3,1,1
+230,BIR,PSA,3,9,b,Cold Para,B,BIRPSA,7,7,2, ,3,4,1
+218,BIR,PSA,3,6,b,Cold Para,B,BIRPSA,7,8,2, ,3,6,1
+830,PAL,SIM,3,3,b,Cold Para,B,PALSIM,8,2,2, ,8,2,1
+890,PAL,SIM,9,3,b,Cold Para,B,PALSIM,8,3,2, ,8,1,1
+854,PAL,SIM,3,9,b,Cold Para,B,PALSIM,8,4,2, ,8,5,1
+842,PAL,SIM,3,6,b,Cold Para,B,PALSIM,8,5,2, ,8,4,1
+878,PAL,SIM,6,3,b,Cold Para,B,PALSIM,8,6,2, ,8,3,1
+866,PAL,SIM,3,12,b,Cold Para,B,PALSIM,8,7,2, ,8,6,1
+902,PAL,SIM,12,3,b,Cold Para,B,PALSIM,8,8,2, ,8,7,1
+350,BIR,SIM,9,3,b,Cold Para,B,BIRSIM,1,2,3, ,6,4,1
+290,BIR,SIM,3,3,b,Cold Para,B,BIRSIM,1,3,3, ,6,2,1
+326,BIR,SIM,3,12,b,Cold Para,B,BIRSIM,1,4,3, ,6,6,1
+314,BIR,SIM,3,9,b,Cold Para,B,BIRSIM,1,5,3, ,6,3,1
+362,BIR,SIM,12,3,b,Cold Para,B,BIRSIM,1,6,3, ,6,7,1
+338,BIR,SIM,6,3,b,Cold Para,B,BIRSIM,1,7,3, ,6,5,1
+302,BIR,SIM,3,6,b,Cold Para,B,BIRSIM,1,8,3, ,6,1,1
+1598,SIM,PSA,12,3,b,Cold Para,B,SIMPSA,2,2,3, ,4,4,1
+1586,SIM,PSA,9,3,b,Cold Para,B,SIMPSA,2,3,3, ,4,3,1
+1550,SIM,PSA,3,9,b,Cold Para,B,SIMPSA,2,4,3, ,4,6,1
+1526,SIM,PSA,3,3,b,Cold Para,B,SIMPSA,2,5,3, ,4,1,1
+1562,SIM,PSA,3,12,b,Cold Para,B,SIMPSA,2,6,3, ,4,5,1
+1574,SIM,PSA,6,3,b,Cold Para,B,SIMPSA,2,7,3, ,4,2,1
+1538,SIM,PSA,3,6,b,Cold Para,B,SIMPSA,2,8,3, ,4,7,1
+1646,SIM,SUL,3,12,b,Cold Para,B,SIMSUL,3,2,3, ,7,2,2
+1610,SIM,SUL,3,3,b,Cold Para,B,SIMSUL,3,3,3, ,7,3,2
+1622,SIM,SUL,3,6,b,Cold Para,B,SIMSUL,3,4,3, ,7,7,2
+1670,SIM,SUL,9,3,b,Cold Para,B,SIMSUL,3,5,3, ,7,6,2
+1682,SIM,SUL,12,3,b,Cold Para,B,SIMSUL,3,6,3, ,7,1,2
+1658,SIM,SUL,6,3,b,Cold Para,B,SIMSUL,3,7,3, ,7,5,2
+1634,SIM,SUL,3,9,b,Cold Para,B,SIMSUL,3,8,3, ,8,3,2
+398,BIR,SUL,3,9,b,Cold Para,B,BIRSUL,4,2,3, ,2,1,1
+422,BIR,SUL,6,3,b,Cold Para,B,BIRSUL,4,3,3, ,2,2,1
+434,BIR,SUL,9,3,b,Cold Para,B,BIRSUL,4,4,3, ,2,6,1
+410,BIR,SUL,3,12,b,Cold Para,B,BIRSUL,4,5,3, ,2,3,1
+374,BIR,SUL,3,3,b,Cold Para,B,BIRSUL,4,6,3, ,9,1,1
+386,BIR,SUL,3,6,b,Cold Para,B,BIRSUL,4,7,3, ,2,7,1
+446,BIR,SUL,12,3,b,Cold Para,B,BIRSUL,4,8,3, ,2,5,1
+1502,SIM,PAN,9,3,b,Cold Para,B,SIMPAN,5,2,3, ,1,1,1
+1454,SIM,PAN,3,6,b,Cold Para,B,SIMPAN,5,3,3, ,1,2,1
+1490,SIM,PAN,6,3,b,Cold Para,B,SIMPAN,5,4,3, ,1,3,1
+1466,SIM,PAN,3,9,b,Cold Para,B,SIMPAN,5,5,3, ,1,5,1
+1442,SIM,PAN,3,3,b,Cold Para,B,SIMPAN,5,6,3, ,1,6,1
+1478,SIM,PAN,3,12,b,Cold Para,B,SIMPAN,5,7,3, ,1,7,1
+1514,SIM,PAN,12,3,b,Cold Para,B,SIMPAN,5,8,3, ,1,4,1
+1910,SUL,PSA,3,6,b,Cold Para,B,SULPSA,6,2,3, ,4,3,2
+1946,SUL,PSA,6,3,b,Cold Para,B,SULPSA,6,3,3, ,4,6,2
+1898,SUL,PSA,3,3,b,Cold Para,B,SULPSA,6,4,3, ,4,4,2
+1934,SUL,PSA,3,12,b,Cold Para,B,SULPSA,6,5,3, ,4,2,2
+1970,SUL,PSA,12,3,b,Cold Para,B,SULPSA,6,6,3, ,4,5,2
+1922,SUL,PSA,3,9,b,Cold Para,B,SULPSA,6,7,3, ,4,1,2
+1958,SUL,PSA,9,3,b,Cold Para,B,SULPSA,6,8,3, ,4,7,2
+974,PAL,SUL,9,3,b,Cold Para,B,PALSUL,7,2,3, ,2,5,2
+986,PAL,SUL,12,3,b,Cold Para,B,PALSUL,7,3,3, ,8,1,2
+962,PAL,SUL,6,3,b,Cold Para,B,PALSUL,7,4,3, ,2,1,2
+938,PAL,SUL,3,9,b,Cold Para,B,PALSUL,7,5,3, ,2,3,2
+914,PAL,SUL,3,3,b,Cold Para,B,PALSUL,7,6,3, ,2,7,2
+950,PAL,SUL,3,12,b,Cold Para,B,PALSUL,7,7,3, ,2,2,2
+926,PAL,SUL,3,6,b,Cold Para,B,PALSUL,7,8,3, ,2,6,2
+614,PAL,BIR,3,12,b,Cold Para,B,PALBIR,8,2,3, ,7,6,1
+650,PAL,BIR,12,3,b,Cold Para,B,PALBIR,8,3,3, ,7,1,1
+590,PAL,BIR,3,6,b,Cold Para,B,PALBIR,8,4,3, ,9,3,1
+638,PAL,BIR,9,3,b,Cold Para,B,PALBIR,8,5,3, ,7,2,1
+626,PAL,BIR,6,3,b,Cold Para,B,PALBIR,8,6,3, ,7,5,1
+578,PAL,BIR,3,3,b,Cold Para,B,PALBIR,8,7,3, ,7,7,1
+602,PAL,BIR,3,9,b,Cold Para,B,PALBIR,8,8,3, ,7,3,1
+1133,PSA,   ,1,NA,e,Cold Safe,B,PSA   ,1,1,1,Lower,9,7,2
+1130,PSA,   ,1,NA,b,Cold Safe,B,PSA   ,1,2,1,Lower,9,3,2
+1175,PSA,   ,3,NA,e,Cold Safe,B,PSA   ,1,3,1,Lower,11,5,2
+1196,PSA,   ,9,NA,b,Cold Safe,B,PSA   ,1,4,1,Lower,11,7,2
+1220,PSA,   ,15,NA,b,Cold Safe,B,PSA   ,1,5,1,Lower,12,1,2
+59,BIR,   ,3,NA,e,Cold Safe,B,BIR   ,1,6,1,Upper,9,6,1
+56,BIR,   ,3,NA,b,Cold Safe,B,BIR   ,1,7,1,Upper,11,5,1
+14,BIR,   ,1,NA,b,Cold Safe,B,BIR   ,1,8,1,Upper,12,1,1
+20,BIR,   ,1,NA,h,Cold Safe,B,BIR   ,1,9,1,Upper,9,7,1
+17,BIR,   ,1,NA,e,Cold Safe,B,BIR   ,1,10,1,Upper,10,6,1
+1013,PAN,   ,1,NA,e,Cold Safe,B,PAN   ,2,1,1,Lower,12,7,2
+1010,PAN,   ,1,NA,b,Cold Safe,B,PAN   ,2,2,1,Lower,9,2,2
+1052,PAN,   ,3,NA,b,Cold Safe,B,PAN   ,2,3,1,Lower,8,6,2
+1103,PAN,   ,15,NA,e,Cold Safe,B,PAN   ,2,4,1,Lower,9,6,2
+1019,PAN,   ,1,NA,k,Cold Safe,B,PAN   ,2,5,1,Lower,8,4,2
+1139,PSA,   ,1,NA,k,Cold Safe,B,PSA   ,2,6,1,Upper,13,2,1
+1223,PSA,   ,15,NA,e,Cold Safe,B,PSA   ,2,7,1,Upper,13,3,1
+1172,PSA,   ,3,NA,b,Cold Safe,B,PSA   ,2,8,1,Upper,11,6,1
+1136,PSA,   ,1,NA,h,Cold Safe,B,PSA   ,2,9,1,Upper,11,2,1
+1199,PSA,   ,9,NA,e,Cold Safe,B,PSA   ,2,10,1,Upper,10,4,1
+479,PAL,   ,1,NA,k,Cold Safe,B,PAL   ,3,1,1,Lower,10,2,2
+560,PAL,   ,15,NA,b,Cold Safe,B,PAL   ,3,2,1,Lower,10,4,2
+536,PAL,   ,9,NA,b,Cold Safe,B,PAL   ,3,3,1,Lower,8,7,2
+473,PAL,   ,1,NA,e,Cold Safe,B,PAL   ,3,4,1,Lower,11,1,2
+476,PAL,   ,1,NA,h,Cold Safe,B,PAL   ,3,5,1,Lower,12,2,2
+1400,SIM,   ,9,NA,b,Cold Safe,B,SIM   ,3,6,1,Upper,12,6,1
+1337,SIM,   ,1,NA,e,Cold Safe,B,SIM   ,3,7,1,Upper,10,1,1
+1343,SIM,   ,1,NA,k,Cold Safe,B,SIM   ,3,8,1,Upper,11,3,1
+1379,SIM,   ,3,NA,e,Cold Safe,B,SIM   ,3,9,1,Upper,12,2,1
+1424,SIM,   ,15,NA,b,Cold Safe,B,SIM   ,3,10,1,Upper,10,3,1
+1709,SUL,   ,1,NA,e,Cold Safe,B,SUL   ,4,1,1,Lower,12,6,2
+1796,SUL,   ,15,NA,b,Cold Safe,B,SUL   ,4,2,1,Lower,8,5,2
+1775,SUL,   ,9,NA,e,Cold Safe,B,SUL   ,4,3,1,Lower,10,6,2
+1748,SUL,   ,3,NA,b,Cold Safe,B,SUL   ,4,4,1,Lower,10,3,2
+1706,SUL,   ,1,NA,b,Cold Safe,B,SUL   ,4,5,1,Lower,11,6,2
+1055,PAN,   ,3,NA,e,Cold Safe,B,PAN   ,4,6,1,Upper,9,5,1
+1079,PAN,   ,9,NA,e,Cold Safe,B,PAN   ,4,7,1,Upper,12,7,1
+1100,PAN,   ,15,NA,b,Cold Safe,B,PAN   ,4,8,1,Upper,13,7,1
+1076,PAN,   ,9,NA,b,Cold Safe,B,PAN   ,4,9,1,Upper,11,4,1
+1016,PAN,   ,1,NA,h,Cold Safe,B,PAN   ,4,10,1,Upper,10,2,1
+1427,SIM,   ,15,NA,e,Cold Safe,B,SIM   ,5,1,1,Lower,11,3,2
+1340,SIM,   ,1,NA,h,Cold Safe,B,SIM   ,5,2,1,Lower,11,2,2
+1376,SIM,   ,3,NA,b,Cold Safe,B,SIM   ,5,3,1,Lower,9,5,2
+1403,SIM,   ,9,NA,e,Cold Safe,B,SIM   ,5,4,1,Lower,12,3,2
+1334,SIM,   ,1,NA,b,Cold Safe,B,SIM   ,5,5,1,Lower,10,5,2
+470,PAL,   ,1,NA,b,Cold Safe,B,PAL   ,5,6,1,Upper,13,4,1
+512,PAL,   ,3,NA,b,Cold Safe,B,PAL   ,5,7,1,Upper,13,5,1
+515,PAL,   ,3,NA,e,Cold Safe,B,PAL   ,5,8,1,Upper,13,6,1
+539,PAL,   ,9,NA,e,Cold Safe,B,PAL   ,5,9,1,Upper,12,3,1
+563,PAL,   ,15,NA,e,Cold Safe,B,PAL   ,5,10,1,Upper,13,1,1
+23,BIR,   ,1,NA,k,Cold Safe,B,BIR   ,6,1,1,Lower,9,1,2
+83,BIR,   ,9,NA,e,Cold Safe,B,BIR   ,6,2,1,Lower,12,5,2
+80,BIR,   ,9,NA,b,Cold Safe,B,BIR   ,6,3,1,Lower,10,1,2
+107,BIR,   ,15,NA,e,Cold Safe,B,BIR   ,6,4,1,Lower,12,4,2
+104,BIR,   ,15,NA,b,Cold Safe,B,BIR   ,6,5,1,Lower,10,7,2
+1712,SUL,   ,1,NA,h,Cold Safe,B,SUL   ,6,6,1,Upper,10,5,1
+1715,SUL,   ,1,NA,k,Cold Safe,B,SUL   ,6,7,1,Upper,10,7,1
+1751,SUL,   ,3,NA,e,Cold Safe,B,SUL   ,6,8,1,Upper,11,1,1
+1772,SUL,   ,9,NA,b,Cold Safe,B,SUL   ,6,9,1,Upper,12,5,1
+1799,SUL,   ,15,NA,e,Cold Safe,B,SUL   ,6,10,1,Upper,11,7,1
+677,PAL,PAN,3,6,b,Cold Safe,B,PALPAN,2,2,2, ,1,4,1
+689,PAL,PAN,3,9,b,Cold Safe,B,PALPAN,2,3,2, ,1,3,1
+713,PAL,PAN,6,3,b,Cold Safe,B,PALPAN,2,4,2, ,1,1,1
+665,PAL,PAN,3,3,b,Cold Safe,B,PALPAN,2,5,2, ,1,7,1
+701,PAL,PAN,3,12,b,Cold Safe,B,PALPAN,2,6,2, ,1,2,1
+725,PAL,PAN,9,3,b,Cold Safe,B,PALPAN,2,7,2, ,1,5,1
+737,PAL,PAN,12,3,b,Cold Safe,B,PALPAN,2,8,2, ,1,6,1
+1625,SIM,SUL,3,6,b,Cold Safe,B,SIMSUL,3,2,2, ,4,4,1
+1637,SIM,SUL,3,9,b,Cold Safe,B,SIMSUL,3,3,2, ,4,7,1
+1613,SIM,SUL,3,3,b,Cold Safe,B,SIMSUL,3,4,2, ,4,6,1
+1685,SIM,SUL,12,3,b,Cold Safe,B,SIMSUL,3,5,2, ,4,3,1
+1661,SIM,SUL,6,3,b,Cold Safe,B,SIMSUL,3,6,2, ,4,5,1
+1673,SIM,SUL,9,3,b,Cold Safe,B,SIMSUL,3,7,2, ,4,2,1
+1649,SIM,SUL,3,12,b,Cold Safe,B,SIMSUL,3,8,2, ,4,1,1
+185,BIR,PAN,9,3,b,Cold Safe,B,BIRPAN,4,2,2, ,6,5,1
+125,BIR,PAN,3,3,b,Cold Safe,B,BIRPAN,4,3,2, ,6,3,1
+173,BIR,PAN,6,3,b,Cold Safe,B,BIRPAN,4,4,2, ,6,2,1
+161,BIR,PAN,3,12,b,Cold Safe,B,BIRPAN,4,5,2, ,6,7,1
+137,BIR,PAN,3,6,b,Cold Safe,B,BIRPAN,4,6,2, ,6,4,1
+197,BIR,PAN,12,3,b,Cold Safe,B,BIRPAN,4,7,2, ,6,6,1
+149,BIR,PAN,3,9,b,Cold Safe,B,BIRPAN,4,8,2, ,6,1,1
+329,BIR,SIM,3,12,b,Cold Safe,B,BIRSIM,5,2,2, ,2,6,1
+305,BIR,SIM,3,6,b,Cold Safe,B,BIRSIM,5,3,2, ,2,5,1
+293,BIR,SIM,3,3,b,Cold Safe,B,BIRSIM,5,4,2, ,2,1,1
+353,BIR,SIM,9,3,b,Cold Safe,B,BIRSIM,5,5,2, ,2,7,1
+365,BIR,SIM,12,3,b,Cold Safe,B,BIRSIM,5,6,2, ,2,3,1
+317,BIR,SIM,3,9,b,Cold Safe,B,BIRSIM,5,7,2, ,2,2,1
+341,BIR,SIM,6,3,b,Cold Safe,B,BIRSIM,5,8,2, ,9,1,1
+209,BIR,PSA,3,3,b,Cold Safe,B,BIRPSA,6,2,2, ,3,3,1
+245,BIR,PSA,3,12,b,Cold Safe,B,BIRPSA,6,3,2, ,3,1,1
+233,BIR,PSA,3,9,b,Cold Safe,B,BIRPSA,6,4,2, ,3,2,1
+221,BIR,PSA,3,6,b,Cold Safe,B,BIRPSA,6,5,2, ,3,6,1
+257,BIR,PSA,6,3,b,Cold Safe,B,BIRPSA,6,6,2, ,3,5,1
+269,BIR,PSA,9,3,b,Cold Safe,B,BIRPSA,6,7,2, ,3,7,1
+281,BIR,PSA,12,3,b,Cold Safe,B,BIRPSA,6,8,2, ,3,4,1
+629,PAL,BIR,6,3,b,Cold Safe,B,PALBIR,7,2,2, ,7,1,1
+581,PAL,BIR,3,3,b,Cold Safe,B,PALBIR,7,3,2, ,7,3,1
+605,PAL,BIR,3,9,b,Cold Safe,B,PALBIR,7,4,2, ,7,6,1
+653,PAL,BIR,12,3,b,Cold Safe,B,PALBIR,7,5,2, ,7,5,1
+593,PAL,BIR,3,6,b,Cold Safe,B,PALBIR,7,6,2, ,7,7,1
+617,PAL,BIR,3,12,b,Cold Safe,B,PALBIR,7,7,2, ,7,2,1
+641,PAL,BIR,9,3,b,Cold Safe,B,PALBIR,7,8,2, ,9,3,1
+1901,SUL,PSA,3,3,b,Cold Safe,B,SULPSA,8,2,2, ,3,1,2
+1973,SUL,PSA,12,3,b,Cold Safe,B,SULPSA,8,3,2, ,3,6,2
+1925,SUL,PSA,3,9,b,Cold Safe,B,SULPSA,8,4,2, ,3,3,2
+1961,SUL,PSA,9,3,b,Cold Safe,B,SULPSA,8,5,2, ,3,4,2
+1913,SUL,PSA,3,6,b,Cold Safe,B,SULPSA,8,6,2, ,3,2,2
+1937,SUL,PSA,3,12,b,Cold Safe,B,SULPSA,8,7,2, ,3,7,2
+1949,SUL,PSA,6,3,b,Cold Safe,B,SULPSA,8,8,2, ,3,5,2
+1889,SUL,PAN,12,3,b,Cold Safe,B,SULPAN,1,2,3, ,1,2,2
+1853,SUL,PAN,3,12,b,Cold Safe,B,SULPAN,1,3,3, ,1,3,2
+1877,SUL,PAN,9,3,b,Cold Safe,B,SULPAN,1,4,3, ,1,6,2
+1841,SUL,PAN,3,9,b,Cold Safe,B,SULPAN,1,5,3, ,1,4,2
+1817,SUL,PAN,3,3,b,Cold Safe,B,SULPAN,1,6,3, ,1,7,2
+1829,SUL,PAN,3,6,b,Cold Safe,B,SULPAN,1,7,3, ,1,5,2
+1865,SUL,PAN,6,3,b,Cold Safe,B,SULPAN,1,8,3, ,1,1,2
+929,PAL,SUL,3,6,b,Cold Safe,B,PALSUL,2,2,3, ,2,3,2
+977,PAL,SUL,9,3,b,Cold Safe,B,PALSUL,2,3,3, ,8,1,2
+989,PAL,SUL,12,3,b,Cold Safe,B,PALSUL,2,4,3, ,2,5,2
+953,PAL,SUL,3,12,b,Cold Safe,B,PALSUL,2,5,3, ,2,2,2
+965,PAL,SUL,6,3,b,Cold Safe,B,PALSUL,2,6,3, ,2,7,2
+917,PAL,SUL,3,3,b,Cold Safe,B,PALSUL,2,7,3, ,2,6,2
+941,PAL,SUL,3,9,b,Cold Safe,B,PALSUL,2,8,3, ,2,1,2
+1277,PSA,PAN,3,12,b,Cold Safe,B,PSAPAN,3,2,3, ,7,6,2
+1313,PSA,PAN,12,3,b,Cold Safe,B,PSAPAN,3,3,3, ,7,5,2
+1289,PSA,PAN,6,3,b,Cold Safe,B,PSAPAN,3,4,3, ,7,7,2
+1253,PSA,PAN,3,6,b,Cold Safe,B,PSAPAN,3,5,3, ,7,2,2
+1241,PSA,PAN,3,3,b,Cold Safe,B,PSAPAN,3,6,3, ,8,3,2
+1301,PSA,PAN,9,3,b,Cold Safe,B,PSAPAN,3,7,3, ,7,1,2
+1265,PSA,PAN,3,9,b,Cold Safe,B,PSAPAN,3,8,3, ,7,3,2
+749,PAL,PSA,3,3,b,Cold Safe,B,PALPSA,4,2,3, ,8,1,1
+821,PAL,PSA,12,3,b,Cold Safe,B,PALPSA,4,3,3, ,8,4,1
+773,PAL,PSA,3,9,b,Cold Safe,B,PALPSA,4,4,3, ,8,7,1
+809,PAL,PSA,9,3,b,Cold Safe,B,PALPSA,4,5,3, ,8,6,1
+761,PAL,PSA,3,6,b,Cold Safe,B,PALPSA,4,6,3, ,8,3,1
+785,PAL,PSA,3,12,b,Cold Safe,B,PALPSA,4,7,3, ,8,5,1
+797,PAL,PSA,6,3,b,Cold Safe,B,PALPSA,4,8,3, ,8,2,1
+1541,SIM,PSA,3,6,b,Cold Safe,B,SIMPSA,5,2,3, ,6,1,2
+1553,SIM,PSA,3,9,b,Cold Safe,B,SIMPSA,5,3,3, ,6,4,2
+1577,SIM,PSA,6,3,b,Cold Safe,B,SIMPSA,5,4,3, ,6,2,2
+1565,SIM,PSA,3,12,b,Cold Safe,B,SIMPSA,5,5,3, ,6,3,2
+1589,SIM,PSA,9,3,b,Cold Safe,B,SIMPSA,5,6,3, ,6,5,2
+1601,SIM,PSA,12,3,b,Cold Safe,B,SIMPSA,5,7,3, ,6,6,2
+1529,SIM,PSA,3,3,b,Cold Safe,B,SIMPSA,5,8,3, ,6,7,2
+1457,SIM,PAN,3,6,b,Cold Safe,B,SIMPAN,6,2,3, ,4,1,2
+1505,SIM,PAN,9,3,b,Cold Safe,B,SIMPAN,6,3,3, ,4,4,2
+1517,SIM,PAN,12,3,b,Cold Safe,B,SIMPAN,6,4,3, ,4,7,2
+1481,SIM,PAN,3,12,b,Cold Safe,B,SIMPAN,6,5,3, ,4,2,2
+1469,SIM,PAN,3,9,b,Cold Safe,B,SIMPAN,6,6,3, ,4,5,2
+1445,SIM,PAN,3,3,b,Cold Safe,B,SIMPAN,6,7,3, ,4,3,2
+1493,SIM,PAN,6,3,b,Cold Safe,B,SIMPAN,6,8,3, ,4,6,2
+857,PAL,SIM,3,9,b,Cold Safe,B,PALSIM,7,2,3, ,5,2,2
+833,PAL,SIM,3,3,b,Cold Safe,B,PALSIM,7,3,3, ,5,6,2
+869,PAL,SIM,3,12,b,Cold Safe,B,PALSIM,7,4,3, ,5,1,2
+893,PAL,SIM,9,3,b,Cold Safe,B,PALSIM,7,5,3, ,5,3,2
+845,PAL,SIM,3,6,b,Cold Safe,B,PALSIM,7,6,3, ,5,5,2
+881,PAL,SIM,6,3,b,Cold Safe,B,PALSIM,7,7,3, ,5,7,2
+905,PAL,SIM,12,3,b,Cold Safe,B,PALSIM,7,8,3, ,8,2,2
+389,BIR,SUL,3,6,b,Cold Safe,B,BIRSUL,8,2,3, ,5,7,1
+413,BIR,SUL,3,12,b,Cold Safe,B,BIRSUL,8,3,3, ,9,2,1
+377,BIR,SUL,3,3,b,Cold Safe,B,BIRSUL,8,4,3, ,5,5,1
+401,BIR,SUL,3,9,b,Cold Safe,B,BIRSUL,8,5,3, ,5,1,1
+425,BIR,SUL,6,3,b,Cold Safe,B,BIRSUL,8,6,3, ,5,2,1
+449,BIR,SUL,12,3,b,Cold Safe,B,BIRSUL,8,7,3, ,5,3,1
+437,BIR,SUL,9,3,b,Cold Safe,B,BIRSUL,8,8,3, ,5,6,1
+89,BIR,   ,9,NA,e,Hot Para,B,BIR   ,1,1,1,Lower,12,1,2
+113,BIR,   ,15,NA,e,Hot Para,B,BIR   ,1,2,1,Lower,11,7,2
+110,BIR,   ,15,NA,b,Hot Para,B,BIR   ,1,3,1,Lower,9,6,2
+32,BIR,   ,1,NA,h,Hot Para,B,BIR   ,1,4,1,Lower,8,4,2
+29,BIR,   ,1,NA,e,Hot Para,B,BIR   ,1,5,1,Lower,10,7,2
+1106,PAN,   ,15,NA,b,Hot Para,B,PAN   ,1,6,1,Upper,11,6,1
+1061,PAN,   ,3,NA,e,Hot Para,B,PAN   ,1,7,1,Upper,12,2,1
+1058,PAN,   ,3,NA,b,Hot Para,B,PAN   ,1,8,1,Upper,12,1,1
+1028,PAN,   ,1,NA,h,Hot Para,B,PAN   ,1,9,1,Upper,13,1,1
+1082,PAN,   ,9,NA,b,Hot Para,B,PAN   ,1,10,1,Upper,12,5,1
+1781,SUL,   ,9,NA,e,Hot Para,B,SUL   ,2,1,1,Lower,10,5,2
+1757,SUL,   ,3,NA,e,Hot Para,B,SUL   ,2,2,1,Lower,9,2,2
+1754,SUL,   ,3,NA,b,Hot Para,B,SUL   ,2,3,1,Lower,9,3,2
+1778,SUL,   ,9,NA,b,Hot Para,B,SUL   ,2,4,1,Lower,9,1,2
+1718,SUL,   ,1,NA,b,Hot Para,B,SUL   ,2,5,1,Lower,11,1,2
+35,BIR,   ,1,NA,k,Hot Para,B,BIR   ,2,6,1,Upper,10,6,1
+62,BIR,   ,3,NA,b,Hot Para,B,BIR   ,2,7,1,Upper,10,4,1
+65,BIR,   ,3,NA,e,Hot Para,B,BIR   ,2,8,1,Upper,11,3,1
+26,BIR,   ,1,NA,b,Hot Para,B,BIR   ,2,9,1,Upper,11,5,1
+86,BIR,   ,9,NA,b,Hot Para,B,BIR   ,2,10,1,Upper,13,5,1
+1022,PAN,   ,1,NA,b,Hot Para,B,PAN   ,3,1,1,Lower,9,5,2
+1109,PAN,   ,15,NA,e,Hot Para,B,PAN   ,3,2,1,Lower,11,2,2
+1031,PAN,   ,1,NA,k,Hot Para,B,PAN   ,3,3,1,Lower,9,7,2
+1025,PAN,   ,1,NA,e,Hot Para,B,PAN   ,3,4,1,Lower,12,2,2
+1085,PAN,   ,9,NA,e,Hot Para,B,PAN   ,3,5,1,Lower,12,6,2
+1385,SIM,   ,3,NA,e,Hot Para,B,SIM   ,3,6,1,Upper,13,2,1
+1430,SIM,   ,15,NA,b,Hot Para,B,SIM   ,3,7,1,Upper,11,1,1
+1406,SIM,   ,9,NA,b,Hot Para,B,SIM   ,3,8,1,Upper,12,6,1
+1355,SIM,   ,1,NA,k,Hot Para,B,SIM   ,3,9,1,Upper,11,7,1
+1382,SIM,   ,3,NA,b,Hot Para,B,SIM   ,3,10,1,Upper,10,3,1
+1433,SIM,   ,15,NA,e,Hot Para,B,SIM   ,4,1,1,Lower,8,6,2
+1349,SIM,   ,1,NA,e,Hot Para,B,SIM   ,4,2,1,Lower,12,4,2
+1346,SIM,   ,1,NA,b,Hot Para,B,SIM   ,4,3,1,Lower,12,3,2
+1409,SIM,   ,9,NA,e,Hot Para,B,SIM   ,4,4,1,Lower,12,7,2
+1352,SIM,   ,1,NA,h,Hot Para,B,SIM   ,4,5,1,Lower,11,5,2
+1205,PSA,   ,9,NA,e,Hot Para,B,PSA   ,4,6,1,Upper,11,2,1
+1202,PSA,   ,9,NA,b,Hot Para,B,PSA   ,4,7,1,Upper,13,3,1
+1229,PSA,   ,15,NA,e,Hot Para,B,PSA   ,4,8,1,Upper,9,5,1
+1142,PSA,   ,1,NA,b,Hot Para,B,PSA   ,4,9,1,Upper,10,1,1
+1145,PSA,   ,1,NA,e,Hot Para,B,PSA   ,4,10,1,Upper,10,2,1
+518,PAL,   ,3,NA,b,Hot Para,B,PAL   ,5,1,1,Lower,10,1,2
+545,PAL,   ,9,NA,e,Hot Para,B,PAL   ,5,2,1,Lower,8,7,2
+542,PAL,   ,9,NA,b,Hot Para,B,PAL   ,5,3,1,Lower,10,6,2
+488,PAL,   ,1,NA,h,Hot Para,B,PAL   ,5,4,1,Lower,10,2,2
+482,PAL,   ,1,NA,b,Hot Para,B,PAL   ,5,5,1,Lower,10,4,2
+1805,SUL,   ,15,NA,e,Hot Para,B,SUL   ,5,6,1,Upper,9,6,1
+1724,SUL,   ,1,NA,h,Hot Para,B,SUL   ,5,7,1,Upper,10,5,1
+1802,SUL,   ,15,NA,b,Hot Para,B,SUL   ,5,8,1,Upper,13,4,1
+1721,SUL,   ,1,NA,e,Hot Para,B,SUL   ,5,9,1,Upper,11,4,1
+1727,SUL,   ,1,NA,k,Hot Para,B,SUL   ,5,10,1,Upper,9,7,1
+1178,PSA,   ,3,NA,b,Hot Para,B,PSA   ,6,1,1,Lower,12,5,2
+1151,PSA,   ,1,NA,k,Hot Para,B,PSA   ,6,2,1,Lower,11,6,2
+1226,PSA,   ,15,NA,b,Hot Para,B,PSA   ,6,3,1,Lower,8,5,2
+1181,PSA,   ,3,NA,e,Hot Para,B,PSA   ,6,4,1,Lower,11,3,2
+1148,PSA,   ,1,NA,h,Hot Para,B,PSA   ,6,5,1,Lower,10,3,2
+485,PAL,   ,1,NA,e,Hot Para,B,PAL   ,6,6,1,Upper,12,7,1
+569,PAL,   ,15,NA,e,Hot Para,B,PAL   ,6,7,1,Upper,12,3,1
+566,PAL,   ,15,NA,b,Hot Para,B,PAL   ,6,8,1,Upper,13,7,1
+521,PAL,   ,3,NA,e,Hot Para,B,PAL   ,6,9,1,Upper,10,7,1
+491,PAL,   ,1,NA,k,Hot Para,B,PAL   ,6,10,1,Upper,13,6,1
+824,PAL,PSA,12,3,b,Hot Para,B,PALPSA,2,2,2, ,1,2,2
+752,PAL,PSA,3,3,b,Hot Para,B,PALPSA,2,3,2, ,1,3,2
+764,PAL,PSA,3,6,b,Hot Para,B,PALPSA,2,4,2, ,1,6,2
+776,PAL,PSA,3,9,b,Hot Para,B,PALPSA,2,5,2, ,1,4,2
+788,PAL,PSA,3,12,b,Hot Para,B,PALPSA,2,6,2, ,1,5,2
+800,PAL,PSA,6,3,b,Hot Para,B,PALPSA,2,7,2, ,1,1,2
+812,PAL,PSA,9,3,b,Hot Para,B,PALPSA,2,8,2, ,1,7,2
+188,BIR,PAN,9,3,b,Hot Para,B,BIRPAN,3,2,2, ,3,3,2
+200,BIR,PAN,12,3,b,Hot Para,B,BIRPAN,3,3,2, ,3,7,2
+152,BIR,PAN,3,9,b,Hot Para,B,BIRPAN,3,4,2, ,3,1,2
+176,BIR,PAN,6,3,b,Hot Para,B,BIRPAN,3,5,2, ,3,4,2
+128,BIR,PAN,3,3,b,Hot Para,B,BIRPAN,3,6,2, ,3,6,2
+164,BIR,PAN,3,12,b,Hot Para,B,BIRPAN,3,7,2, ,3,5,2
+140,BIR,PAN,3,6,b,Hot Para,B,BIRPAN,3,8,2, ,3,2,2
+224,BIR,PSA,3,6,b,Hot Para,B,BIRPSA,4,2,2, ,4,6,1
+272,BIR,PSA,9,3,b,Hot Para,B,BIRPSA,4,3,2, ,4,4,1
+260,BIR,PSA,6,3,b,Hot Para,B,BIRPSA,4,4,2, ,4,2,1
+284,BIR,PSA,12,3,b,Hot Para,B,BIRPSA,4,5,2, ,4,1,1
+212,BIR,PSA,3,3,b,Hot Para,B,BIRPSA,4,6,2, ,4,7,1
+236,BIR,PSA,3,9,b,Hot Para,B,BIRPSA,4,7,2, ,4,5,1
+248,BIR,PSA,3,12,b,Hot Para,B,BIRPSA,4,8,2, ,4,3,1
+836,PAL,SIM,3,3,b,Hot Para,B,PALSIM,5,2,2, ,8,6,1
+908,PAL,SIM,12,3,b,Hot Para,B,PALSIM,5,3,2, ,8,5,1
+848,PAL,SIM,3,6,b,Hot Para,B,PALSIM,5,4,2, ,8,4,1
+896,PAL,SIM,9,3,b,Hot Para,B,PALSIM,5,5,2, ,8,7,1
+884,PAL,SIM,6,3,b,Hot Para,B,PALSIM,5,6,2, ,8,1,1
+872,PAL,SIM,3,12,b,Hot Para,B,PALSIM,5,7,2, ,8,2,1
+860,PAL,SIM,3,9,b,Hot Para,B,PALSIM,5,8,2, ,8,3,1
+1904,SUL,PSA,3,3,b,Hot Para,B,SULPSA,6,2,2, ,1,4,1
+1976,SUL,PSA,12,3,b,Hot Para,B,SULPSA,6,3,2, ,1,6,1
+1928,SUL,PSA,3,9,b,Hot Para,B,SULPSA,6,4,2, ,1,7,1
+1916,SUL,PSA,3,6,b,Hot Para,B,SULPSA,6,5,2, ,1,3,1
+1964,SUL,PSA,9,3,b,Hot Para,B,SULPSA,6,6,2, ,1,1,1
+1952,SUL,PSA,6,3,b,Hot Para,B,SULPSA,6,7,2, ,1,2,1
+1940,SUL,PSA,3,12,b,Hot Para,B,SULPSA,6,8,2, ,1,5,1
+1628,SIM,SUL,3,6,b,Hot Para,B,SIMSUL,7,2,2, ,6,7,2
+1616,SIM,SUL,3,3,b,Hot Para,B,SIMSUL,7,3,2, ,6,5,2
+1640,SIM,SUL,3,9,b,Hot Para,B,SIMSUL,7,4,2, ,6,3,2
+1652,SIM,SUL,3,12,b,Hot Para,B,SIMSUL,7,5,2, ,6,6,2
+1688,SIM,SUL,12,3,b,Hot Para,B,SIMSUL,7,6,2, ,6,2,2
+1676,SIM,SUL,9,3,b,Hot Para,B,SIMSUL,7,7,2, ,6,1,2
+1664,SIM,SUL,6,3,b,Hot Para,B,SIMSUL,7,8,2, ,6,4,2
+332,BIR,SIM,3,12,b,Hot Para,B,BIRSIM,8,2,2, ,4,6,2
+320,BIR,SIM,3,9,b,Hot Para,B,BIRSIM,8,3,2, ,4,5,2
+308,BIR,SIM,3,6,b,Hot Para,B,BIRSIM,8,4,2, ,4,3,2
+296,BIR,SIM,3,3,b,Hot Para,B,BIRSIM,8,5,2, ,4,2,2
+356,BIR,SIM,9,3,b,Hot Para,B,BIRSIM,8,6,2, ,4,7,2
+368,BIR,SIM,12,3,b,Hot Para,B,BIRSIM,8,7,2, ,4,1,2
+344,BIR,SIM,6,3,b,Hot Para,B,BIRSIM,8,8,2, ,4,4,2
+1592,SIM,PSA,9,3,b,Hot Para,B,SIMPSA,1,2,3, ,2,3,2
+1544,SIM,PSA,3,6,b,Hot Para,B,SIMPSA,1,3,3, ,2,6,2
+1580,SIM,PSA,6,3,b,Hot Para,B,SIMPSA,1,4,3, ,2,7,2
+1604,SIM,PSA,12,3,b,Hot Para,B,SIMPSA,1,5,3, ,2,1,2
+1556,SIM,PSA,3,9,b,Hot Para,B,SIMPSA,1,6,3, ,2,5,2
+1532,SIM,PSA,3,3,b,Hot Para,B,SIMPSA,1,7,3, ,8,1,2
+1568,SIM,PSA,3,12,b,Hot Para,B,SIMPSA,1,8,3, ,2,2,2
+1472,SIM,PAN,3,9,b,Hot Para,B,SIMPAN,2,2,3, ,2,7,1
+1508,SIM,PAN,9,3,b,Hot Para,B,SIMPAN,2,3,3, ,2,2,1
+1448,SIM,PAN,3,3,b,Hot Para,B,SIMPAN,2,4,3, ,2,5,1
+1520,SIM,PAN,12,3,b,Hot Para,B,SIMPAN,2,5,3, ,2,3,1
+1496,SIM,PAN,6,3,b,Hot Para,B,SIMPAN,2,6,3, ,2,6,1
+1460,SIM,PAN,3,6,b,Hot Para,B,SIMPAN,2,7,3, ,9,1,1
+1484,SIM,PAN,3,12,b,Hot Para,B,SIMPAN,2,8,3, ,2,1,1
+1256,PSA,PAN,3,6,b,Hot Para,B,PSAPAN,3,2,3, ,7,6,1
+1304,PSA,PAN,9,3,b,Hot Para,B,PSAPAN,3,3,3, ,7,2,1
+1268,PSA,PAN,3,9,b,Hot Para,B,PSAPAN,3,4,3, ,9,3,1
+1280,PSA,PAN,3,12,b,Hot Para,B,PSAPAN,3,5,3, ,7,7,1
+1292,PSA,PAN,6,3,b,Hot Para,B,PSAPAN,3,6,3, ,7,1,1
+1316,PSA,PAN,12,3,b,Hot Para,B,PSAPAN,3,7,3, ,7,3,1
+1244,PSA,PAN,3,3,b,Hot Para,B,PSAPAN,3,8,3, ,7,5,1
+608,PAL,BIR,3,9,b,Hot Para,B,PALBIR,4,2,3, ,7,6,2
+584,PAL,BIR,3,3,b,Hot Para,B,PALBIR,4,3,3, ,7,5,2
+632,PAL,BIR,6,3,b,Hot Para,B,PALBIR,4,4,3, ,7,3,2
+656,PAL,BIR,12,3,b,Hot Para,B,PALBIR,4,5,3, ,8,3,2
+620,PAL,BIR,3,12,b,Hot Para,B,PALBIR,4,6,3, ,7,7,2
+644,PAL,BIR,9,3,b,Hot Para,B,PALBIR,4,7,3, ,7,2,2
+596,PAL,BIR,3,6,b,Hot Para,B,PALBIR,4,8,3, ,7,1,2
+1880,SUL,PAN,9,3,b,Hot Para,B,SULPAN,5,2,3, ,3,3,1
+1856,SUL,PAN,3,12,b,Hot Para,B,SULPAN,5,3,3, ,3,1,1
+1820,SUL,PAN,3,3,b,Hot Para,B,SULPAN,5,4,3, ,3,5,1
+1844,SUL,PAN,3,9,b,Hot Para,B,SULPAN,5,5,3, ,3,6,1
+1868,SUL,PAN,6,3,b,Hot Para,B,SULPAN,5,6,3, ,3,4,1
+1892,SUL,PAN,12,3,b,Hot Para,B,SULPAN,5,7,3, ,3,2,1
+1832,SUL,PAN,3,6,b,Hot Para,B,SULPAN,5,8,3, ,3,7,1
+944,PAL,SUL,3,9,b,Hot Para,B,PALSUL,6,2,3, ,6,5,1
+968,PAL,SUL,6,3,b,Hot Para,B,PALSUL,6,3,3, ,6,1,1
+956,PAL,SUL,3,12,b,Hot Para,B,PALSUL,6,4,3, ,6,4,1
+920,PAL,SUL,3,3,b,Hot Para,B,PALSUL,6,5,3, ,6,6,1
+932,PAL,SUL,3,6,b,Hot Para,B,PALSUL,6,6,3, ,6,7,1
+980,PAL,SUL,9,3,b,Hot Para,B,PALSUL,6,7,3, ,6,3,1
+992,PAL,SUL,12,3,b,Hot Para,B,PALSUL,6,8,3, ,6,2,1
+440,BIR,SUL,9,3,b,Hot Para,B,BIRSUL,7,2,3, ,5,3,2
+404,BIR,SUL,3,9,b,Hot Para,B,BIRSUL,7,3,3, ,5,1,2
+380,BIR,SUL,3,3,b,Hot Para,B,BIRSUL,7,4,3, ,8,2,2
+428,BIR,SUL,6,3,b,Hot Para,B,BIRSUL,7,5,3, ,5,6,2
+392,BIR,SUL,3,6,b,Hot Para,B,BIRSUL,7,6,3, ,5,2,2
+452,BIR,SUL,12,3,b,Hot Para,B,BIRSUL,7,7,3, ,5,5,2
+416,BIR,SUL,3,12,b,Hot Para,B,BIRSUL,7,8,3, ,5,7,2
+716,PAL,PAN,6,3,b,Hot Para,B,PALPAN,8,2,3, ,5,6,1
+704,PAL,PAN,3,12,b,Hot Para,B,PALPAN,8,3,3, ,5,2,1
+728,PAL,PAN,9,3,b,Hot Para,B,PALPAN,8,4,3, ,9,2,1
+740,PAL,PAN,12,3,b,Hot Para,B,PALPAN,8,5,3, ,5,7,1
+692,PAL,PAN,3,9,b,Hot Para,B,PALPAN,8,6,3, ,5,3,1
+680,PAL,PAN,3,6,b,Hot Para,B,PALPAN,8,7,3, ,5,5,1
+668,PAL,PAN,3,3,b,Hot Para,B,PALPAN,8,8,3, ,5,1,1
+1736,SUL,   ,1,NA,h,Hot Safe,B,SUL   ,1,1,1,Lower,11,1,2
+1787,SUL,   ,9,NA,e,Hot Safe,B,SUL   ,1,2,1,Lower,9,5,2
+1730,SUL,   ,1,NA,b,Hot Safe,B,SUL   ,1,3,1,Lower,10,1,2
+1811,SUL,   ,15,NA,e,Hot Safe,B,SUL   ,1,4,1,Lower,9,7,2
+1808,SUL,   ,15,NA,b,Hot Safe,B,SUL   ,1,5,1,Lower,11,2,2
+1040,PAN,   ,1,NA,h,Hot Safe,B,PAN   ,1,6,1,Upper,10,7,1
+1064,PAN,   ,3,NA,b,Hot Safe,B,PAN   ,1,7,1,Upper,10,5,1
+1088,PAN,   ,9,NA,b,Hot Safe,B,PAN   ,1,8,1,Upper,12,1,1
+1112,PAN,   ,15,NA,b,Hot Safe,B,PAN   ,1,9,1,Upper,11,1,1
+1034,PAN,   ,1,NA,b,Hot Safe,B,PAN   ,1,10,1,Upper,9,6,1
+1067,PAN,   ,3,NA,e,Hot Safe,B,PAN   ,2,1,1,Lower,11,5,2
+1043,PAN,   ,1,NA,k,Hot Safe,B,PAN   ,2,2,1,Lower,10,5,2
+1115,PAN,   ,15,NA,e,Hot Safe,B,PAN   ,2,3,1,Lower,8,4,2
+1091,PAN,   ,9,NA,e,Hot Safe,B,PAN   ,2,4,1,Lower,12,5,2
+1037,PAN,   ,1,NA,e,Hot Safe,B,PAN   ,2,5,1,Lower,10,4,2
+71,BIR,   ,3,NA,e,Hot Safe,B,BIR   ,2,6,1,Upper,9,7,1
+41,BIR,   ,1,NA,e,Hot Safe,B,BIR   ,2,7,1,Upper,13,6,1
+116,BIR,   ,15,NA,b,Hot Safe,B,BIR   ,2,8,1,Upper,10,6,1
+68,BIR,   ,3,NA,b,Hot Safe,B,BIR   ,2,9,1,Upper,11,2,1
+119,BIR,   ,15,NA,e,Hot Safe,B,BIR   ,2,10,1,Upper,12,6,1
+1364,SIM,   ,1,NA,h,Hot Safe,B,SIM   ,3,1,1,Lower,11,6,2
+1436,SIM,   ,15,NA,b,Hot Safe,B,SIM   ,3,2,1,Lower,12,1,2
+1367,SIM,   ,1,NA,k,Hot Safe,B,SIM   ,3,3,1,Lower,10,6,2
+1391,SIM,   ,3,NA,e,Hot Safe,B,SIM   ,3,4,1,Lower,8,5,2
+1358,SIM,   ,1,NA,b,Hot Safe,B,SIM   ,3,5,1,Lower,11,3,2
+1187,PSA,   ,3,NA,e,Hot Safe,B,PSA   ,3,6,1,Upper,13,2,1
+1184,PSA,   ,3,NA,b,Hot Safe,B,PSA   ,3,7,1,Upper,13,4,1
+1235,PSA,   ,15,NA,e,Hot Safe,B,PSA   ,3,8,1,Upper,11,6,1
+1154,PSA,   ,1,NA,b,Hot Safe,B,PSA   ,3,9,1,Upper,9,5,1
+1232,PSA,   ,15,NA,b,Hot Safe,B,PSA   ,3,10,1,Upper,12,3,1
+548,PAL,   ,9,NA,b,Hot Safe,B,PAL   ,4,1,1,Lower,10,3,2
+524,PAL,   ,3,NA,b,Hot Safe,B,PAL   ,4,2,1,Lower,10,7,2
+497,PAL,   ,1,NA,e,Hot Safe,B,PAL   ,4,3,1,Lower,10,2,2
+494,PAL,   ,1,NA,b,Hot Safe,B,PAL   ,4,4,1,Lower,8,7,2
+527,PAL,   ,3,NA,e,Hot Safe,B,PAL   ,4,5,1,Lower,9,2,2
+500,PAL,   ,1,NA,h,Hot Safe,B,PAL   ,4,6,1,Upper,13,1,1
+551,PAL,   ,9,NA,e,Hot Safe,B,PAL   ,4,7,1,Upper,11,7,1
+572,PAL,   ,15,NA,b,Hot Safe,B,PAL   ,4,8,1,Upper,10,2,1
+575,PAL,   ,15,NA,e,Hot Safe,B,PAL   ,4,9,1,Upper,13,7,1
+503,PAL,   ,1,NA,k,Hot Safe,B,PAL   ,4,10,1,Upper,10,3,1
+44,BIR,   ,1,NA,h,Hot Safe,B,BIR   ,5,1,1,Lower,8,6,2
+47,BIR,   ,1,NA,k,Hot Safe,B,BIR   ,5,2,1,Lower,11,7,2
+92,BIR,   ,9,NA,b,Hot Safe,B,BIR   ,5,3,1,Lower,9,1,2
+95,BIR,   ,9,NA,e,Hot Safe,B,BIR   ,5,4,1,Lower,12,3,2
+38,BIR,   ,1,NA,b,Hot Safe,B,BIR   ,5,5,1,Lower,9,3,2
+1784,SUL,   ,9,NA,b,Hot Safe,B,SUL   ,5,6,1,Upper,12,5,1
+1760,SUL,   ,3,NA,b,Hot Safe,B,SUL   ,5,7,1,Upper,12,2,1
+1733,SUL,   ,1,NA,e,Hot Safe,B,SUL   ,5,8,1,Upper,13,3,1
+1739,SUL,   ,1,NA,k,Hot Safe,B,SUL   ,5,9,1,Upper,10,1,1
+1763,SUL,   ,3,NA,e,Hot Safe,B,SUL   ,5,10,1,Upper,12,7,1
+1211,PSA,   ,9,NA,e,Hot Safe,B,PSA   ,6,1,1,Lower,12,6,2
+1208,PSA,   ,9,NA,b,Hot Safe,B,PSA   ,6,2,1,Lower,9,6,2
+1163,PSA,   ,1,NA,k,Hot Safe,B,PSA   ,6,3,1,Lower,12,4,2
+1157,PSA,   ,1,NA,e,Hot Safe,B,PSA   ,6,4,1,Lower,12,2,2
+1160,PSA,   ,1,NA,h,Hot Safe,B,PSA   ,6,5,1,Lower,12,7,2
+1415,SIM,   ,9,NA,e,Hot Safe,B,SIM   ,6,6,1,Upper,13,5,1
+1412,SIM,   ,9,NA,b,Hot Safe,B,SIM   ,6,7,1,Upper,11,5,1
+1439,SIM,   ,15,NA,e,Hot Safe,B,SIM   ,6,8,1,Upper,11,3,1
+1361,SIM,   ,1,NA,e,Hot Safe,B,SIM   ,6,9,1,Upper,10,4,1
+1388,SIM,   ,3,NA,b,Hot Safe,B,SIM   ,6,10,1,Upper,11,4,1
+1847,SUL,PAN,3,9,b,Hot Safe,B,SULPAN,2,2,2, ,1,2,2
+1883,SUL,PAN,9,3,b,Hot Safe,B,SULPAN,2,3,2, ,1,4,2
+1835,SUL,PAN,3,6,b,Hot Safe,B,SULPAN,2,4,2, ,1,7,2
+1871,SUL,PAN,6,3,b,Hot Safe,B,SULPAN,2,5,2, ,1,5,2
+1859,SUL,PAN,3,12,b,Hot Safe,B,SULPAN,2,6,2, ,1,3,2
+1823,SUL,PAN,3,3,b,Hot Safe,B,SULPAN,2,7,2, ,1,6,2
+1895,SUL,PAN,12,3,b,Hot Safe,B,SULPAN,2,8,2, ,1,1,2
+1451,SIM,PAN,3,3,b,Hot Safe,B,SIMPAN,3,2,2, ,5,1,2
+1463,SIM,PAN,3,6,b,Hot Safe,B,SIMPAN,3,3,2, ,5,3,2
+1475,SIM,PAN,3,9,b,Hot Safe,B,SIMPAN,3,4,2, ,5,5,2
+1511,SIM,PAN,9,3,b,Hot Safe,B,SIMPAN,3,5,2, ,8,2,2
+1499,SIM,PAN,6,3,b,Hot Safe,B,SIMPAN,3,6,2, ,5,2,2
+1487,SIM,PAN,3,12,b,Hot Safe,B,SIMPAN,3,7,2, ,5,6,2
+1523,SIM,PAN,12,3,b,Hot Safe,B,SIMPAN,3,8,2, ,5,7,2
+623,PAL,BIR,3,12,b,Hot Safe,B,PALBIR,4,2,2, ,4,2,1
+659,PAL,BIR,12,3,b,Hot Safe,B,PALBIR,4,3,2, ,4,6,1
+647,PAL,BIR,9,3,b,Hot Safe,B,PALBIR,4,4,2, ,4,7,1
+611,PAL,BIR,3,9,b,Hot Safe,B,PALBIR,4,5,2, ,4,5,1
+635,PAL,BIR,6,3,b,Hot Safe,B,PALBIR,4,6,2, ,4,3,1
+587,PAL,BIR,3,3,b,Hot Safe,B,PALBIR,4,7,2, ,4,4,1
+599,PAL,BIR,3,6,b,Hot Safe,B,PALBIR,4,8,2, ,4,1,1
+1919,SUL,PSA,3,6,b,Hot Safe,B,SULPSA,5,2,2, ,6,6,2
+1931,SUL,PSA,3,9,b,Hot Safe,B,SULPSA,5,3,2, ,6,5,2
+1955,SUL,PSA,6,3,b,Hot Safe,B,SULPSA,5,4,2, ,6,4,2
+1967,SUL,PSA,9,3,b,Hot Safe,B,SULPSA,5,5,2, ,6,1,2
+1943,SUL,PSA,3,12,b,Hot Safe,B,SULPSA,5,6,2, ,6,3,2
+1979,SUL,PSA,12,3,b,Hot Safe,B,SULPSA,5,7,2, ,6,7,2
+1907,SUL,PSA,3,3,b,Hot Safe,B,SULPSA,5,8,2, ,6,2,2
+1571,SIM,PSA,3,12,b,Hot Safe,B,SIMPSA,6,2,2, ,8,2,1
+1583,SIM,PSA,6,3,b,Hot Safe,B,SIMPSA,6,3,2, ,8,1,1
+1607,SIM,PSA,12,3,b,Hot Safe,B,SIMPSA,6,4,2, ,8,4,1
+1547,SIM,PSA,3,6,b,Hot Safe,B,SIMPSA,6,5,2, ,8,6,1
+1559,SIM,PSA,3,9,b,Hot Safe,B,SIMPSA,6,6,2, ,8,7,1
+1535,SIM,PSA,3,3,b,Hot Safe,B,SIMPSA,6,7,2, ,8,5,1
+1595,SIM,PSA,9,3,b,Hot Safe,B,SIMPSA,6,8,2, ,8,3,1
+1643,SIM,SUL,3,9,b,Hot Safe,B,SIMSUL,7,2,2, ,7,3,2
+1679,SIM,SUL,9,3,b,Hot Safe,B,SIMSUL,7,3,2, ,7,5,2
+1619,SIM,SUL,3,3,b,Hot Safe,B,SIMSUL,7,4,2, ,7,6,2
+1631,SIM,SUL,3,6,b,Hot Safe,B,SIMSUL,7,5,2, ,7,2,2
+1667,SIM,SUL,6,3,b,Hot Safe,B,SIMSUL,7,6,2, ,7,1,2
+1691,SIM,SUL,12,3,b,Hot Safe,B,SIMSUL,7,7,2, ,7,7,2
+1655,SIM,SUL,3,12,b,Hot Safe,B,SIMSUL,7,8,2, ,8,3,2
+1307,PSA,PAN,9,3,b,Hot Safe,B,PSAPAN,8,2,2, ,1,7,1
+1319,PSA,PAN,12,3,b,Hot Safe,B,PSAPAN,8,3,2, ,1,5,1
+1259,PSA,PAN,3,6,b,Hot Safe,B,PSAPAN,8,4,2, ,1,2,1
+1295,PSA,PAN,6,3,b,Hot Safe,B,PSAPAN,8,5,2, ,1,3,1
+1283,PSA,PAN,3,12,b,Hot Safe,B,PSAPAN,8,6,2, ,1,1,1
+1271,PSA,PAN,3,9,b,Hot Safe,B,PSAPAN,8,7,2, ,1,4,1
+1247,PSA,PAN,3,3,b,Hot Safe,B,PSAPAN,8,8,2, ,1,6,1
+803,PAL,PSA,6,3,b,Hot Safe,B,PALPSA,1,2,3, ,3,5,2
+779,PAL,PSA,3,9,b,Hot Safe,B,PALPSA,1,3,3, ,3,3,2
+755,PAL,PSA,3,3,b,Hot Safe,B,PALPSA,1,4,3, ,3,1,2
+815,PAL,PSA,9,3,b,Hot Safe,B,PALPSA,1,5,3, ,3,4,2
+767,PAL,PSA,3,6,b,Hot Safe,B,PALPSA,1,6,3, ,3,2,2
+827,PAL,PSA,12,3,b,Hot Safe,B,PALPSA,1,7,3, ,3,6,2
+791,PAL,PSA,3,12,b,Hot Safe,B,PALPSA,1,8,3, ,3,7,2
+371,BIR,SIM,12,3,b,Hot Safe,B,BIRSIM,2,2,3, ,6,4,1
+323,BIR,SIM,3,9,b,Hot Safe,B,BIRSIM,2,3,3, ,6,5,1
+299,BIR,SIM,3,3,b,Hot Safe,B,BIRSIM,2,4,3, ,6,3,1
+335,BIR,SIM,3,12,b,Hot Safe,B,BIRSIM,2,5,3, ,6,1,1
+359,BIR,SIM,9,3,b,Hot Safe,B,BIRSIM,2,6,3, ,6,7,1
+311,BIR,SIM,3,6,b,Hot Safe,B,BIRSIM,2,7,3, ,6,2,1
+347,BIR,SIM,6,3,b,Hot Safe,B,BIRSIM,2,8,3, ,6,6,1
+155,BIR,PAN,3,9,b,Hot Safe,B,BIRPAN,3,2,3, ,5,2,1
+203,BIR,PAN,12,3,b,Hot Safe,B,BIRPAN,3,3,3, ,5,3,1
+143,BIR,PAN,3,6,b,Hot Safe,B,BIRPAN,3,4,3, ,5,7,1
+179,BIR,PAN,6,3,b,Hot Safe,B,BIRPAN,3,5,3, ,5,1,1
+191,BIR,PAN,9,3,b,Hot Safe,B,BIRPAN,3,6,3, ,9,2,1
+131,BIR,PAN,3,3,b,Hot Safe,B,BIRPAN,3,7,3, ,5,5,1
+167,BIR,PAN,3,12,b,Hot Safe,B,BIRPAN,3,8,3, ,5,6,1
+971,PAL,SUL,6,3,b,Hot Safe,B,PALSUL,4,2,3, ,7,1,1
+923,PAL,SUL,3,3,b,Hot Safe,B,PALSUL,4,3,3, ,7,7,1
+935,PAL,SUL,3,6,b,Hot Safe,B,PALSUL,4,4,3, ,7,2,1
+959,PAL,SUL,3,12,b,Hot Safe,B,PALSUL,4,5,3, ,7,3,1
+947,PAL,SUL,3,9,b,Hot Safe,B,PALSUL,4,6,3, ,7,5,1
+995,PAL,SUL,12,3,b,Hot Safe,B,PALSUL,4,7,3, ,9,3,1
+983,PAL,SUL,9,3,b,Hot Safe,B,PALSUL,4,8,3, ,7,6,1
+875,PAL,SIM,3,12,b,Hot Safe,B,PALSIM,5,2,3, ,4,5,2
+839,PAL,SIM,3,3,b,Hot Safe,B,PALSIM,5,3,3, ,4,6,2
+887,PAL,SIM,6,3,b,Hot Safe,B,PALSIM,5,4,3, ,4,2,2
+899,PAL,SIM,9,3,b,Hot Safe,B,PALSIM,5,5,3, ,4,1,2
+911,PAL,SIM,12,3,b,Hot Safe,B,PALSIM,5,6,3, ,4,4,2
+863,PAL,SIM,3,9,b,Hot Safe,B,PALSIM,5,7,3, ,4,7,2
+851,PAL,SIM,3,6,b,Hot Safe,B,PALSIM,5,8,3, ,4,3,2
+719,PAL,PAN,6,3,b,Hot Safe,B,PALPAN,6,2,3, ,3,7,1
+671,PAL,PAN,3,3,b,Hot Safe,B,PALPAN,6,3,3, ,3,5,1
+695,PAL,PAN,3,9,b,Hot Safe,B,PALPAN,6,4,3, ,3,1,1
+707,PAL,PAN,3,12,b,Hot Safe,B,PALPAN,6,5,3, ,3,4,1
+743,PAL,PAN,12,3,b,Hot Safe,B,PALPAN,6,6,3, ,3,2,1
+683,PAL,PAN,3,6,b,Hot Safe,B,PALPAN,6,7,3, ,3,6,1
+731,PAL,PAN,9,3,b,Hot Safe,B,PALPAN,6,8,3, ,3,3,1
+287,BIR,PSA,12,3,b,Hot Safe,B,BIRPSA,7,2,3, ,2,7,1
+239,BIR,PSA,3,9,b,Hot Safe,B,BIRPSA,7,3,3, ,2,5,1
+215,BIR,PSA,3,3,b,Hot Safe,B,BIRPSA,7,4,3, ,2,6,1
+227,BIR,PSA,3,6,b,Hot Safe,B,BIRPSA,7,5,3, ,2,3,1
+251,BIR,PSA,3,12,b,Hot Safe,B,BIRPSA,7,6,3, ,2,2,1
+263,BIR,PSA,6,3,b,Hot Safe,B,BIRPSA,7,7,3, ,9,1,1
+275,BIR,PSA,9,3,b,Hot Safe,B,BIRPSA,7,8,3, ,2,1,1
+455,BIR,SUL,12,3,b,Hot Safe,B,BIRSUL,8,2,3, ,2,1,2
+443,BIR,SUL,9,3,b,Hot Safe,B,BIRSUL,8,3,3, ,2,5,2
+395,BIR,SUL,3,6,b,Hot Safe,B,BIRSUL,8,4,3, ,2,7,2
+419,BIR,SUL,3,12,b,Hot Safe,B,BIRSUL,8,5,3, ,2,3,2
+383,BIR,SUL,3,3,b,Hot Safe,B,BIRSUL,8,6,3, ,8,1,2
+431,BIR,SUL,6,3,b,Hot Safe,B,BIRSUL,8,7,3, ,2,6,2
+407,BIR,SUL,3,9,b,Hot Safe,B,BIRSUL,8,8,3, ,2,2,2
+1746,SUL,   ,3,NA,f,Cold Para,C,SUL   ,1,1,1,Lower,9,3,2
+1701,SUL,   ,1,NA,i,Cold Para,C,SUL   ,1,2,1,Lower,10,3,2
+1791,SUL,   ,15,NA,c,Cold Para,C,SUL   ,1,3,1,Lower,11,1,2
+1704,SUL,   ,1,NA,l,Cold Para,C,SUL   ,1,4,1,Lower,12,1,2
+1695,SUL,   ,1,NA,c,Cold Para,C,SUL   ,1,5,1,Lower,10,2,2
+1770,SUL,   ,9,NA,f,Cold Para,C,SUL   ,1,6,1,Upper,9,5,1
+1794,SUL,   ,15,NA,f,Cold Para,C,SUL   ,1,7,1,Upper,13,7,1
+1698,SUL,   ,1,NA,f,Cold Para,C,SUL   ,1,8,1,Upper,12,5,1
+1767,SUL,   ,9,NA,c,Cold Para,C,SUL   ,1,9,1,Upper,12,3,1
+1743,SUL,   ,3,NA,c,Cold Para,C,SUL   ,1,10,1,Upper,10,1,1
+1398,SIM,   ,9,NA,f,Cold Para,C,SIM   ,2,1,1,Lower,10,5,2
+1326,SIM,   ,1,NA,f,Cold Para,C,SIM   ,2,2,1,Lower,9,2,2
+1329,SIM,   ,1,NA,i,Cold Para,C,SIM   ,2,3,1,Lower,8,4,2
+1374,SIM,   ,3,NA,f,Cold Para,C,SIM   ,2,4,1,Lower,10,1,2
+1419,SIM,   ,15,NA,c,Cold Para,C,SIM   ,2,5,1,Lower,12,6,2
+1191,PSA,   ,9,NA,c,Cold Para,C,PSA   ,2,6,1,Upper,11,6,1
+1122,PSA,   ,1,NA,f,Cold Para,C,PSA   ,2,7,1,Upper,12,6,1
+1128,PSA,   ,1,NA,l,Cold Para,C,PSA   ,2,8,1,Upper,12,1,1
+1125,PSA,   ,1,NA,i,Cold Para,C,PSA   ,2,9,1,Upper,11,1,1
+1167,PSA,   ,3,NA,c,Cold Para,C,PSA   ,2,10,1,Upper,13,2,1
+1008,PAN,   ,1,NA,l,Cold Para,C,PAN   ,3,1,1,Lower,11,5,2
+1071,PAN,   ,9,NA,c,Cold Para,C,PAN   ,3,2,1,Lower,11,6,2
+1050,PAN,   ,3,NA,f,Cold Para,C,PAN   ,3,3,1,Lower,9,6,2
+1098,PAN,   ,15,NA,f,Cold Para,C,PAN   ,3,4,1,Lower,9,7,2
+1005,PAN,   ,1,NA,i,Cold Para,C,PAN   ,3,5,1,Lower,11,2,2
+459,PAL,   ,1,NA,c,Cold Para,C,PAL   ,3,6,1,Upper,13,1,1
+465,PAL,   ,1,NA,i,Cold Para,C,PAL   ,3,7,1,Upper,10,4,1
+462,PAL,   ,1,NA,f,Cold Para,C,PAL   ,3,8,1,Upper,11,3,1
+510,PAL,   ,3,NA,f,Cold Para,C,PAL   ,3,9,1,Upper,10,5,1
+558,PAL,   ,15,NA,f,Cold Para,C,PAL   ,3,10,1,Upper,10,6,1
+1218,PSA,   ,15,NA,f,Cold Para,C,PSA   ,4,1,1,Lower,12,4,2
+1119,PSA,   ,1,NA,c,Cold Para,C,PSA   ,4,2,1,Lower,9,5,2
+1194,PSA,   ,9,NA,f,Cold Para,C,PSA   ,4,3,1,Lower,8,6,2
+1170,PSA,   ,3,NA,f,Cold Para,C,PSA   ,4,4,1,Lower,10,4,2
+1215,PSA,   ,15,NA,c,Cold Para,C,PSA   ,4,5,1,Lower,12,2,2
+1332,SIM,   ,1,NA,l,Cold Para,C,SIM   ,4,6,1,Upper,12,2,1
+1395,SIM,   ,9,NA,c,Cold Para,C,SIM   ,4,7,1,Upper,13,5,1
+1422,SIM,   ,15,NA,f,Cold Para,C,SIM   ,4,8,1,Upper,11,4,1
+1371,SIM,   ,3,NA,c,Cold Para,C,SIM   ,4,9,1,Upper,11,7,1
+1323,SIM,   ,1,NA,c,Cold Para,C,SIM   ,4,10,1,Upper,9,6,1
+468,PAL,   ,1,NA,l,Cold Para,C,PAL   ,5,1,1,Lower,10,6,2
+555,PAL,   ,15,NA,c,Cold Para,C,PAL   ,5,2,1,Lower,12,3,2
+534,PAL,   ,9,NA,f,Cold Para,C,PAL   ,5,3,1,Lower,12,5,2
+507,PAL,   ,3,NA,c,Cold Para,C,PAL   ,5,4,1,Lower,11,3,2
+531,PAL,   ,9,NA,c,Cold Para,C,PAL   ,5,5,1,Lower,8,7,2
+12,BIR,   ,1,NA,l,Cold Para,C,BIR   ,5,6,1,Upper,10,2,1
+9,BIR,   ,1,NA,i,Cold Para,C,BIR   ,5,7,1,Upper,10,7,1
+99,BIR,   ,15,NA,c,Cold Para,C,BIR   ,5,8,1,Upper,11,5,1
+102,BIR,   ,15,NA,f,Cold Para,C,BIR   ,5,9,1,Upper,10,3,1
+78,BIR,   ,9,NA,f,Cold Para,C,BIR   ,5,10,1,Upper,13,3,1
+54,BIR,   ,3,NA,f,Cold Para,C,BIR   ,6,1,1,Lower,9,1,2
+6,BIR,   ,1,NA,f,Cold Para,C,BIR   ,6,2,1,Lower,11,7,2
+75,BIR,   ,9,NA,c,Cold Para,C,BIR   ,6,3,1,Lower,8,5,2
+51,BIR,   ,3,NA,c,Cold Para,C,BIR   ,6,4,1,Lower,12,7,2
+3,BIR,   ,1,NA,c,Cold Para,C,BIR   ,6,5,1,Lower,10,7,2
+1095,PAN,   ,15,NA,c,Cold Para,C,PAN   ,6,6,1,Upper,9,7,1
+999,PAN,   ,1,NA,c,Cold Para,C,PAN   ,6,7,1,Upper,11,2,1
+1047,PAN,   ,3,NA,c,Cold Para,C,PAN   ,6,8,1,Upper,13,4,1
+1074,PAN,   ,9,NA,f,Cold Para,C,PAN   ,6,9,1,Upper,13,6,1
+1002,PAN,   ,1,NA,f,Cold Para,C,PAN   ,6,10,1,Upper,12,7,1
+939,PAL,SUL,3,9,c,Cold Para,C,PALSUL,2,2,2, ,7,2,2
+915,PAL,SUL,3,3,c,Cold Para,C,PALSUL,2,3,2, ,7,1,2
+927,PAL,SUL,3,6,c,Cold Para,C,PALSUL,2,4,2, ,7,5,2
+963,PAL,SUL,6,3,c,Cold Para,C,PALSUL,2,5,2, ,8,3,2
+951,PAL,SUL,3,12,c,Cold Para,C,PALSUL,2,6,2, ,7,7,2
+975,PAL,SUL,9,3,c,Cold Para,C,PALSUL,2,7,2, ,7,3,2
+987,PAL,SUL,12,3,c,Cold Para,C,PALSUL,2,8,2, ,7,6,2
+339,BIR,SIM,6,3,c,Cold Para,C,BIRSIM,3,2,2, ,6,4,2
+363,BIR,SIM,12,3,c,Cold Para,C,BIRSIM,3,3,2, ,6,3,2
+327,BIR,SIM,3,12,c,Cold Para,C,BIRSIM,3,4,2, ,6,7,2
+351,BIR,SIM,9,3,c,Cold Para,C,BIRSIM,3,5,2, ,6,5,2
+303,BIR,SIM,3,6,c,Cold Para,C,BIRSIM,3,6,2, ,6,2,2
+315,BIR,SIM,3,9,c,Cold Para,C,BIRSIM,3,7,2, ,6,6,2
+291,BIR,SIM,3,3,c,Cold Para,C,BIRSIM,3,8,2, ,6,1,2
+1863,SUL,PAN,6,3,c,Cold Para,C,SULPAN,4,2,2, ,2,6,2
+1827,SUL,PAN,3,6,c,Cold Para,C,SULPAN,4,3,2, ,8,1,2
+1815,SUL,PAN,3,3,c,Cold Para,C,SULPAN,4,4,2, ,2,2,2
+1887,SUL,PAN,12,3,c,Cold Para,C,SULPAN,4,5,2, ,2,1,2
+1875,SUL,PAN,9,3,c,Cold Para,C,SULPAN,4,6,2, ,2,5,2
+1839,SUL,PAN,3,9,c,Cold Para,C,SULPAN,4,7,2, ,2,3,2
+1851,SUL,PAN,3,12,c,Cold Para,C,SULPAN,4,8,2, ,2,7,2
+123,BIR,PAN,3,3,c,Cold Para,C,BIRPAN,5,2,2, ,4,3,1
+147,BIR,PAN,3,9,c,Cold Para,C,BIRPAN,5,3,2, ,4,2,1
+171,BIR,PAN,6,3,c,Cold Para,C,BIRPAN,5,4,2, ,4,5,1
+183,BIR,PAN,9,3,c,Cold Para,C,BIRPAN,5,5,2, ,4,1,1
+195,BIR,PAN,12,3,c,Cold Para,C,BIRPAN,5,6,2, ,4,4,1
+159,BIR,PAN,3,12,c,Cold Para,C,BIRPAN,5,7,2, ,4,7,1
+135,BIR,PAN,3,6,c,Cold Para,C,BIRPAN,5,8,2, ,4,6,1
+1683,SIM,SUL,12,3,c,Cold Para,C,SIMSUL,6,2,2, ,7,5,1
+1671,SIM,SUL,9,3,c,Cold Para,C,SIMSUL,6,3,2, ,7,1,1
+1623,SIM,SUL,3,6,c,Cold Para,C,SIMSUL,6,4,2, ,7,2,1
+1659,SIM,SUL,6,3,c,Cold Para,C,SIMSUL,6,5,2, ,7,7,1
+1647,SIM,SUL,3,12,c,Cold Para,C,SIMSUL,6,6,2, ,7,3,1
+1635,SIM,SUL,3,9,c,Cold Para,C,SIMSUL,6,7,2, ,9,3,1
+1611,SIM,SUL,3,3,c,Cold Para,C,SIMSUL,6,8,2, ,7,6,1
+1899,SUL,PSA,3,3,c,Cold Para,C,SULPSA,7,2,2, ,8,1,1
+1959,SUL,PSA,9,3,c,Cold Para,C,SULPSA,7,3,2, ,8,6,1
+1923,SUL,PSA,3,9,c,Cold Para,C,SULPSA,7,4,2, ,8,5,1
+1971,SUL,PSA,12,3,c,Cold Para,C,SULPSA,7,5,2, ,8,2,1
+1935,SUL,PSA,3,12,c,Cold Para,C,SULPSA,7,6,2, ,8,3,1
+1911,SUL,PSA,3,6,c,Cold Para,C,SULPSA,7,7,2, ,8,4,1
+1947,SUL,PSA,6,3,c,Cold Para,C,SULPSA,7,8,2, ,8,7,1
+1479,SIM,PAN,3,12,c,Cold Para,C,SIMPAN,8,2,2, ,5,2,1
+1515,SIM,PAN,12,3,c,Cold Para,C,SIMPAN,8,3,2, ,5,3,1
+1491,SIM,PAN,6,3,c,Cold Para,C,SIMPAN,8,4,2, ,9,2,1
+1503,SIM,PAN,9,3,c,Cold Para,C,SIMPAN,8,5,2, ,5,5,1
+1455,SIM,PAN,3,6,c,Cold Para,C,SIMPAN,8,6,2, ,5,1,1
+1443,SIM,PAN,3,3,c,Cold Para,C,SIMPAN,8,7,2, ,5,6,1
+1467,SIM,PAN,3,9,c,Cold Para,C,SIMPAN,8,8,2, ,5,7,1
+1539,SIM,PSA,3,6,c,Cold Para,C,SIMPSA,1,2,3, ,6,1,1
+1587,SIM,PSA,9,3,c,Cold Para,C,SIMPSA,1,3,3, ,6,2,1
+1563,SIM,PSA,3,12,c,Cold Para,C,SIMPSA,1,4,3, ,6,6,1
+1575,SIM,PSA,6,3,c,Cold Para,C,SIMPSA,1,5,3, ,6,7,1
+1599,SIM,PSA,12,3,c,Cold Para,C,SIMPSA,1,6,3, ,6,4,1
+1551,SIM,PSA,3,9,c,Cold Para,C,SIMPSA,1,7,3, ,6,5,1
+1527,SIM,PSA,3,3,c,Cold Para,C,SIMPSA,1,8,3, ,6,3,1
+411,BIR,SUL,3,12,c,Cold Para,C,BIRSUL,2,2,3, ,5,5,2
+375,BIR,SUL,3,3,c,Cold Para,C,BIRSUL,2,3,3, ,5,2,2
+435,BIR,SUL,9,3,c,Cold Para,C,BIRSUL,2,4,3, ,5,1,2
+447,BIR,SUL,12,3,c,Cold Para,C,BIRSUL,2,5,3, ,5,6,2
+423,BIR,SUL,6,3,c,Cold Para,C,BIRSUL,2,6,3, ,5,7,2
+399,BIR,SUL,3,9,c,Cold Para,C,BIRSUL,2,7,3, ,8,2,2
+387,BIR,SUL,3,6,c,Cold Para,C,BIRSUL,2,8,3, ,5,3,2
+1299,PSA,PAN,9,3,c,Cold Para,C,PSAPAN,3,2,3, ,1,1,2
+1251,PSA,PAN,3,6,c,Cold Para,C,PSAPAN,3,3,3, ,1,4,2
+1239,PSA,PAN,3,3,c,Cold Para,C,PSAPAN,3,4,3, ,1,6,2
+1311,PSA,PAN,12,3,c,Cold Para,C,PSAPAN,3,5,3, ,1,2,2
+1275,PSA,PAN,3,12,c,Cold Para,C,PSAPAN,3,6,3, ,1,5,2
+1263,PSA,PAN,3,9,c,Cold Para,C,PSAPAN,3,7,3, ,1,3,2
+1287,PSA,PAN,6,3,c,Cold Para,C,PSAPAN,3,8,3, ,1,7,2
+759,PAL,PSA,3,6,c,Cold Para,C,PALPSA,4,2,3, ,4,2,2
+795,PAL,PSA,6,3,c,Cold Para,C,PALPSA,4,3,3, ,4,4,2
+783,PAL,PSA,3,12,c,Cold Para,C,PALPSA,4,4,3, ,4,7,2
+819,PAL,PSA,12,3,c,Cold Para,C,PALPSA,4,5,3, ,4,3,2
+807,PAL,PSA,9,3,c,Cold Para,C,PALPSA,4,6,3, ,4,5,2
+771,PAL,PSA,3,9,c,Cold Para,C,PALPSA,4,7,3, ,4,1,2
+747,PAL,PSA,3,3,c,Cold Para,C,PALPSA,4,8,3, ,4,6,2
+255,BIR,PSA,6,3,c,Cold Para,C,BIRPSA,5,2,3, ,3,1,1
+219,BIR,PSA,3,6,c,Cold Para,C,BIRPSA,5,3,3, ,3,3,1
+243,BIR,PSA,3,12,c,Cold Para,C,BIRPSA,5,4,3, ,3,4,1
+279,BIR,PSA,12,3,c,Cold Para,C,BIRPSA,5,5,3, ,3,2,1
+267,BIR,PSA,9,3,c,Cold Para,C,BIRPSA,5,6,3, ,3,7,1
+207,BIR,PSA,3,3,c,Cold Para,C,BIRPSA,5,7,3, ,3,5,1
+231,BIR,PSA,3,9,c,Cold Para,C,BIRPSA,5,8,3, ,3,6,1
+675,PAL,PAN,3,6,c,Cold Para,C,PALPAN,6,2,3, ,3,2,2
+723,PAL,PAN,9,3,c,Cold Para,C,PALPAN,6,3,3, ,3,3,2
+687,PAL,PAN,3,9,c,Cold Para,C,PALPAN,6,4,3, ,3,4,2
+663,PAL,PAN,3,3,c,Cold Para,C,PALPAN,6,5,3, ,3,7,2
+735,PAL,PAN,12,3,c,Cold Para,C,PALPAN,6,6,3, ,3,6,2
+699,PAL,PAN,3,12,c,Cold Para,C,PALPAN,6,7,3, ,3,5,2
+711,PAL,PAN,6,3,c,Cold Para,C,PALPAN,6,8,3, ,3,1,2
+603,PAL,BIR,3,9,c,Cold Para,C,PALBIR,7,2,3, ,2,6,1
+639,PAL,BIR,9,3,c,Cold Para,C,PALBIR,7,3,3, ,9,1,1
+615,PAL,BIR,3,12,c,Cold Para,C,PALBIR,7,4,3, ,2,3,1
+651,PAL,BIR,12,3,c,Cold Para,C,PALBIR,7,5,3, ,2,5,1
+591,PAL,BIR,3,6,c,Cold Para,C,PALBIR,7,6,3, ,2,2,1
+579,PAL,BIR,3,3,c,Cold Para,C,PALBIR,7,7,3, ,2,1,1
+627,PAL,BIR,6,3,c,Cold Para,C,PALBIR,7,8,3, ,2,7,1
+903,PAL,SIM,12,3,c,Cold Para,C,PALSIM,8,2,3, ,1,2,1
+831,PAL,SIM,3,3,c,Cold Para,C,PALSIM,8,3,3, ,1,3,1
+891,PAL,SIM,9,3,c,Cold Para,C,PALSIM,8,4,3, ,1,1,1
+879,PAL,SIM,6,3,c,Cold Para,C,PALSIM,8,5,3, ,1,7,1
+867,PAL,SIM,3,12,c,Cold Para,C,PALSIM,8,6,3, ,1,4,1
+855,PAL,SIM,3,9,c,Cold Para,C,PALSIM,8,7,3, ,1,6,1
+843,PAL,SIM,3,6,c,Cold Para,C,PALSIM,8,8,3, ,1,5,1
+1716,SUL,   ,1,NA,l,Cold Safe,C,SUL   ,1,1,1,Lower,9,6,2
+1776,SUL,   ,9,NA,f,Cold Safe,C,SUL   ,1,2,1,Lower,10,2,2
+1713,SUL,   ,1,NA,i,Cold Safe,C,SUL   ,1,3,1,Lower,10,3,2
+1800,SUL,   ,15,NA,f,Cold Safe,C,SUL   ,1,4,1,Lower,10,7,2
+1707,SUL,   ,1,NA,c,Cold Safe,C,SUL   ,1,5,1,Lower,8,5,2
+474,PAL,   ,1,NA,f,Cold Safe,C,PAL   ,1,6,1,Upper,13,3,1
+564,PAL,   ,15,NA,f,Cold Safe,C,PAL   ,1,7,1,Upper,12,1,1
+471,PAL,   ,1,NA,c,Cold Safe,C,PAL   ,1,8,1,Upper,12,6,1
+477,PAL,   ,1,NA,i,Cold Safe,C,PAL   ,1,9,1,Upper,10,5,1
+537,PAL,   ,9,NA,c,Cold Safe,C,PAL   ,1,10,1,Upper,9,6,1
+57,BIR,   ,3,NA,c,Cold Safe,C,BIR   ,2,1,1,Lower,10,1,2
+60,BIR,   ,3,NA,f,Cold Safe,C,BIR   ,2,2,1,Lower,10,6,2
+18,BIR,   ,1,NA,f,Cold Safe,C,BIR   ,2,3,1,Lower,11,2,2
+24,BIR,   ,1,NA,l,Cold Safe,C,BIR   ,2,4,1,Lower,9,2,2
+15,BIR,   ,1,NA,c,Cold Safe,C,BIR   ,2,5,1,Lower,9,3,2
+1137,PSA,   ,1,NA,i,Cold Safe,C,PSA   ,2,6,1,Upper,9,7,1
+1173,PSA,   ,3,NA,c,Cold Safe,C,PSA   ,2,7,1,Upper,10,6,1
+1140,PSA,   ,1,NA,l,Cold Safe,C,PSA   ,2,8,1,Upper,11,2,1
+1134,PSA,   ,1,NA,f,Cold Safe,C,PSA   ,2,9,1,Upper,10,3,1
+1200,PSA,   ,9,NA,f,Cold Safe,C,PSA   ,2,10,1,Upper,11,5,1
+1176,PSA,   ,3,NA,f,Cold Safe,C,PSA   ,3,1,1,Lower,11,5,2
+1221,PSA,   ,15,NA,c,Cold Safe,C,PSA   ,3,2,1,Lower,11,7,2
+1197,PSA,   ,9,NA,c,Cold Safe,C,PSA   ,3,3,1,Lower,9,5,2
+1131,PSA,   ,1,NA,c,Cold Safe,C,PSA   ,3,4,1,Lower,12,5,2
+1224,PSA,   ,15,NA,f,Cold Safe,C,PSA   ,3,5,1,Lower,12,4,2
+21,BIR,   ,1,NA,i,Cold Safe,C,BIR   ,3,6,1,Upper,11,4,1
+108,BIR,   ,15,NA,f,Cold Safe,C,BIR   ,3,7,1,Upper,13,2,1
+84,BIR,   ,9,NA,f,Cold Safe,C,BIR   ,3,8,1,Upper,11,3,1
+105,BIR,   ,15,NA,c,Cold Safe,C,BIR   ,3,9,1,Upper,10,1,1
+81,BIR,   ,9,NA,c,Cold Safe,C,BIR   ,3,10,1,Upper,11,7,1
+1017,PAN,   ,1,NA,i,Cold Safe,C,PAN   ,4,1,1,Lower,8,6,2
+1056,PAN,   ,3,NA,f,Cold Safe,C,PAN   ,4,2,1,Lower,9,1,2
+1080,PAN,   ,9,NA,f,Cold Safe,C,PAN   ,4,3,1,Lower,11,6,2
+1011,PAN,   ,1,NA,c,Cold Safe,C,PAN   ,4,4,1,Lower,8,7,2
+1101,PAN,   ,15,NA,c,Cold Safe,C,PAN   ,4,5,1,Lower,11,1,2
+1749,SUL,   ,3,NA,c,Cold Safe,C,SUL   ,4,6,1,Upper,10,2,1
+1773,SUL,   ,9,NA,c,Cold Safe,C,SUL   ,4,7,1,Upper,12,2,1
+1752,SUL,   ,3,NA,f,Cold Safe,C,SUL   ,4,8,1,Upper,12,5,1
+1797,SUL,   ,15,NA,c,Cold Safe,C,SUL   ,4,9,1,Upper,11,1,1
+1710,SUL,   ,1,NA,f,Cold Safe,C,SUL   ,4,10,1,Upper,9,5,1
+1401,SIM,   ,9,NA,c,Cold Safe,C,SIM   ,5,1,1,Lower,12,3,2
+1380,SIM,   ,3,NA,f,Cold Safe,C,SIM   ,5,2,1,Lower,12,6,2
+1344,SIM,   ,1,NA,l,Cold Safe,C,SIM   ,5,3,1,Lower,8,4,2
+1377,SIM,   ,3,NA,c,Cold Safe,C,SIM   ,5,4,1,Lower,11,3,2
+1428,SIM,   ,15,NA,f,Cold Safe,C,SIM   ,5,5,1,Lower,12,7,2
+1014,PAN,   ,1,NA,f,Cold Safe,C,PAN   ,5,6,1,Upper,13,4,1
+1053,PAN,   ,3,NA,c,Cold Safe,C,PAN   ,5,7,1,Upper,13,5,1
+1020,PAN,   ,1,NA,l,Cold Safe,C,PAN   ,5,8,1,Upper,10,4,1
+1104,PAN,   ,15,NA,f,Cold Safe,C,PAN   ,5,9,1,Upper,10,7,1
+1077,PAN,   ,9,NA,c,Cold Safe,C,PAN   ,5,10,1,Upper,13,1,1
+540,PAL,   ,9,NA,f,Cold Safe,C,PAL   ,6,1,1,Lower,10,5,2
+480,PAL,   ,1,NA,l,Cold Safe,C,PAL   ,6,2,1,Lower,12,1,2
+561,PAL,   ,15,NA,c,Cold Safe,C,PAL   ,6,3,1,Lower,9,7,2
+516,PAL,   ,3,NA,f,Cold Safe,C,PAL   ,6,4,1,Lower,12,2,2
+513,PAL,   ,3,NA,c,Cold Safe,C,PAL   ,6,5,1,Lower,10,4,2
+1338,SIM,   ,1,NA,f,Cold Safe,C,SIM   ,6,6,1,Upper,13,6,1
+1341,SIM,   ,1,NA,i,Cold Safe,C,SIM   ,6,7,1,Upper,13,7,1
+1335,SIM,   ,1,NA,c,Cold Safe,C,SIM   ,6,8,1,Upper,11,6,1
+1425,SIM,   ,15,NA,c,Cold Safe,C,SIM   ,6,9,1,Upper,12,7,1
+1404,SIM,   ,9,NA,f,Cold Safe,C,SIM   ,6,10,1,Upper,12,3,1
+1518,SIM,PAN,12,3,c,Cold Safe,C,SIMPAN,2,2,2, ,8,1,2
+1482,SIM,PAN,3,12,c,Cold Safe,C,SIMPAN,2,3,2, ,2,1,2
+1446,SIM,PAN,3,3,c,Cold Safe,C,SIMPAN,2,4,2, ,2,7,2
+1458,SIM,PAN,3,6,c,Cold Safe,C,SIMPAN,2,5,2, ,2,5,2
+1470,SIM,PAN,3,9,c,Cold Safe,C,SIMPAN,2,6,2, ,2,6,2
+1494,SIM,PAN,6,3,c,Cold Safe,C,SIMPAN,2,7,2, ,2,3,2
+1506,SIM,PAN,9,3,c,Cold Safe,C,SIMPAN,2,8,2, ,2,2,2
+1314,PSA,PAN,12,3,c,Cold Safe,C,PSAPAN,3,2,2, ,1,6,2
+1302,PSA,PAN,9,3,c,Cold Safe,C,PSAPAN,3,3,2, ,1,1,2
+1278,PSA,PAN,3,12,c,Cold Safe,C,PSAPAN,3,4,2, ,1,3,2
+1242,PSA,PAN,3,3,c,Cold Safe,C,PSAPAN,3,5,2, ,1,4,2
+1290,PSA,PAN,6,3,c,Cold Safe,C,PSAPAN,3,6,2, ,1,2,2
+1254,PSA,PAN,3,6,c,Cold Safe,C,PSAPAN,3,7,2, ,1,5,2
+1266,PSA,PAN,3,9,c,Cold Safe,C,PSAPAN,3,8,2, ,1,7,2
+390,BIR,SUL,3,6,c,Cold Safe,C,BIRSUL,4,2,2, ,3,5,1
+378,BIR,SUL,3,3,c,Cold Safe,C,BIRSUL,4,3,2, ,3,6,1
+426,BIR,SUL,6,3,c,Cold Safe,C,BIRSUL,4,4,2, ,3,7,1
+438,BIR,SUL,9,3,c,Cold Safe,C,BIRSUL,4,5,2, ,3,3,1
+402,BIR,SUL,3,9,c,Cold Safe,C,BIRSUL,4,6,2, ,3,1,1
+450,BIR,SUL,12,3,c,Cold Safe,C,BIRSUL,4,7,2, ,3,2,1
+414,BIR,SUL,3,12,c,Cold Safe,C,BIRSUL,4,8,2, ,3,4,1
+1614,SIM,SUL,3,3,c,Cold Safe,C,SIMSUL,5,2,2, ,6,3,1
+1638,SIM,SUL,3,9,c,Cold Safe,C,SIMSUL,5,3,2, ,6,7,1
+1662,SIM,SUL,6,3,c,Cold Safe,C,SIMSUL,5,4,2, ,6,6,1
+1650,SIM,SUL,3,12,c,Cold Safe,C,SIMSUL,5,5,2, ,6,2,1
+1674,SIM,SUL,9,3,c,Cold Safe,C,SIMSUL,5,6,2, ,6,1,1
+1626,SIM,SUL,3,6,c,Cold Safe,C,SIMSUL,5,7,2, ,6,4,1
+1686,SIM,SUL,12,3,c,Cold Safe,C,SIMSUL,5,8,2, ,6,5,1
+1938,SUL,PSA,3,12,c,Cold Safe,C,SULPSA,6,2,2, ,5,6,1
+1962,SUL,PSA,9,3,c,Cold Safe,C,SULPSA,6,3,2, ,5,3,1
+1926,SUL,PSA,3,9,c,Cold Safe,C,SULPSA,6,4,2, ,9,2,1
+1914,SUL,PSA,3,6,c,Cold Safe,C,SULPSA,6,5,2, ,5,1,1
+1902,SUL,PSA,3,3,c,Cold Safe,C,SULPSA,6,6,2, ,5,7,1
+1974,SUL,PSA,12,3,c,Cold Safe,C,SULPSA,6,7,2, ,5,5,1
+1950,SUL,PSA,6,3,c,Cold Safe,C,SULPSA,6,8,2, ,5,2,1
+1842,SUL,PAN,3,9,c,Cold Safe,C,SULPAN,7,2,2, ,6,2,2
+1878,SUL,PAN,9,3,c,Cold Safe,C,SULPAN,7,3,2, ,6,7,2
+1830,SUL,PAN,3,6,c,Cold Safe,C,SULPAN,7,4,2, ,6,4,2
+1818,SUL,PAN,3,3,c,Cold Safe,C,SULPAN,7,5,2, ,6,3,2
+1866,SUL,PAN,6,3,c,Cold Safe,C,SULPAN,7,6,2, ,6,6,2
+1854,SUL,PAN,3,12,c,Cold Safe,C,SULPAN,7,7,2, ,6,5,2
+1890,SUL,PAN,12,3,c,Cold Safe,C,SULPAN,7,8,2, ,6,1,2
+1590,SIM,PSA,9,3,c,Cold Safe,C,SIMPSA,8,2,2, ,4,2,1
+1578,SIM,PSA,6,3,c,Cold Safe,C,SIMPSA,8,3,2, ,4,7,1
+1554,SIM,PSA,3,9,c,Cold Safe,C,SIMPSA,8,4,2, ,4,4,1
+1602,SIM,PSA,12,3,c,Cold Safe,C,SIMPSA,8,5,2, ,4,6,1
+1566,SIM,PSA,3,12,c,Cold Safe,C,SIMPSA,8,6,2, ,4,5,1
+1530,SIM,PSA,3,3,c,Cold Safe,C,SIMPSA,8,7,2, ,4,3,1
+1542,SIM,PSA,3,6,c,Cold Safe,C,SIMPSA,8,8,2, ,4,1,1
+150,BIR,PAN,3,9,c,Cold Safe,C,BIRPAN,1,2,3, ,8,1,1
+138,BIR,PAN,3,6,c,Cold Safe,C,BIRPAN,1,3,3, ,8,3,1
+174,BIR,PAN,6,3,c,Cold Safe,C,BIRPAN,1,4,3, ,8,7,1
+186,BIR,PAN,9,3,c,Cold Safe,C,BIRPAN,1,5,3, ,8,2,1
+198,BIR,PAN,12,3,c,Cold Safe,C,BIRPAN,1,6,3, ,8,4,1
+126,BIR,PAN,3,3,c,Cold Safe,C,BIRPAN,1,7,3, ,8,6,1
+162,BIR,PAN,3,12,c,Cold Safe,C,BIRPAN,1,8,3, ,8,5,1
+810,PAL,PSA,9,3,c,Cold Safe,C,PALPSA,2,2,3, ,3,4,2
+786,PAL,PSA,3,12,c,Cold Safe,C,PALPSA,2,3,3, ,3,7,2
+774,PAL,PSA,3,9,c,Cold Safe,C,PALPSA,2,4,3, ,3,2,2
+798,PAL,PSA,6,3,c,Cold Safe,C,PALPSA,2,5,3, ,3,5,2
+750,PAL,PSA,3,3,c,Cold Safe,C,PALPSA,2,6,3, ,3,1,2
+762,PAL,PSA,3,6,c,Cold Safe,C,PALPSA,2,7,3, ,3,3,2
+822,PAL,PSA,12,3,c,Cold Safe,C,PALPSA,2,8,3, ,3,6,2
+318,BIR,SIM,3,9,c,Cold Safe,C,BIRSIM,3,2,3, ,7,6,1
+342,BIR,SIM,6,3,c,Cold Safe,C,BIRSIM,3,3,3, ,7,5,1
+366,BIR,SIM,12,3,c,Cold Safe,C,BIRSIM,3,4,3, ,7,3,1
+306,BIR,SIM,3,6,c,Cold Safe,C,BIRSIM,3,5,3, ,7,2,1
+330,BIR,SIM,3,12,c,Cold Safe,C,BIRSIM,3,6,3, ,9,3,1
+294,BIR,SIM,3,3,c,Cold Safe,C,BIRSIM,3,7,3, ,7,7,1
+354,BIR,SIM,9,3,c,Cold Safe,C,BIRSIM,3,8,3, ,7,1,1
+606,PAL,BIR,3,9,c,Cold Safe,C,PALBIR,4,2,3, ,5,3,2
+642,PAL,BIR,9,3,c,Cold Safe,C,PALBIR,4,3,3, ,8,2,2
+654,PAL,BIR,12,3,c,Cold Safe,C,PALBIR,4,4,3, ,5,7,2
+582,PAL,BIR,3,3,c,Cold Safe,C,PALBIR,4,5,3, ,5,6,2
+594,PAL,BIR,3,6,c,Cold Safe,C,PALBIR,4,6,3, ,5,1,2
+618,PAL,BIR,3,12,c,Cold Safe,C,PALBIR,4,7,3, ,5,5,2
+630,PAL,BIR,6,3,c,Cold Safe,C,PALBIR,4,8,3, ,5,2,2
+870,PAL,SIM,3,12,c,Cold Safe,C,PALSIM,5,2,3, ,1,4,1
+834,PAL,SIM,3,3,c,Cold Safe,C,PALSIM,5,3,3, ,1,6,1
+882,PAL,SIM,6,3,c,Cold Safe,C,PALSIM,5,4,3, ,1,3,1
+846,PAL,SIM,3,6,c,Cold Safe,C,PALSIM,5,5,3, ,1,2,1
+906,PAL,SIM,12,3,c,Cold Safe,C,PALSIM,5,6,3, ,1,1,1
+894,PAL,SIM,9,3,c,Cold Safe,C,PALSIM,5,7,3, ,1,5,1
+858,PAL,SIM,3,9,c,Cold Safe,C,PALSIM,5,8,3, ,1,7,1
+918,PAL,SUL,3,3,c,Cold Safe,C,PALSUL,6,2,3, ,2,3,1
+930,PAL,SUL,3,6,c,Cold Safe,C,PALSUL,6,3,3, ,2,1,1
+966,PAL,SUL,6,3,c,Cold Safe,C,PALSUL,6,4,3, ,2,2,1
+990,PAL,SUL,12,3,c,Cold Safe,C,PALSUL,6,5,3, ,2,5,1
+954,PAL,SUL,3,12,c,Cold Safe,C,PALSUL,6,6,3, ,9,1,1
+978,PAL,SUL,9,3,c,Cold Safe,C,PALSUL,6,7,3, ,2,7,1
+942,PAL,SUL,3,9,c,Cold Safe,C,PALSUL,6,8,3, ,2,6,1
+714,PAL,PAN,6,3,c,Cold Safe,C,PALPAN,7,2,3, ,4,7,2
+678,PAL,PAN,3,6,c,Cold Safe,C,PALPAN,7,3,3, ,4,4,2
+690,PAL,PAN,3,9,c,Cold Safe,C,PALPAN,7,4,3, ,4,2,2
+666,PAL,PAN,3,3,c,Cold Safe,C,PALPAN,7,5,3, ,4,5,2
+738,PAL,PAN,12,3,c,Cold Safe,C,PALPAN,7,6,3, ,4,3,2
+702,PAL,PAN,3,12,c,Cold Safe,C,PALPAN,7,7,3, ,4,6,2
+726,PAL,PAN,9,3,c,Cold Safe,C,PALPAN,7,8,3, ,4,1,2
+270,BIR,PSA,9,3,c,Cold Safe,C,BIRPSA,8,2,3, ,8,3,2
+282,BIR,PSA,12,3,c,Cold Safe,C,BIRPSA,8,3,3, ,7,7,2
+258,BIR,PSA,6,3,c,Cold Safe,C,BIRPSA,8,4,3, ,7,5,2
+210,BIR,PSA,3,3,c,Cold Safe,C,BIRPSA,8,5,3, ,7,1,2
+246,BIR,PSA,3,12,c,Cold Safe,C,BIRPSA,8,6,3, ,7,6,2
+222,BIR,PSA,3,6,c,Cold Safe,C,BIRPSA,8,7,3, ,7,2,2
+234,BIR,PSA,3,9,c,Cold Safe,C,BIRPSA,8,8,3, ,7,3,2
+87,BIR,   ,9,NA,c,Hot Para,C,BIR   ,1,1,1,Lower,12,6,2
+30,BIR,   ,1,NA,f,Hot Para,C,BIR   ,1,2,1,Lower,8,5,2
+63,BIR,   ,3,NA,c,Hot Para,C,BIR   ,1,3,1,Lower,8,4,2
+111,BIR,   ,15,NA,c,Hot Para,C,BIR   ,1,4,1,Lower,10,4,2
+90,BIR,   ,9,NA,f,Hot Para,C,BIR   ,1,5,1,Lower,10,2,2
+1407,SIM,   ,9,NA,c,Hot Para,C,SIM   ,1,6,1,Upper,10,7,1
+1434,SIM,   ,15,NA,f,Hot Para,C,SIM   ,1,7,1,Upper,10,6,1
+1431,SIM,   ,15,NA,c,Hot Para,C,SIM   ,1,8,1,Upper,9,6,1
+1353,SIM,   ,1,NA,i,Hot Para,C,SIM   ,1,9,1,Upper,10,5,1
+1347,SIM,   ,1,NA,c,Hot Para,C,SIM   ,1,10,1,Upper,12,5,1
+1152,PSA,   ,1,NA,l,Hot Para,C,PSA   ,2,1,1,Lower,10,1,2
+1143,PSA,   ,1,NA,c,Hot Para,C,PSA   ,2,2,1,Lower,8,7,2
+1227,PSA,   ,15,NA,c,Hot Para,C,PSA   ,2,3,1,Lower,12,4,2
+1206,PSA,   ,9,NA,f,Hot Para,C,PSA   ,2,4,1,Lower,8,6,2
+1230,PSA,   ,15,NA,f,Hot Para,C,PSA   ,2,5,1,Lower,9,5,2
+114,BIR,   ,15,NA,f,Hot Para,C,BIR   ,2,6,1,Upper,13,7,1
+36,BIR,   ,1,NA,l,Hot Para,C,BIR   ,2,7,1,Upper,12,2,1
+27,BIR,   ,1,NA,c,Hot Para,C,BIR   ,2,8,1,Upper,13,3,1
+66,BIR,   ,3,NA,f,Hot Para,C,BIR   ,2,9,1,Upper,11,5,1
+33,BIR,   ,1,NA,i,Hot Para,C,BIR   ,2,10,1,Upper,13,2,1
+492,PAL,   ,1,NA,l,Hot Para,C,PAL   ,3,1,1,Lower,9,3,2
+570,PAL,   ,15,NA,f,Hot Para,C,PAL   ,3,2,1,Lower,9,2,2
+567,PAL,   ,15,NA,c,Hot Para,C,PAL   ,3,3,1,Lower,12,2,2
+546,PAL,   ,9,NA,f,Hot Para,C,PAL   ,3,4,1,Lower,11,7,2
+483,PAL,   ,1,NA,c,Hot Para,C,PAL   ,3,5,1,Lower,10,3,2
+1146,PSA,   ,1,NA,f,Hot Para,C,PSA   ,3,6,1,Upper,10,2,1
+1179,PSA,   ,3,NA,c,Hot Para,C,PSA   ,3,7,1,Upper,13,4,1
+1149,PSA,   ,1,NA,i,Hot Para,C,PSA   ,3,8,1,Upper,13,6,1
+1182,PSA,   ,3,NA,f,Hot Para,C,PSA   ,3,9,1,Upper,11,6,1
+1203,PSA,   ,9,NA,c,Hot Para,C,PSA   ,3,10,1,Upper,9,5,1
+1062,PAN,   ,3,NA,f,Hot Para,C,PAN   ,4,1,1,Lower,12,3,2
+1086,PAN,   ,9,NA,f,Hot Para,C,PAN   ,4,2,1,Lower,10,7,2
+1029,PAN,   ,1,NA,i,Hot Para,C,PAN   ,4,3,1,Lower,12,7,2
+1110,PAN,   ,15,NA,f,Hot Para,C,PAN   ,4,4,1,Lower,11,2,2
+1032,PAN,   ,1,NA,l,Hot Para,C,PAN   ,4,5,1,Lower,9,7,2
+1026,PAN,   ,1,NA,f,Hot Para,C,PAN   ,4,6,1,Upper,13,5,1
+1083,PAN,   ,9,NA,c,Hot Para,C,PAN   ,4,7,1,Upper,13,1,1
+1107,PAN,   ,15,NA,c,Hot Para,C,PAN   ,4,8,1,Upper,9,7,1
+1059,PAN,   ,3,NA,c,Hot Para,C,PAN   ,4,9,1,Upper,11,7,1
+1023,PAN,   ,1,NA,c,Hot Para,C,PAN   ,4,10,1,Upper,11,4,1
+1779,SUL,   ,9,NA,c,Hot Para,C,SUL   ,5,1,1,Lower,12,5,2
+1782,SUL,   ,9,NA,f,Hot Para,C,SUL   ,5,2,1,Lower,12,1,2
+1725,SUL,   ,1,NA,i,Hot Para,C,SUL   ,5,3,1,Lower,11,6,2
+1728,SUL,   ,1,NA,l,Hot Para,C,SUL   ,5,4,1,Lower,10,6,2
+1719,SUL,   ,1,NA,c,Hot Para,C,SUL   ,5,5,1,Lower,11,5,2
+1803,SUL,   ,15,NA,c,Hot Para,C,SUL   ,5,6,1,Upper,11,2,1
+1722,SUL,   ,1,NA,f,Hot Para,C,SUL   ,5,7,1,Upper,10,3,1
+1758,SUL,   ,3,NA,f,Hot Para,C,SUL   ,5,8,1,Upper,12,1,1
+1806,SUL,   ,15,NA,f,Hot Para,C,SUL   ,5,9,1,Upper,12,7,1
+1755,SUL,   ,3,NA,c,Hot Para,C,SUL   ,5,10,1,Upper,12,3,1
+1350,SIM,   ,1,NA,f,Hot Para,C,SIM   ,6,1,1,Lower,9,6,2
+1386,SIM,   ,3,NA,f,Hot Para,C,SIM   ,6,2,1,Lower,9,1,2
+1410,SIM,   ,9,NA,f,Hot Para,C,SIM   ,6,3,1,Lower,11,1,2
+1356,SIM,   ,1,NA,l,Hot Para,C,SIM   ,6,4,1,Lower,10,5,2
+1383,SIM,   ,3,NA,c,Hot Para,C,SIM   ,6,5,1,Lower,11,3,2
+522,PAL,   ,3,NA,f,Hot Para,C,PAL   ,6,6,1,Upper,12,6,1
+486,PAL,   ,1,NA,f,Hot Para,C,PAL   ,6,7,1,Upper,11,1,1
+489,PAL,   ,1,NA,i,Hot Para,C,PAL   ,6,8,1,Upper,10,4,1
+519,PAL,   ,3,NA,c,Hot Para,C,PAL   ,6,9,1,Upper,11,3,1
+543,PAL,   ,9,NA,c,Hot Para,C,PAL   ,6,10,1,Upper,10,1,1
+261,BIR,PSA,6,3,c,Hot Para,C,BIRPSA,2,2,2, ,8,3,2
+285,BIR,PSA,12,3,c,Hot Para,C,BIRPSA,2,3,2, ,7,2,2
+273,BIR,PSA,9,3,c,Hot Para,C,BIRPSA,2,4,2, ,7,1,2
+237,BIR,PSA,3,9,c,Hot Para,C,BIRPSA,2,5,2, ,7,6,2
+213,BIR,PSA,3,3,c,Hot Para,C,BIRPSA,2,6,2, ,7,5,2
+225,BIR,PSA,3,6,c,Hot Para,C,BIRPSA,2,7,2, ,7,7,2
+249,BIR,PSA,3,12,c,Hot Para,C,BIRPSA,2,8,2, ,7,3,2
+741,PAL,PAN,12,3,c,Hot Para,C,PALPAN,3,2,2, ,3,7,1
+729,PAL,PAN,9,3,c,Hot Para,C,PALPAN,3,3,2, ,3,1,1
+693,PAL,PAN,3,9,c,Hot Para,C,PALPAN,3,4,2, ,3,5,1
+717,PAL,PAN,6,3,c,Hot Para,C,PALPAN,3,5,2, ,3,6,1
+669,PAL,PAN,3,3,c,Hot Para,C,PALPAN,3,6,2, ,3,2,1
+705,PAL,PAN,3,12,c,Hot Para,C,PALPAN,3,7,2, ,3,4,1
+681,PAL,PAN,3,6,c,Hot Para,C,PALPAN,3,8,2, ,3,3,1
+1509,SIM,PAN,9,3,c,Hot Para,C,SIMPAN,4,2,2, ,8,2,1
+1473,SIM,PAN,3,9,c,Hot Para,C,SIMPAN,4,3,2, ,8,4,1
+1521,SIM,PAN,12,3,c,Hot Para,C,SIMPAN,4,4,2, ,8,5,1
+1461,SIM,PAN,3,6,c,Hot Para,C,SIMPAN,4,5,2, ,8,6,1
+1485,SIM,PAN,3,12,c,Hot Para,C,SIMPAN,4,6,2, ,8,1,1
+1449,SIM,PAN,3,3,c,Hot Para,C,SIMPAN,4,7,2, ,8,3,1
+1497,SIM,PAN,6,3,c,Hot Para,C,SIMPAN,4,8,2, ,8,7,1
+897,PAL,SIM,9,3,c,Hot Para,C,PALSIM,5,2,2, ,2,1,1
+861,PAL,SIM,3,9,c,Hot Para,C,PALSIM,5,3,2, ,9,1,1
+909,PAL,SIM,12,3,c,Hot Para,C,PALSIM,5,4,2, ,2,6,1
+885,PAL,SIM,6,3,c,Hot Para,C,PALSIM,5,5,2, ,2,3,1
+837,PAL,SIM,3,3,c,Hot Para,C,PALSIM,5,6,2, ,2,2,1
+849,PAL,SIM,3,6,c,Hot Para,C,PALSIM,5,7,2, ,2,7,1
+873,PAL,SIM,3,12,c,Hot Para,C,PALSIM,5,8,2, ,2,5,1
+1833,SUL,PAN,3,6,c,Hot Para,C,SULPAN,6,2,2, ,2,2,2
+1845,SUL,PAN,3,9,c,Hot Para,C,SULPAN,6,3,2, ,2,6,2
+1881,SUL,PAN,9,3,c,Hot Para,C,SULPAN,6,4,2, ,2,5,2
+1869,SUL,PAN,6,3,c,Hot Para,C,SULPAN,6,5,2, ,2,1,2
+1857,SUL,PAN,3,12,c,Hot Para,C,SULPAN,6,6,2, ,2,3,2
+1893,SUL,PAN,12,3,c,Hot Para,C,SULPAN,6,7,2, ,8,1,2
+1821,SUL,PAN,3,3,c,Hot Para,C,SULPAN,6,8,2, ,2,7,2
+645,PAL,BIR,9,3,c,Hot Para,C,PALBIR,7,2,2, ,9,3,1
+657,PAL,BIR,12,3,c,Hot Para,C,PALBIR,7,3,2, ,7,6,1
+633,PAL,BIR,6,3,c,Hot Para,C,PALBIR,7,4,2, ,7,2,1
+597,PAL,BIR,3,6,c,Hot Para,C,PALBIR,7,5,2, ,7,5,1
+621,PAL,BIR,3,12,c,Hot Para,C,PALBIR,7,6,2, ,7,3,1
+585,PAL,BIR,3,3,c,Hot Para,C,PALBIR,7,7,2, ,7,1,1
+609,PAL,BIR,3,9,c,Hot Para,C,PALBIR,7,8,2, ,7,7,1
+141,BIR,PAN,3,6,c,Hot Para,C,BIRPAN,8,2,2, ,1,2,1
+201,BIR,PAN,12,3,c,Hot Para,C,BIRPAN,8,3,2, ,1,4,1
+153,BIR,PAN,3,9,c,Hot Para,C,BIRPAN,8,4,2, ,1,1,1
+129,BIR,PAN,3,3,c,Hot Para,C,BIRPAN,8,5,2, ,1,7,1
+165,BIR,PAN,3,12,c,Hot Para,C,BIRPAN,8,6,2, ,1,3,1
+189,BIR,PAN,9,3,c,Hot Para,C,BIRPAN,8,7,2, ,1,5,1
+177,BIR,PAN,6,3,c,Hot Para,C,BIRPAN,8,8,2, ,1,6,1
+825,PAL,PSA,12,3,c,Hot Para,C,PALPSA,1,2,3, ,6,4,1
+753,PAL,PSA,3,3,c,Hot Para,C,PALPSA,1,3,3, ,6,6,1
+801,PAL,PSA,6,3,c,Hot Para,C,PALPSA,1,4,3, ,6,2,1
+765,PAL,PSA,3,6,c,Hot Para,C,PALPSA,1,5,3, ,6,5,1
+813,PAL,PSA,9,3,c,Hot Para,C,PALPSA,1,6,3, ,6,1,1
+789,PAL,PSA,3,12,c,Hot Para,C,PALPSA,1,7,3, ,6,7,1
+777,PAL,PSA,3,9,c,Hot Para,C,PALPSA,1,8,3, ,6,3,1
+957,PAL,SUL,3,12,c,Hot Para,C,PALSUL,2,2,3, ,5,6,2
+933,PAL,SUL,3,6,c,Hot Para,C,PALSUL,2,3,3, ,8,2,2
+981,PAL,SUL,9,3,c,Hot Para,C,PALSUL,2,4,3, ,5,5,2
+993,PAL,SUL,12,3,c,Hot Para,C,PALSUL,2,5,3, ,5,7,2
+969,PAL,SUL,6,3,c,Hot Para,C,PALSUL,2,6,3, ,5,1,2
+945,PAL,SUL,3,9,c,Hot Para,C,PALSUL,2,7,3, ,5,2,2
+921,PAL,SUL,3,3,c,Hot Para,C,PALSUL,2,8,3, ,5,3,2
+321,BIR,SIM,3,9,c,Hot Para,C,BIRSIM,3,2,3, ,3,6,2
+345,BIR,SIM,6,3,c,Hot Para,C,BIRSIM,3,3,3, ,3,5,2
+297,BIR,SIM,3,3,c,Hot Para,C,BIRSIM,3,4,3, ,3,7,2
+369,BIR,SIM,12,3,c,Hot Para,C,BIRSIM,3,5,3, ,3,2,2
+333,BIR,SIM,3,12,c,Hot Para,C,BIRSIM,3,6,3, ,3,4,2
+357,BIR,SIM,9,3,c,Hot Para,C,BIRSIM,3,7,3, ,3,1,2
+309,BIR,SIM,3,6,c,Hot Para,C,BIRSIM,3,8,3, ,3,3,2
+1317,PSA,PAN,12,3,c,Hot Para,C,PSAPAN,4,2,3, ,5,2,1
+1281,PSA,PAN,3,12,c,Hot Para,C,PSAPAN,4,3,3, ,9,2,1
+1293,PSA,PAN,6,3,c,Hot Para,C,PSAPAN,4,4,3, ,5,6,1
+1269,PSA,PAN,3,9,c,Hot Para,C,PSAPAN,4,5,3, ,5,3,1
+1245,PSA,PAN,3,3,c,Hot Para,C,PSAPAN,4,6,3, ,5,1,1
+1257,PSA,PAN,3,6,c,Hot Para,C,PSAPAN,4,7,3, ,5,5,1
+1305,PSA,PAN,9,3,c,Hot Para,C,PSAPAN,4,8,3, ,5,7,1
+417,BIR,SUL,3,12,c,Hot Para,C,BIRSUL,5,2,3, ,4,5,1
+405,BIR,SUL,3,9,c,Hot Para,C,BIRSUL,5,3,3, ,4,6,1
+441,BIR,SUL,9,3,c,Hot Para,C,BIRSUL,5,4,3, ,4,7,1
+381,BIR,SUL,3,3,c,Hot Para,C,BIRSUL,5,5,3, ,4,2,1
+453,BIR,SUL,12,3,c,Hot Para,C,BIRSUL,5,6,3, ,4,4,1
+429,BIR,SUL,6,3,c,Hot Para,C,BIRSUL,5,7,3, ,4,3,1
+393,BIR,SUL,3,6,c,Hot Para,C,BIRSUL,5,8,3, ,4,1,1
+1653,SIM,SUL,3,12,c,Hot Para,C,SIMSUL,6,2,3, ,6,6,2
+1677,SIM,SUL,9,3,c,Hot Para,C,SIMSUL,6,3,3, ,6,2,2
+1629,SIM,SUL,3,6,c,Hot Para,C,SIMSUL,6,4,3, ,6,3,2
+1665,SIM,SUL,6,3,c,Hot Para,C,SIMSUL,6,5,3, ,6,1,2
+1641,SIM,SUL,3,9,c,Hot Para,C,SIMSUL,6,6,3, ,6,5,2
+1689,SIM,SUL,12,3,c,Hot Para,C,SIMSUL,6,7,3, ,6,4,2
+1617,SIM,SUL,3,3,c,Hot Para,C,SIMSUL,6,8,3, ,6,7,2
+1917,SUL,PSA,3,6,c,Hot Para,C,SULPSA,7,2,3, ,4,6,2
+1941,SUL,PSA,3,12,c,Hot Para,C,SULPSA,7,3,3, ,4,7,2
+1929,SUL,PSA,3,9,c,Hot Para,C,SULPSA,7,4,3, ,4,2,2
+1965,SUL,PSA,9,3,c,Hot Para,C,SULPSA,7,5,3, ,4,3,2
+1977,SUL,PSA,12,3,c,Hot Para,C,SULPSA,7,6,3, ,4,1,2
+1905,SUL,PSA,3,3,c,Hot Para,C,SULPSA,7,7,3, ,4,4,2
+1953,SUL,PSA,6,3,c,Hot Para,C,SULPSA,7,8,3, ,4,5,2
+1569,SIM,PSA,3,12,c,Hot Para,C,SIMPSA,8,2,3, ,1,1,2
+1545,SIM,PSA,3,6,c,Hot Para,C,SIMPSA,8,3,3, ,1,6,2
+1593,SIM,PSA,9,3,c,Hot Para,C,SIMPSA,8,4,3, ,1,7,2
+1581,SIM,PSA,6,3,c,Hot Para,C,SIMPSA,8,5,3, ,1,4,2
+1557,SIM,PSA,3,9,c,Hot Para,C,SIMPSA,8,6,3, ,1,5,2
+1605,SIM,PSA,12,3,c,Hot Para,C,SIMPSA,8,7,3, ,1,3,2
+1533,SIM,PSA,3,3,c,Hot Para,C,SIMPSA,8,8,3, ,1,2,2
+1389,SIM,   ,3,NA,c,Hot Safe,C,SIM   ,1,1,1,Lower,11,7,2
+1416,SIM,   ,9,NA,f,Hot Safe,C,SIM   ,1,2,1,Lower,11,3,2
+1440,SIM,   ,15,NA,f,Hot Safe,C,SIM   ,1,3,1,Lower,10,1,2
+1437,SIM,   ,15,NA,c,Hot Safe,C,SIM   ,1,4,1,Lower,9,5,2
+1392,SIM,   ,3,NA,f,Hot Safe,C,SIM   ,1,5,1,Lower,12,7,2
+1164,PSA,   ,1,NA,l,Hot Safe,C,PSA   ,1,6,1,Upper,10,7,1
+1209,PSA,   ,9,NA,c,Hot Safe,C,PSA   ,1,7,1,Upper,10,5,1
+1158,PSA,   ,1,NA,f,Hot Safe,C,PSA   ,1,8,1,Upper,10,2,1
+1155,PSA,   ,1,NA,c,Hot Safe,C,PSA   ,1,9,1,Upper,10,4,1
+1236,PSA,   ,15,NA,f,Hot Safe,C,PSA   ,1,10,1,Upper,11,2,1
+552,PAL,   ,9,NA,f,Hot Safe,C,PAL   ,2,1,1,Lower,8,7,2
+501,PAL,   ,1,NA,i,Hot Safe,C,PAL   ,2,2,1,Lower,12,1,2
+525,PAL,   ,3,NA,c,Hot Safe,C,PAL   ,2,3,1,Lower,12,4,2
+504,PAL,   ,1,NA,l,Hot Safe,C,PAL   ,2,4,1,Lower,12,3,2
+573,PAL,   ,15,NA,c,Hot Safe,C,PAL   ,2,5,1,Lower,10,6,2
+1809,SUL,   ,15,NA,c,Hot Safe,C,SUL   ,2,6,1,Upper,13,7,1
+1761,SUL,   ,3,NA,c,Hot Safe,C,SUL   ,2,7,1,Upper,13,5,1
+1812,SUL,   ,15,NA,f,Hot Safe,C,SUL   ,2,8,1,Upper,13,4,1
+1764,SUL,   ,3,NA,f,Hot Safe,C,SUL   ,2,9,1,Upper,11,5,1
+1737,SUL,   ,1,NA,i,Hot Safe,C,SUL   ,2,10,1,Upper,12,3,1
+72,BIR,   ,3,NA,f,Hot Safe,C,BIR   ,3,1,1,Lower,9,3,2
+69,BIR,   ,3,NA,c,Hot Safe,C,BIR   ,3,2,1,Lower,10,7,2
+93,BIR,   ,9,NA,c,Hot Safe,C,BIR   ,3,3,1,Lower,12,2,2
+48,BIR,   ,1,NA,l,Hot Safe,C,BIR   ,3,4,1,Lower,10,5,2
+45,BIR,   ,1,NA,i,Hot Safe,C,BIR   ,3,5,1,Lower,9,2,2
+1044,PAN,   ,1,NA,l,Hot Safe,C,PAN   ,3,6,1,Upper,13,1,1
+1089,PAN,   ,9,NA,c,Hot Safe,C,PAN   ,3,7,1,Upper,13,6,1
+1041,PAN,   ,1,NA,i,Hot Safe,C,PAN   ,3,8,1,Upper,12,6,1
+1038,PAN,   ,1,NA,f,Hot Safe,C,PAN   ,3,9,1,Upper,13,2,1
+1092,PAN,   ,9,NA,f,Hot Safe,C,PAN   ,3,10,1,Upper,12,1,1
+1731,SUL,   ,1,NA,c,Hot Safe,C,SUL   ,4,1,1,Lower,11,2,2
+1734,SUL,   ,1,NA,f,Hot Safe,C,SUL   ,4,2,1,Lower,10,2,2
+1740,SUL,   ,1,NA,l,Hot Safe,C,SUL   ,4,3,1,Lower,8,4,2
+1788,SUL,   ,9,NA,f,Hot Safe,C,SUL   ,4,4,1,Lower,10,3,2
+1785,SUL,   ,9,NA,c,Hot Safe,C,SUL   ,4,5,1,Lower,8,5,2
+120,BIR,   ,15,NA,f,Hot Safe,C,BIR   ,4,6,1,Upper,12,5,1
+96,BIR,   ,9,NA,f,Hot Safe,C,BIR   ,4,7,1,Upper,11,6,1
+39,BIR,   ,1,NA,c,Hot Safe,C,BIR   ,4,8,1,Upper,11,7,1
+117,BIR,   ,15,NA,c,Hot Safe,C,BIR   ,4,9,1,Upper,10,6,1
+42,BIR,   ,1,NA,f,Hot Safe,C,BIR   ,4,10,1,Upper,11,1,1
+1185,PSA,   ,3,NA,c,Hot Safe,C,PSA   ,5,1,1,Lower,11,1,2
+1212,PSA,   ,9,NA,f,Hot Safe,C,PSA   ,5,2,1,Lower,12,5,2
+1188,PSA,   ,3,NA,f,Hot Safe,C,PSA   ,5,3,1,Lower,9,7,2
+1161,PSA,   ,1,NA,i,Hot Safe,C,PSA   ,5,4,1,Lower,11,5,2
+1233,PSA,   ,15,NA,c,Hot Safe,C,PSA   ,5,5,1,Lower,9,1,2
+1362,SIM,   ,1,NA,f,Hot Safe,C,SIM   ,5,6,1,Upper,12,2,1
+1413,SIM,   ,9,NA,c,Hot Safe,C,SIM   ,5,7,1,Upper,9,5,1
+1365,SIM,   ,1,NA,i,Hot Safe,C,SIM   ,5,8,1,Upper,9,6,1
+1359,SIM,   ,1,NA,c,Hot Safe,C,SIM   ,5,9,1,Upper,11,3,1
+1368,SIM,   ,1,NA,l,Hot Safe,C,SIM   ,5,10,1,Upper,13,3,1
+1068,PAN,   ,3,NA,f,Hot Safe,C,PAN   ,6,1,1,Lower,11,6,2
+1065,PAN,   ,3,NA,c,Hot Safe,C,PAN   ,6,2,1,Lower,9,6,2
+1113,PAN,   ,15,NA,c,Hot Safe,C,PAN   ,6,3,1,Lower,8,6,2
+1035,PAN,   ,1,NA,c,Hot Safe,C,PAN   ,6,4,1,Lower,12,6,2
+1116,PAN,   ,15,NA,f,Hot Safe,C,PAN   ,6,5,1,Lower,10,4,2
+498,PAL,   ,1,NA,f,Hot Safe,C,PAL   ,6,6,1,Upper,10,1,1
+495,PAL,   ,1,NA,c,Hot Safe,C,PAL   ,6,7,1,Upper,10,3,1
+528,PAL,   ,3,NA,f,Hot Safe,C,PAL   ,6,8,1,Upper,12,7,1
+576,PAL,   ,15,NA,f,Hot Safe,C,PAL   ,6,9,1,Upper,9,7,1
+549,PAL,   ,9,NA,c,Hot Safe,C,PAL   ,6,10,1,Upper,11,4,1
+1560,SIM,PSA,3,9,c,Hot Safe,C,SIMPSA,2,2,2, ,3,1,1
+1536,SIM,PSA,3,3,c,Hot Safe,C,SIMPSA,2,3,2, ,3,2,1
+1584,SIM,PSA,6,3,c,Hot Safe,C,SIMPSA,2,4,2, ,3,3,1
+1608,SIM,PSA,12,3,c,Hot Safe,C,SIMPSA,2,5,2, ,3,7,1
+1596,SIM,PSA,9,3,c,Hot Safe,C,SIMPSA,2,6,2, ,3,6,1
+1548,SIM,PSA,3,6,c,Hot Safe,C,SIMPSA,2,7,2, ,3,5,1
+1572,SIM,PSA,3,12,c,Hot Safe,C,SIMPSA,2,8,2, ,3,4,1
+864,PAL,SIM,3,9,c,Hot Safe,C,PALSIM,3,2,2, ,3,1,2
+852,PAL,SIM,3,6,c,Hot Safe,C,PALSIM,3,3,2, ,3,4,2
+840,PAL,SIM,3,3,c,Hot Safe,C,PALSIM,3,4,2, ,3,6,2
+912,PAL,SIM,12,3,c,Hot Safe,C,PALSIM,3,5,2, ,3,2,2
+900,PAL,SIM,9,3,c,Hot Safe,C,PALSIM,3,6,2, ,3,5,2
+888,PAL,SIM,6,3,c,Hot Safe,C,PALSIM,3,7,2, ,3,7,2
+876,PAL,SIM,3,12,c,Hot Safe,C,PALSIM,3,8,2, ,3,3,2
+1944,SUL,PSA,3,12,c,Hot Safe,C,SULPSA,4,2,2, ,2,2,2
+1968,SUL,PSA,9,3,c,Hot Safe,C,SULPSA,4,3,2, ,2,1,2
+1956,SUL,PSA,6,3,c,Hot Safe,C,SULPSA,4,4,2, ,8,1,2
+1908,SUL,PSA,3,3,c,Hot Safe,C,SULPSA,4,5,2, ,2,6,2
+1920,SUL,PSA,3,6,c,Hot Safe,C,SULPSA,4,6,2, ,2,3,2
+1932,SUL,PSA,3,9,c,Hot Safe,C,SULPSA,4,7,2, ,2,7,2
+1980,SUL,PSA,12,3,c,Hot Safe,C,SULPSA,4,8,2, ,2,5,2
+600,PAL,BIR,3,6,c,Hot Safe,C,PALBIR,5,2,2, ,6,2,2
+624,PAL,BIR,3,12,c,Hot Safe,C,PALBIR,5,3,2, ,6,6,2
+660,PAL,BIR,12,3,c,Hot Safe,C,PALBIR,5,4,2, ,6,3,2
+612,PAL,BIR,3,9,c,Hot Safe,C,PALBIR,5,5,2, ,6,5,2
+588,PAL,BIR,3,3,c,Hot Safe,C,PALBIR,5,6,2, ,6,4,2
+636,PAL,BIR,6,3,c,Hot Safe,C,PALBIR,5,7,2, ,6,1,2
+648,PAL,BIR,9,3,c,Hot Safe,C,PALBIR,5,8,2, ,6,7,2
+1272,PSA,PAN,3,9,c,Hot Safe,C,PSAPAN,6,2,2, ,6,1,1
+1320,PSA,PAN,12,3,c,Hot Safe,C,PSAPAN,6,3,2, ,6,4,1
+1260,PSA,PAN,3,6,c,Hot Safe,C,PSAPAN,6,4,2, ,6,6,1
+1308,PSA,PAN,9,3,c,Hot Safe,C,PSAPAN,6,5,2, ,6,5,1
+1296,PSA,PAN,6,3,c,Hot Safe,C,PSAPAN,6,6,2, ,6,7,1
+1284,PSA,PAN,3,12,c,Hot Safe,C,PSAPAN,6,7,2, ,6,2,1
+1248,PSA,PAN,3,3,c,Hot Safe,C,PSAPAN,6,8,2, ,6,3,1
+996,PAL,SUL,12,3,c,Hot Safe,C,PALSUL,7,2,2, ,5,6,1
+960,PAL,SUL,3,12,c,Hot Safe,C,PALSUL,7,3,2, ,5,1,1
+984,PAL,SUL,9,3,c,Hot Safe,C,PALSUL,7,4,2, ,5,2,1
+924,PAL,SUL,3,3,c,Hot Safe,C,PALSUL,7,5,2, ,9,2,1
+936,PAL,SUL,3,6,c,Hot Safe,C,PALSUL,7,6,2, ,5,3,1
+948,PAL,SUL,3,9,c,Hot Safe,C,PALSUL,7,7,2, ,5,5,1
+972,PAL,SUL,6,3,c,Hot Safe,C,PALSUL,7,8,2, ,5,7,1
+264,BIR,PSA,6,3,c,Hot Safe,C,BIRPSA,8,2,2, ,7,5,2
+276,BIR,PSA,9,3,c,Hot Safe,C,BIRPSA,8,3,2, ,7,3,2
+240,BIR,PSA,3,9,c,Hot Safe,C,BIRPSA,8,4,2, ,7,2,2
+228,BIR,PSA,3,6,c,Hot Safe,C,BIRPSA,8,5,2, ,8,3,2
+252,BIR,PSA,3,12,c,Hot Safe,C,BIRPSA,8,6,2, ,7,7,2
+216,BIR,PSA,3,3,c,Hot Safe,C,BIRPSA,8,7,2, ,7,6,2
+288,BIR,PSA,12,3,c,Hot Safe,C,BIRPSA,8,8,2, ,7,1,2
+1524,SIM,PAN,12,3,c,Hot Safe,C,SIMPAN,1,2,3, ,1,6,1
+1512,SIM,PAN,9,3,c,Hot Safe,C,SIMPAN,1,3,3, ,1,7,1
+1500,SIM,PAN,6,3,c,Hot Safe,C,SIMPAN,1,4,3, ,1,3,1
+1452,SIM,PAN,3,3,c,Hot Safe,C,SIMPAN,1,5,3, ,1,2,1
+1488,SIM,PAN,3,12,c,Hot Safe,C,SIMPAN,1,6,3, ,1,5,1
+1464,SIM,PAN,3,6,c,Hot Safe,C,SIMPAN,1,7,3, ,1,4,1
+1476,SIM,PAN,3,9,c,Hot Safe,C,SIMPAN,1,8,3, ,1,1,1
+708,PAL,PAN,3,12,c,Hot Safe,C,PALPAN,2,2,3, ,8,3,1
+684,PAL,PAN,3,6,c,Hot Safe,C,PALPAN,2,3,3, ,8,1,1
+732,PAL,PAN,9,3,c,Hot Safe,C,PALPAN,2,4,3, ,8,7,1
+696,PAL,PAN,3,9,c,Hot Safe,C,PALPAN,2,5,3, ,8,4,1
+744,PAL,PAN,12,3,c,Hot Safe,C,PALPAN,2,6,3, ,8,5,1
+720,PAL,PAN,6,3,c,Hot Safe,C,PALPAN,2,7,3, ,8,6,1
+672,PAL,PAN,3,3,c,Hot Safe,C,PALPAN,2,8,3, ,8,2,1
+1632,SIM,SUL,3,6,c,Hot Safe,C,SIMSUL,3,2,3, ,4,1,1
+1692,SIM,SUL,12,3,c,Hot Safe,C,SIMSUL,3,3,3, ,4,5,1
+1668,SIM,SUL,6,3,c,Hot Safe,C,SIMSUL,3,4,3, ,4,3,1
+1656,SIM,SUL,3,12,c,Hot Safe,C,SIMSUL,3,5,3, ,4,2,1
+1680,SIM,SUL,9,3,c,Hot Safe,C,SIMSUL,3,6,3, ,4,4,1
+1644,SIM,SUL,3,9,c,Hot Safe,C,SIMSUL,3,7,3, ,4,6,1
+1620,SIM,SUL,3,3,c,Hot Safe,C,SIMSUL,3,8,3, ,4,7,1
+792,PAL,PSA,3,12,c,Hot Safe,C,PALPSA,4,2,3, ,1,4,2
+780,PAL,PSA,3,9,c,Hot Safe,C,PALPSA,4,3,3, ,1,3,2
+804,PAL,PSA,6,3,c,Hot Safe,C,PALPSA,4,4,3, ,1,7,2
+768,PAL,PSA,3,6,c,Hot Safe,C,PALPSA,4,5,3, ,1,6,2
+756,PAL,PSA,3,3,c,Hot Safe,C,PALPSA,4,6,3, ,1,5,2
+828,PAL,PSA,12,3,c,Hot Safe,C,PALPSA,4,7,3, ,1,2,2
+816,PAL,PSA,9,3,c,Hot Safe,C,PALPSA,4,8,3, ,1,1,2
+324,BIR,SIM,3,9,c,Hot Safe,C,BIRSIM,5,2,3, ,2,7,1
+360,BIR,SIM,9,3,c,Hot Safe,C,BIRSIM,5,3,3, ,9,1,1
+300,BIR,SIM,3,3,c,Hot Safe,C,BIRSIM,5,4,3, ,2,3,1
+312,BIR,SIM,3,6,c,Hot Safe,C,BIRSIM,5,5,3, ,2,5,1
+372,BIR,SIM,12,3,c,Hot Safe,C,BIRSIM,5,6,3, ,2,1,1
+348,BIR,SIM,6,3,c,Hot Safe,C,BIRSIM,5,7,3, ,2,6,1
+336,BIR,SIM,3,12,c,Hot Safe,C,BIRSIM,5,8,3, ,2,2,1
+192,BIR,PAN,9,3,c,Hot Safe,C,BIRPAN,6,2,3, ,4,1,2
+132,BIR,PAN,3,3,c,Hot Safe,C,BIRPAN,6,3,3, ,4,5,2
+204,BIR,PAN,12,3,c,Hot Safe,C,BIRPAN,6,4,3, ,4,6,2
+144,BIR,PAN,3,6,c,Hot Safe,C,BIRPAN,6,5,3, ,4,4,2
+180,BIR,PAN,6,3,c,Hot Safe,C,BIRPAN,6,6,3, ,4,7,2
+156,BIR,PAN,3,9,c,Hot Safe,C,BIRPAN,6,7,3, ,4,3,2
+168,BIR,PAN,3,12,c,Hot Safe,C,BIRPAN,6,8,3, ,4,2,2
+1824,SUL,PAN,3,3,c,Hot Safe,C,SULPAN,7,2,3, ,9,3,1
+1884,SUL,PAN,9,3,c,Hot Safe,C,SULPAN,7,3,3, ,7,5,1
+1860,SUL,PAN,3,12,c,Hot Safe,C,SULPAN,7,4,3, ,7,2,1
+1848,SUL,PAN,3,9,c,Hot Safe,C,SULPAN,7,5,3, ,7,3,1
+1872,SUL,PAN,6,3,c,Hot Safe,C,SULPAN,7,6,3, ,7,6,1
+1836,SUL,PAN,3,6,c,Hot Safe,C,SULPAN,7,7,3, ,7,1,1
+1896,SUL,PAN,12,3,c,Hot Safe,C,SULPAN,7,8,3, ,7,7,1
+432,BIR,SUL,6,3,c,Hot Safe,C,BIRSUL,8,2,3, ,5,3,2
+396,BIR,SUL,3,6,c,Hot Safe,C,BIRSUL,8,3,3, ,5,7,2
+444,BIR,SUL,9,3,c,Hot Safe,C,BIRSUL,8,4,3, ,5,2,2
+384,BIR,SUL,3,3,c,Hot Safe,C,BIRSUL,8,5,3, ,8,2,2
+408,BIR,SUL,3,9,c,Hot Safe,C,BIRSUL,8,6,3, ,5,5,2
+456,BIR,SUL,12,3,c,Hot Safe,C,BIRSUL,8,7,3, ,5,1,2
+420,BIR,SUL,3,12,c,Hot Safe,C,BIRSUL,8,8,3, ,5,6,2
