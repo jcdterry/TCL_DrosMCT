@@ -1,5 +1,5 @@
 ---
-title: "SI 2 - Model Design - Allee Effect, Sex Ratio & Emergence Time"
+title: "SI 2 - Model Design - Allee Effect & Sex Ratio"
 author: "Chris Terry, Jinlin Chen & Owen Lewis"
 output:
   pdf_document: default
@@ -75,7 +75,7 @@ AllSexRatioData%>%
   ylab('Females')
 ```
 
-**Figure S2.1.** Consistent sex-ratio of emergent adults, facetted by species. Across all six species, a binomial GLM estimated only a very slight bias ($\beta$ coefficient = 0.065) towards females.   
+**Figure S2.1.** Consistent sex-ratio of emergent adults, faceted by species. Across all six species, a binomial GLM estimated only a very slight bias ($\beta$ coefficient = 0.065) towards females.   
 
 ```{r include=FALSE}
 glm(  cbind(TotMales, TotFemales)~Sp* TotalFounders ,
@@ -87,8 +87,7 @@ glm(  cbind(TotMales, TotFemales)~1,
 
 # Allee Effects
 
-
-```{r}
+```{r message = FALSE}
 Clean_IntraData%>%
   filter(Sp1_Dens <4)%>%
   filter(Treatment  %in% c('Hot Para', 'Hot Safe'))%>%
@@ -123,79 +122,4 @@ AlleeEffectData%>%
 ```
 
 **Figure S2.2.** Per-female offspring is consistently lower for singleton founder pairs than triplets in the monoculture trials.
-
-# Emergence Time Model
-
-Model used to infer mean emergence time from starting densities, based on counts from the single-species tubes, was selected based on backwards stepwise-selection with AIC. 
-
-```{r}
-Clean_IntraData%>%
-  arrange(tubeID)%>%
-  filter(Temp == 'Hot')%>%
-  mutate(Dens0 = Sp1_Dens,
-         SpID = Sp1)%>%
-  filter(GrandTotal >0) -> EmergenceTimeData
-
-lm(data = EmergenceTimeData,
-   MeanEmergence ~ Dens0 * SpID*Treatment)-> Mod_StartCount_all
-
-tmp<-step(Mod_StartCount_all) #  Suggests dropping tree-way interaction
-
-Mod_StartCount <- lm(data = EmergenceTimeData,
-   MeanEmergence ~ Dens0 + SpID + Treatment + Dens0:SpID + Dens0:Treatment + SpID:Treatment)
-
-summary(Mod_StartCount)
-
-lm(data = EmergenceTimeData,
-   MeanEmergence ~ GrandTotal * SpID*Treatment)-> Mod_EndCount
-# Using end counts is similar accuracy, but harder to extrapolate
-
-#summary(Mod_EndCount)
-```
-
-```{r}
-Predictions<- predict(Mod_StartCount,EmergenceTimeData )
-
-SingleSpeciesPredictionData <-data.frame('Predicted Emergence' = Predictions,
-           'Observed Mean Emergence' = EmergenceTimeData$MeanEmergence,
-           'Sp' = EmergenceTimeData$Sp1,
-           'Density' = EmergenceTimeData$Dens0,
-           'Treatment' =EmergenceTimeData$Treatment )%>%
-  mutate(Treatment = recode(Treatment, 
-                             'Hot Safe'='No-Parasitoid',
-                            'Hot Para'= 'Parasitoid'))
-
-SingleSpeciesPredictionData %>%
-  ggplot(aes(Predicted.Emergence,Observed.Mean.Emergence, col=Sp ))+
-  geom_point()+
-  geom_abline(slope=1)+
-  facet_wrap(~Treatment)+
-  coord_fixed()+
-  scale_colour_manual(values = cols, name = 'Species')+
-  ylab('Observed Mean Emegence (days)')+
-  xlab('Predicted Emergence (days)')
-
-```
-
-**Figure S2.3** Quality of fit of emergence time model for monocultures, facetted by treatment. 
-
-```{r}
-
-
-SingleSpeciesPredictionData%>%
-  ggplot(aes(y= Observed.Mean.Emergence, x=Density,  col=Sp ))+
-  geom_point()+
-  geom_line(aes(y= Predicted.Emergence))+
-  facet_wrap(~Treatment)+
-  ggtitle('Emergence Time vs Starting Density')+
-  scale_colour_manual(values = cols, name = 'Species')+
- ylab('Observed Mean Emegence (days)')+
-  xlab('Starting Density')
-
-
-```
-
-**Figure S2.4** Effect of number of founders on emergence time. 
-
-
 

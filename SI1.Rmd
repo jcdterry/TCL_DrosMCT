@@ -61,7 +61,7 @@ USNMENT01557121, USNMENT01557273 and USNMENT01557254. The parasitoid has been ma
 
 ## Location Randomisation Procedure
 
-Within the inclubator, vials were arranged in a randomised, but structured arrangement (Fig. S1.4 and S1.5). The structure was necessary to facilitate handling. In all cases the principle that each vial had an equal change of being located at any point was maintained. Within each treatment, within each block, there was one tray for single-species assays, and two for multi-species assays. Species combinations were kept in rows, but the order of the numbers of each species used was randomised. 
+Within the incubator, vials were arranged in a randomised, but structured arrangement (Fig. S1.4 and S1.5). The structure was necessary to facilitate handling. In all cases the principle that each vial had an equal change of being located at any point was maintained. Within each treatment, within each block, there was one tray for single-species assays, and two for multi-species assays. Species combinations were kept in rows, but the order of the numbers of each species used was randomised. 
 
 Unfortunately, a mistake lead to parasitoid wasps being released into the a wrong box. Block C, Parasitoid(+) box number 2  did not receive parasitoids as planned, while Block C, Parasitoid(-) box number 1, did get parasitoids when it should not have done. This was corrected by reassigning vials to treatments, but had the result that certain combinations had one greater or fewer data point per treatment than was planned. 
 

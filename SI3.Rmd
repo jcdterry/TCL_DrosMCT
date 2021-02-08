@@ -16,16 +16,15 @@ library(knitr)
 library(scales)
 library(bayesplot)
 
+source('Scripts/Stanfunctions.R') 
 
-source('Scripts/GaussianFunctions.R') 
-
-
-d_both <- read_csv('Data/d_both.csv')
+d_both<- read_csv('Data/LongFormData.csv') %>%
+  mutate(ObsCount_Total =  ObsCount_Pairs*2)
 
 species <- c('BIR','PAL', 'PAN', 'PSA', 'SIM', 'SUL')
+Num_Draws <- 2000
 
-d_HS = filter(d_both, Parasitism == 'Safe')
-d_HP =  filter(d_both, Parasitism == 'Para')
+STAN_data = list(N = nrow(d_both),y = d_both$ObsCount_Total) 
 
 dir.create('StanFitsPriorTest/')
 ```
@@ -34,72 +33,55 @@ dir.create('StanFitsPriorTest/')
 ### Code for writing STAN code for rerunning fits with different priors::
 ###  Unbounding alpha:
 
-Write_BothTreatmentsStanFunction_SingleA(d_HS,d_HP, 'NoLower', AlphaLowerBound = FALSE, AlphaSD= 1)
+Write_Stan_NegB_2R_1A(d_both, 'PriorTest_NegAlpha', AlphaLowerBound = -0.025, AlphaSD= 1)
 
 ### Changing strength of prior on alpha:
-Write_BothTreatmentsStanFunction_SingleA(d_HS,d_HP, 'PriorTest_0001', AlphaLowerBound = TRUE, AlphaSD= 0.001)
-Write_BothTreatmentsStanFunction_SingleA(d_HS,d_HP, 'PriorTest_001' , AlphaLowerBound = TRUE, AlphaSD= 0.01)
-Write_BothTreatmentsStanFunction_SingleA(d_HS,d_HP, 'PriorTest_10'  , AlphaLowerBound = TRUE, AlphaSD= 10)
-``````
+Write_Stan_NegB_2R_1A(d_both, 'PriorTest_01' , AlphaSD= 0.1, CalcGQ=FALSE)
+Write_Stan_NegB_2R_1A(d_both, 'PriorTest_10'  ,AlphaSD= 10, CalcGQ=FALSE)
+```
 
 ```{r eval = FALSE}
 ## Refitting models. 
-fit_NoLower <- stan( file = 'StanModels/BuiltModel_NoLower.stan',
-                data = list(N = nrow(d_both), 
-                            y = d_both$ObsGrRate) , 
-                chains = 4,
-                seed = 1,
-                cores = 2, iter = 2000)
+fit_PriorTest_NegAlpha <- stan( file = 'StanModels/BuiltModel_NegB_PriorTest_NegAlpha.stan',
+                               data = STAN_data, 
+                               chains = 4,  seed = 1,cores = 2, iter = Num_Draws)
 
-save(fit_NoLower, file = 'StanFitsPriorTest/fit_NoLower')   
+save(fit_PriorTest_NegAlpha, file = 'StanFitsPriorTest/fit_PriorTest_NegAlpha')   
 
-fit_PriorTest_0001 <- stan( file = 'StanModels/BuiltModel_PriorTest_0001.stan',
-                                 data = list(N = nrow(d_both), 
-                                             y = d_both$ObsGrRate) , 
-                                 chains = 4,
-                                 seed = 1,
-                                 cores = 2, iter = 2000)
+fit_PriorTest_01 <- stan( file = 'StanModels/BuiltModel_NegB_PriorTest_01.stan',
+                            data = STAN_data, 
+                            chains = 4,  seed = 1,cores = 2, iter = Num_Draws)
 
-save(fit_PriorTest_0001, file = 'StanFitsPriorTest/fit_PriorTest_0001')   
+save(fit_PriorTest_01, file = 'StanFitsPriorTest/fit_PriorTest_01')   
 
-fit_PriorTest_001 <- stan( file = 'StanModels/BuiltModel_PriorTest_001.stan',
-                                 data = list(N = nrow(d_both), 
-                                             y = d_both$ObsGrRate) , 
-                                 chains = 4,
-                                 seed = 1,
-                                 cores = 2, iter = 2000)
 
-save(fit_PriorTest_001, file = 'StanFitsPriorTest/fit_PriorTest_001')   
-
-fit_PriorTest_10 <- stan( file = 'StanModels/BuiltModel_PriorTest_10.stan',
-                                 data = list(N = nrow(d_both), 
-                                             y = d_both$ObsGrRate) , 
-                                 chains = 4,
-                                 seed = 1,
-                                 cores = 2, iter = 2000)
+fit_PriorTest_10 <- stan( file = 'StanModels/BuiltModel_NegB_PriorTest_10.stan',
+                          data = STAN_data, 
+                          chains = 4,  seed = 1,cores = 2, iter = Num_Draws)
 
 save(fit_PriorTest_10, file = 'StanFitsPriorTest/fit_PriorTest_10')   
 
 ```
 
-In our model, the $r$ parameters were relatively straightforward to estimate, and there is good reason to be confident that the choice of prior is not particularly influential. However, for the competition terms ($\alpha$), the fits were considerably more uncertain, and there is a greater potential for the choice of prior to be influential. In the main text, we present results where the prior on each $\alpha$ parameter is set to be a zero-centered Gaussian distribution with standard deviation 1. We also constrain $\alpha$ to be positive (i.e. exclude the possibility for facilitation). 
+In our model, the $r$ parameters were relatively straightforward to estimate, and there is good reason to be confident that the choice of prior is not particularly influential. However, for the competitive coefficents ($\alpha$) the fits were considerably more uncertain, and there is a greater potential for the choice of prior to be influential. In the main text, we present results where the prior on each $\alpha$ parameter is constrained to be positive (i.e. exclude the possibility for facilitation) and conditioned on a zero-centered Gaussian distribution with standard deviation 1. To confirm that the choice of prior is not having an outsized effect, we tested tighter ($\sigma$ = 0.1) and looser ($\sigma$ = 10) priors on the $\alpha$ values, as well as a test where the lower $\alpha$ limit was reduced from 0 to -0.025 (lower values could lead to negative growth rates which are incompatible with the negative binomial error distribution). 
 
-To confirm that the choice of prior is not having an outsized effect, we tested tighter ($\sigma$ = 0.001, 0.01) and looser ($\sigma$ = 10) priors on the $\alpha$ values. Only the very tight prior resulted in markedly different  $\alpha$ posterior distributions, indicating that our results are not overly influences by our choice of priors (Fig S3.1).
 
+Only the very tight prior resulted in markedly different $\alpha$ posterior distributions, indicating that our results are not overly influences by our choice of priors (Fig S3.1). Only one interaction coefficient had a posterior that notably included facilitatory values ($\alpha_{PAN,BIR}$). We have no particular explanation about why this interaction is negative, and can only assume it derives from data variability. As it is only a single term, we consider it unlikely to have a large influence on our overall results. 
 
 
 ```{R}
-load('StanFits/fit_both_singleA') ## core model used in paper
-load( 'StanFitsPriorTest/fit_PriorTest_0001')
-load( 'StanFitsPriorTest/fit_PriorTest_001')
+load('StanFits/fit_2R_1A') ## Best-fit model used in main text
+load( 'StanFitsPriorTest/fit_PriorTest_01')
 load( 'StanFitsPriorTest/fit_PriorTest_10')
+load( 'StanFitsPriorTest/fit_PriorTest_NegAlpha')
 ```
 
-```{r fig.height=6}
-As_PriorSD_0001 <- extract(fit_PriorTest_0001, pars = 'A')$A
-As_PriorSD_001  <- extract(fit_PriorTest_001, pars = 'A')$A
-As_PriorSD_1    <- extract(fit_both_singleA, pars = 'A')$A
+```{r fig.height=8}
+As_PriorSD_01  <- extract(fit_PriorTest_01, pars = 'A')$A
+As_PriorSD_1    <- extract(fit_2R_1A, pars = 'A')$A
 As_PriorSD_10   <- extract(fit_PriorTest_10, pars = 'A')$A
+As_PriorNegAlpha    <- extract(fit_PriorTest_NegAlpha, pars = 'A')$A
+
 
 ExtractCI_As<-function(df){
   out <- expand.grid(focal.sp = species,
@@ -113,10 +95,10 @@ ExtractCI_As<-function(df){
 return(out)
   }
 
-bind_rows(ExtractCI_As(As_PriorSD_0001) %>% mutate(Prior = '0.001'),
-          ExtractCI_As(As_PriorSD_001  ) %>% mutate(Prior = '0.01'),
-          ExtractCI_As(As_PriorSD_1    ) %>% mutate(Prior = '1 (Main text model)'),
-          ExtractCI_As(As_PriorSD_10   ) %>% mutate(Prior = '10')) -> As_PriorCompare
+bind_rows(ExtractCI_As(As_PriorSD_01) %>% mutate(Prior = 'SD = 0.1'),
+          ExtractCI_As(As_PriorNegAlpha) %>% mutate(Prior = 'No Lower Bound'),
+          ExtractCI_As(As_PriorSD_1    ) %>% mutate(Prior = 'SD = 1 (Main text model)'),
+          ExtractCI_As(As_PriorSD_10   ) %>% mutate(Prior = 'SD = 10')) -> As_PriorCompare
 
 Dodger<-  position_dodge(width = 0.5)
 
@@ -124,25 +106,15 @@ As_PriorCompare %>%
   mutate(Parameter = paste0(focal.sp, '.',other.sp))%>%
   ggplot(aes(col = Prior, x = Parameter, y = med ))+
   geom_errorbar(aes(ymin = mci2.5, ymax=mci97.5),position =Dodger, width = 0)+
-  geom_errorbar(aes(ymin = mci10, ymax=mci90),position =Dodger, width = 0, size = 2 )+
-  geom_point(position = Dodger)+
+  geom_errorbar(aes(ymin = mci10, ymax=mci90),position =Dodger, width = 0, size = 1.5 )+
+  geom_point(position = Dodger, pch = 23, fill = 'black')+
   coord_flip()+
-  scale_colour_viridis_d(name = 'Prior s.d.')+
-  xlab('Competition parameter (A_ij)')+
-  ylab('Estimated Value')
-
+  scale_colour_viridis_d(name = 'Prior Specification:')+
+  xlab('Competition coefficient (A_ij)')+
+  ylab('Estimated Value')+
+  theme_classic()+
+  theme(legend.position = 'bottom', legend.direction = 'vertical')+
+  guides(col=guide_legend(ncol=2))
 ```
 
-**Figure S3.1** Posterior distribution of competition terms under different prior distributions. Only when the prior is specified with very high precision ($\sigma$ = 0.001), was the posterior significantly affected.
-
-We sought to test relaxing the boundary condition, but as well as being an essential feature for conventional coexistence theory, the lower bound on competition coefficients ($\alpha$) was necessary for the model to converge satisfactorily. The $\hat{R}$ convergence statistic indicated very poor convergence (Fig S3.2).
-
-
-```{r}
-load( 'StanFitsPriorTest/fit_NoLower')
-Draws_NoLower<-as.array(fit_NoLower)
-rhats <- rhat(fit_NoLower)[1:50]
-mcmc_rhat(rhats) + yaxis_text(hjust = 1)
-```
-
-**Figure S3.2** Parameter-level convergence statistics of model fit without lower boundary on competition terms show very poor convergence.
+**Figure S3.1** Fitted posterior distributions of competitive coefficient terms under different prior assumptions. 

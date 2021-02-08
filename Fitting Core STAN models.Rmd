@@ -5,11 +5,11 @@ output: html_document
 ---
 
 
-This script fits the core STAN models, both the Gaussian and Count-model cases. 
+This script fits the core STAN models.
 
 It also calculates the LOO likelihoods needed for elpd. 
 
-It does not do any subsequent analysis - That is handled in `Main Text Analyses.rmd` or one of the SI documents. 
+It does not do any subsequent analysis - that is handled in `Main Text Analyses.rmd` or one of the SI documents. 
 
 Assessment of sensitivity to priors is also conducted separately - SI 3.
 
@@ -22,12 +22,18 @@ library(knitr)
 library(scales)
 library(loo)
 library(cowplot)
-library(igraph)
+# library(igraph)
 
-source('Scripts/GaussianFunctions.R') 
-source('Scripts/NegBinFunctions.R') 
+source('Scripts/Stanfunctions.R') 
 
-d_both <- read_csv('Data/d_both.csv')
+# 
+# read_csv('Data/d_both.csv')%>%
+#   select(- Temp,-Treatment,-MeanEmergence ,
+#          -MeanGenTime,-ObsGrRate, - c(BIR:SUL),  -c(BIR_L:SUL_L), - Sp1_Dens) %>%
+#   write_csv('Data/LongFormData.csv')
+
+
+d_both<- read_csv('Data/LongFormData.csv')
 
 species <- c('BIR','PAL', 'PAN', 'PSA', 'SIM', 'SUL')
 Num_Draws <- 3000
@@ -39,215 +45,85 @@ dir.create('LOO/')
 
 # Preparing data
 
-Count models can't deal with the halves that are derived from dividing males+females by two to get the best estimate of the number of pairs (/females).
-Instead use 'total count', which is just this times two
+NB '_Nt' values are inferred number of females values, so need to double up. 
+
 ```{r}
 d_both <- mutate(d_both, ObsCount_Total =  ObsCount_Pairs*2)
-d_HS <- filter(d_both, Parasitism =='Safe')
-d_HP <- filter(d_both, Parasitism =='Para')
+
+STAN_data = list(N = nrow(d_both), 
+                                      y = d_both$ObsCount_Total) 
 
 ```
 
 # Writing and fitting STAN functions
 
-Using one set of data, can pre-specify ordering of combinations of species.  For each of 750 iterations,  have a separate line, (written with a simple R script pulling in the relevant numbers)
-
-e.g.:
-
-`rs[r_sel] / (1+ N0s[Aii_selection1]* A[Aii_selection2]   + N0s[Aij_selection1] *A0[Aij_selection2]    )`    
-
-Handled by various `WriteStanFunction()` versions
-
 ## 1. Separate A and r models
 
 ```{r}
-Write_BothTreatmentsStanFunction_DoubleA(PreparedData1 = d_HS,
-                                         PreparedData2 = d_HP,
-                                         'BothTogether_2As',
-                                         AlphaLowerBound = TRUE, AlphaSD= 1)
+Write_Stan_NegB_2R_2A(d= d_both,
+                      '2R_2A',
+                      AlphaLowerBound = TRUE, AlphaSD= 1)
 ```
 
 ```{r}
-fit_both_doubleA <- stan( file = 'StanModels/BuiltModel_BothTogether_2As.stan',
-                          data = list(N = nrow(d_both), 
-                                      y = c(d_both$ObsGrRate)) , 
+fit_2R_2A <- stan( file = 'StanModels/BuiltModel_NegB_2R_2A.stan',
+                          data = STAN_data, 
                           chains = 4, seed = 1,
                           cores = 2, iter = Num_Draws)
 
-save(fit_both_doubleA, file = 'StanFits/fit_both_doubleA')
+save(fit_2R_2A, file = 'StanFits/fit_2R_2A')
 ```
 
 ## 2. Single A, separate R
 
 ```{r}
-Write_BothTreatmentsStanFunction_SingleA(PreparedData1 = d_HS,
-                                         PreparedData2 = d_HP,
-                                         'BothTogether_singleA',
-                                         AlphaLowerBound = TRUE, AlphaSD= 1)
+Write_Stan_NegB_2R_1A(d= d_both,
+                      '2R_1A',
+                      AlphaLowerBound = TRUE, AlphaSD= 1)
 ```
 
 ```{r}
-fit_both_singleA <- stan( file = 'StanModels/BuiltModel_BothTogether_singleA.stan',
-                          data = list(N = nrow(d_both), 
-                                      y = c(d_both$ObsGrRate)) , 
+fit_2R_1A <- stan( file = 'StanModels/BuiltModel_NegB_2R_1A.stan',
+                          data = STAN_data , 
                           chains = 4,  seed = 1,
                           cores = 2, iter = Num_Draws)
 
-save(fit_both_singleA, file = 'StanFits/fit_both_singleA')
+
+save(fit_2R_1A, file = 'StanFits/fit_2R_1A')
 ```
 
 ## 3. Single A and single r
 
 ```{r}
-Write_BothTreatmentsStanFunction_SingleSetRandA(PreparedData1 = d_HS,
-                                                PreparedData2 = d_HP,
-                                                'Comb_RandA',
-                                         AlphaLowerBound = TRUE, AlphaSD= 1)
+Write_Stan_NegB_1R_1A(d= d_both,
+                      '1R_1A',
+                      AlphaLowerBound = TRUE, AlphaSD= 1)
 ```
 
 ```{r}
-fit_both_Comb_RandA <- stan( file = 'StanModels/BuiltModel_Comb_RandA.stan',
-                             data = list(N = nrow(d_both), 
-                                         y = c(d_both$ObsGrRate)) , 
+fit_1R_1A <- stan( file = 'StanModels/BuiltModel_NegB_1R_1A.stan',
+                             data = STAN_data , 
                              chains = 4,  seed = 1,
                              cores = 2, iter = Num_Draws)
 
-save(fit_both_Comb_RandA, file = 'StanFits/fit_both_Comb_RandA')
+save(fit_1R_1A, file = 'StanFits/fit_1R_1A')
 ```
 
 # Cross-validation
 
 ```{r}
-load('StanFits/fit_both_singleA')
-load('StanFits/fit_both_doubleA')
-load('StanFits/fit_both_Comb_RandA')
+load('StanFits/fit_2R_2A')
+load('StanFits/fit_2R_1A')
+load('StanFits/fit_1R_1A')
 ```
 
 ```{r}
-singleA_loo   <-loo(fit_both_singleA)
-doubleA_loo   <-loo(fit_both_doubleA)
-Comb_RandA_loo<-loo(fit_both_Comb_RandA)
-save(singleA_loo, file='LOO/singleA_loo')
-save(doubleA_loo, file='LOO/doubleA_loo')
-save(Comb_RandA_loo, file='LOO/Comb_RandA_loo')
-```
+LOO_2R_2A<-loo(fit_2R_2A)
+LOO_2R_1A<-loo(fit_2R_1A)
+LOO_1R_1A<-loo(fit_1R_1A)
+save(LOO_2R_2A, file='LOO/LOO_2R_2A')
+save(LOO_2R_1A, file='LOO/LOO_2R_1A')
+save(LOO_1R_1A, file='LOO/LOO_1R_1A')
 
-
-# Raw Count (negative binomial) Model fitting
-
-This approach uses the raw count data. This allows the variability in small counts to be more appropriately modeled, but does not adjust for variable generation times.
-
-## 1. Separate A and r models, but combined 
-
-
-```{r}
-Write_Stan_NegB_DoubleA(PreparedData1 = d_HS,
-                        PreparedData2 = d_HP,
-                        'NegB_BothTogether_2As')
-
-fit_both_doubleA_NegB <- stan(file = 'StanModels/BuiltModel_NegB_BothTogether_2As.stan',
-                          data = list(N = nrow(d_both), 
-                                      y = c(d_both$ObsCount_Total)) , 
-                          chains = 4, seed = 1,
-                          cores = 2, iter = Num_Draws)
-
-save(fit_both_doubleA_NegB, file = 'StanFits/fit_both_doubleA_NegB')
-```
-
-## 2. Single A, separate R
-
-```{r}
-Write_Stan_NegB_SingleA(PreparedData1 = d_HS,
-                        PreparedData2 = d_HP,
-                        'NegB_BothTogether_singleA')
-
-fit_both_singleA_NegB <- stan( file = 'StanModels/BuiltModel_NegB_BothTogether_singleA.stan',
-                          data = list(N = nrow(d_both), 
-                                      y = c(d_both$ObsCount_Total)) , 
-                          chains = 4,  seed = 1,
-                          cores = 2, iter = Num_Draws)
-
-save(fit_both_singleA_NegB, file = 'StanFits/fit_both_singleA_NegB')
-```
-
-
-```{r}
-singleA_loo_NegB   <-loo(fit_both_singleA_NegB)
-doubleA_loo_NegB   <-loo(fit_both_doubleA_NegB)
-
-save(singleA_loo_NegB, file='LOO/singleA_loo_NegB')
-save(doubleA_loo_NegB, file='LOO/doubleA_loo_NegB')
-```
-
-
-# Raw Count (Poisson) Model fitting
-
-This approach uses the raw count data. This allows the variability in small counts to be more appropriately modeled, but does not adjust for variable generation times.
-
-## 1. Separate A and r models, but combined 
-
-```{r}
-
-Write_Stan_Pois_DoubleA(PreparedData1 = d_HS,
-                        PreparedData2 = d_HP,
-                        'Pois_BothTogether_2As')
-
-fit_both_doubleA_Pois <- stan( file = 'StanModels/BuiltModel_Pois_BothTogether_2As.stan',
-                          data = list(N = nrow(d_both), 
-                                      y = c(d_both$ObsCount_Total)) , 
-                          chains = 4, seed = 1,
-                          cores = 2, iter = Num_Draws)
-
-save(fit_both_doubleA_Pois, file = 'StanFits/fit_both_doubleA_Pois')
-```
-
-## 2. Single A, separate R
-
-```{r}
-
-Write_Stan_Pois_SingleA(PreparedData1 = d_HS,
-                        PreparedData2 = d_HP,
-                        'Pois_BothTogether_singleA')
-
-fit_both_singleA_Pois <- stan( file = 'StanModels/BuiltModel_Pois_BothTogether_singleA.stan',
-                          data = list(N = nrow(d_both), 
-                                      y = c(d_both$ObsCount_Total)) , 
-                          chains = 4,  seed = 1,
-                          cores = 2, iter = Num_Draws)
-
-save(fit_both_singleA_Pois, file = 'StanFits/fit_both_singleA_Pois')
-```
-
-## 3. Single A and single r
-
-```{r}
-Write_Stan_Pois_SingleSetRandA(PreparedData1 = d_HS,
-                               PreparedData2 = d_HP,
-                               'Pois_Comb_RandA')
-
-
-fit_both_Comb_RandA_Pois <- stan( file = 'StanModels/BuiltModel_Pois_Comb_RandA.stan',
-                             data = list(N = nrow(d_both), 
-                                         y = c(d_both$ObsCount_Total)) , 
-                             chains = 4,  seed = 1,
-                             cores = 2, iter = Num_Draws)
-
-save(fit_both_Comb_RandA_Pois, file = 'StanFits/fit_both_Comb_RandA_Pois')
-```
-
-```{r}
-load('StanFits/fit_both_singleA_Pois')
-load('StanFits/fit_both_doubleA_Pois')
-load('StanFits/fit_both_Comb_RandA_Pois')
-
-```
-
-```{r}
-singleA_loo_Pois   <-loo(fit_both_singleA_Pois)
-doubleA_loo_Pois   <-loo(fit_both_doubleA_Pois)
-Comb_RandA_loo_Pois<-loo(fit_both_Comb_RandA_Pois)
-save(singleA_loo_Pois, file='LOO/singleA_loo_Pois')
-save(doubleA_loo_Pois, file='LOO/doubleA_loo_Pois')
-save(Comb_RandA_loo_Pois, file='LOO/Comb_RandA_loo_Pois')
 ```
 

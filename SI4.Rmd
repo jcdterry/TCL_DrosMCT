@@ -1,9 +1,7 @@
 ---
-title: "SI4 - Additional Results"
+title: "SI 4 - Additional Results"
 author: "Chris Terry, Jinlin Chen & Owen Lewis"
-output:
-  pdf_document:
-    number_sections: yes
+output: pdf_document
 ---
 
 
@@ -26,7 +24,9 @@ library(bayesplot)
 
 source('Scripts/Other Functions.R') 
 
-d_both <- read_csv('Data/d_both.csv')
+d_both <- read_csv('Data/LongFormData.csv')%>%
+  mutate(ObsCount_Total =  ObsCount_Pairs*2)
+
 species <- c('BIR','PAL', 'PAN', 'PSA', 'SIM', 'SUL')
 
 cols = c('BIR' = 'skyblue', 
@@ -37,89 +37,85 @@ cols = c('BIR' = 'skyblue',
          'SUL' = 'gold'  )
 
 # Loading model fits:
+load('StanFits/fit_2R_2A')
+load('StanFits/fit_2R_1A')
+load('StanFits/fit_1R_1A')
 
-load('StanFits/fit_both_singleA')
-load('StanFits/fit_both_doubleA')
-load('StanFits/fit_both_Comb_RandA')
+# Loading cross validation data:
+load('LOO/LOO_2R_2A')
+load('LOO/LOO_2R_1A')
+load('LOO/LOO_1R_1A')
 
-
-draws_singleA<-rstan::extract(fit_both_singleA )
+# Extracting fitted parameters
+draws_singleA<-rstan::extract(fit_2R_1A )
 
 ```
 
 
 This appendix details the results of additional analyses to support the results in the main text. 
 
-1. Full results from model comparison 
-2. Information on the estimates of the posterior distribution of model parameters
-3. Diagnostic plots for the model fitting, including posterior predictive plots
-4. Results from maximal model including predation effects on competitive terms
-5. Comparison to point estimates of coexistence
+A. Full results from model comparison 
 
+B. Median estimates for model parameters
 
-# Model comparison
+C. Full posterior distribution of model parameters
+
+D. Diagnostic plots for the model fitting, including posterior predictive plots
+
+E. Results from maximal model including predation effects on competitive terms
+
+# A. Model comparison
 
 ```{r}
-load('LOO/singleA_loo')
-load('LOO/doubleA_loo')
-load('LOO/Comb_RandA_loo')
-
-loo_compare( doubleA_loo,singleA_loo, Comb_RandA_loo ) %>%
+loo_compare(LOO_2R_2A,LOO_2R_1A,LOO_1R_1A ) %>%
   as.data.frame()%>%
   select(  elpd_diff,  se_diff,p_loo, se_p_loo)%>%
   kable(digits =4, col.names = c('$\\Delta$ ELPD', 'Standard Error of Difference',
                                  'Effective Number of Parameters',  'Standard Error' ) ,
         format = "latex", booktabs = TRUE ,
-  linesep = "", escape= FALSE)%>%
+        linesep = "", escape= FALSE)%>%
   kable_styling()
 ```
 
-**Table S4.1** Results from model comparison through expected log-pointwise predictive density (ELPD), computed using Pareto-smoothed importance sampling with the loo R package (Vehtari *et al* 2018). Models differ in the degree of divergence in fitted parameters between parasitism treatments. Model 1: separate $\alpha$ and $r$ values (representing hypothesis that parasitism affects both growth rate and competition terms between species.) Model 2: joint $\alpha$ values, but variable $r$ (representing hypothesis that parasitism affects growth rates, but not competition terms), Model 3: joint $\alpha$ and $r$ values (i.e. hypothesis that parasitism has not effect). Differences in ELPD suggest strongest support for Model 2.
+**Table S4.1** Results from model comparison through expected log-pointwise predictive density (ELPD), computed using Pareto-smoothed importance sampling with the loo R package (Vehtari *et al* 2019). Models differ in the degree of divergence in fitted parameters between parasitism treatments. Model 1: separate $\alpha$ and $r$ values (representing the hypothesis that parasitism affects both growth rate and competition terms between species.) Model 2: joint $\alpha$ values, but variable $r$ (the hypothesis that parasitism affects growth rates, but not competition terms), Model 3: joint $\alpha$ and $r$ values (the hypothesis that parasitism has no effect). Differences in ELPD suggest strongest support for Model 2.
 
 
 ```{r eval = FALSE, include = FALSE}
-## Alternative method using WAIC gives similair result, but results not necessarily reliable due to outliers. 
-LL_singleA<- extract_log_lik(fit_both_singleA)
-LL_doubleA<- extract_log_lik(fit_both_doubleA)
-LL_Comb_RandA<- extract_log_lik(fit_both_Comb_RandA)
-waic(LL_singleA) 
-waic(LL_doubleA) 
-waic(LL_Comb_RandA)
+## Alternative method using WAIC gives similar result, but results not necessarily reliable due to outliers. 
+LL_2R_2A<- extract_log_lik(fit_2R_2A)
+LL_2R_1A<- extract_log_lik(fit_2R_1A)
+LL_1R_1A<- extract_log_lik(fit_1R_1A)
+waic(LL_2R_2A) 
+waic(LL_2R_1A) 
+waic(LL_1R_1A)
 ```
+\pagebreak
+# B. Median Parameter Values
 
-# Parameter posterior distributions (selected model)
-
-```{r fig.height=6, fig.width=4}
-r_draw_matrix <- as.matrix(fit_both_singleA, pars = c('r1', 'r2') )  
-colnames(r_draw_matrix)<- paste(species, rep(c('\nSafe', '\nParasitism'),each=6))
-mcmc_areas(r_draw_matrix[, c(1,7,2,8,3,9,4,10,5,11,6,12)])+
-  xlab('Growth Rate (r)')+
-  yaxis_text(face = 'plain')
-
-```
-
-**Figure S4.1** Posterior distribution of growth rates under the two treatments. Shaded area shows 50% inner interval. 
-
-```{r fig.height=6, fig.width=4}
-A_draw_matrix <- as.matrix(fit_both_singleA, pars = c('A') )
-colnames(A_draw_matrix)<- paste('Effect of ', rep(species, each = 6),  'on', rep(species, 6))
-mcmc_intervals(A_draw_matrix)+
-  yaxis_text(face = 'plain')
-```
-
-**Figure S4.2** Posterior distribution of competition parameters. Wide bar shows 50% inner interval, line shows 90% interval, circle shows median value. 
+Despite a major point of the paper being that the full posterior is essential to fully understand the uncertainties in parameter estimates, we appreciate that for some purposes a single point estimate is useful. Table S4.2 and Table S4.3 therefore present median estimates for the key model parameters. 
 
 ```{r}
+## Prep data 
 
+r_draw_matrix <- as.matrix(fit_2R_1A, pars = c('r1', 'r2') )  
+colnames(r_draw_matrix)<- paste(species, rep(c('\nSafe', '\nParasitism'),each=6))
+
+A_draw_matrix <- as.matrix(fit_2R_1A, pars = c('A') )
+colnames(A_draw_matrix)<- paste('Effect of ', rep(species, each = 6),  'on', rep(species, 6))
+
+```
+
+```{r}
 data.frame(Median=apply(r_draw_matrix,2, median),
            Param =colnames(r_draw_matrix))%>%
   separate(Param, into = c('Species', 'Treatment'))%>%
   group_by(Species)%>%
   spread(Treatment,Median )%>%
   kable(digits=3, format = "latex",
-  linesep = "", booktabs = TRUE )%>%
+        linesep = "", booktabs = TRUE )%>%
   kable_styling()
 ```
+
 
 **Table S4.2** Median values for growth rates ($r$) in the two treatments
 
@@ -135,9 +131,43 @@ apply(A_draw_matrix,2, median) %>%
 
 **Table S4.3** Median values for competition coefficients ($\alpha$) laid out in standard matrix form ($\alpha_{row, col}$).
 
+\pagebreak
+
+# C. Parameter posterior distributions (selected model)
+
+```{r fig.height=6, fig.width=4, message = FALSE, warning = FALSE}
+mcmc_areas(r_draw_matrix[, c(1,7,2,8,3,9,4,10,5,11,6,12)])+
+  xlab('Growth Rate (R)')+
+  yaxis_text(face = 'plain')+
+  scale_x_log10()
+
+```
+
+**Figure S4.1** Posterior distribution of growth rates under the two treatments. Shaded area shows 50% inner interval. N.B. log-scale. 
+
+```{r fig.height=6, fig.width=4, message = FALSE, warning = FALSE}
+mcmc_intervals(A_draw_matrix)+
+  yaxis_text(face = 'plain')+
+  xlab('Competition coefficient')+
+  scale_x_log10()
+```
+
+**Figure S4.2** Posterior distribution of competition parameters. Wide bar shows 50% inner interval, line shows 90% interval, circle shows median value. N.B. log-scale. 
+
+
+```{r fig.height=3, fig.width=5}
+phi_draw_matrix <- as.matrix(fit_2R_1A, pars = c('phi1', 'phi2') )
+colnames(phi_draw_matrix) <- c('Overdispersion\nParameter (Safe)', 'Overdispersion\nParameter (Parasitism)')
+mcmc_areas(phi_draw_matrix)+
+  yaxis_text(face = 'plain')
+
+```
+
+**Figure S4.3** Posterior distribution of the $\phi$ parameters, where the shaded area shows 50% inner interval. Note that in the parameterisation we used (`neg_binomial_2()`), the variance is defined as $\mu + \dfrac{\mu^2}{\phi}$. Therefore the inverse of $\phi$ controls the overdispersion, which is scaled by the mean value. $\phi$ is lower in the parasitoid treatment, suggesting that parasitism increases the variance in the next generation.
+
 ## Relative uncertainty in components of fitness differences
 
-```{r}
+```{r message = FALSE, fig.height=3, fig.width=6}
 Safe_fitComps <- Calc_FitDiff_components_fromSTANfit(draws_singleA$A,draws_singleA$r1)
 Para_fitComps <- Calc_FitDiff_components_fromSTANfit(draws_singleA$A,draws_singleA$r2)
 
@@ -164,46 +194,53 @@ Safe_fitComps %>%
   scale_x_log10()+
   ylab('')+
   xlab('Posterior Estimate')+
-  coord_cartesian(xlim = c(0.1, 10))
+  coord_cartesian(xlim = c(0.1, 10))+
+  theme_classic()+
+#  theme(legend.position = "bottom")+
+  guides(col=guide_legend(ncol=2))
 
 ```
 
-**Figure S4.3** Posterior distribution of the two components of the fitness difference. The uncertainty in the 'competitive response ratio' $\sqrt{\frac{\alpha_{ij}\alpha_{ii}}{\alpha_{ji}\alpha_{jj}}}$ is much larger than the demographic ratio $\frac{r_j-1}{r_i-1}$ (mean coefficient of variation 32x larger). 
+**Figure S4.4** Posterior distribution of the two components of the fitness difference. The uncertainty in the 'competitive response ratio' $\sqrt{\frac{\alpha_{ij}\alpha_{ii}}{\alpha_{ji}\alpha_{jj}}}$ is much larger than the demographic ratio $\frac{r_j-1}{r_i-1}$ (mean coefficient of variation 32x larger). 
 
-# Model Diagnostics
+\pagebreak
+# D. Model Diagnostics
 
 ## Overall Predictive Capacity
 
 ```{r fig.height=3, fig.width=4}
 
-yrep_orig<- extract(fit_both_singleA, 'y_sim')$y_sim
+yrep_orig<- extract(fit_2R_1A, 'y_sim')$y_sim
 
-ppc_dens_overlay(y = d_both$ObsGrRate,
+ppc_dens_overlay(y = d_both$ObsCount_Total,
                  yrep =  yrep_orig[1:100, ])+
-  xlab('Inferred daily growth rate, (lambda)')
+  xlab('Total Count')+
+  scale_x_sqrt()
 
 ```
 
-**Figure S4.4** Overall predictive capacity of best fit model. 100 sets of predictions from the posterior (blue), are compared to observed values (black). It can be seen that the model captures the overall spread of the data well, but does not pick up the low-growth rate observations (i.e. those cases where no adults were observed to emerge).")
+**Figure S4.5** Overall predictive capacity of best fit model. 100 sets of predictions from the posterior (blue), are compared to observed values (black). It can be seen that the model captures the overall spread of the data well, but does not pick up the low-growth rate observations (i.e. those cases where no adults were observed to emerge). N.B. the square-root X-scaling to magnify small values. 
 
 ```{r fig.height=3, fig.width=4}
-load('LOO/singleA_loo')
 
-plot(singleA_loo)
+plot(LOO_2R_1A)
 
 ```
 
-**Figure S4.5** Test for model misspecification, using Pareto-smoothed Importance Sampling to test for strongly outlying data points. No points exceeded the threshold of 0.7 (Gabry *et al.* 2019).
+**Figure S4.6** Test for model miss-specification, using Pareto-smoothed Importance Sampling to test for strongly outlying data points. No points exceeded the threshold of 0.7 (Gabry *et al.* 2019).
 
 ```{r}
 d_both%>%
   select(tubeID, Type, Parasitism, FocalSpecies, 
-         OtherSp,ObsGrRate ,FocalSpeciesStartDens, OtherSpeciesStartDens) %>%
+         OtherSp,ObsCount_Total ,FocalSpeciesStartDens, OtherSpeciesStartDens) %>%
   mutate(OtherSpeciesStartDens = ifelse(is.na(OtherSpeciesStartDens), 0, OtherSpeciesStartDens))%>%
-    rename(Focal =FocalSpecies, Other = OtherSp)-> SimpleData
+  rename(Focal =FocalSpecies, Other = OtherSp)-> SimpleData
 ```
+\pagebreak
 
 ## Species-level Predictive Capacity
+
+Figures S4.7 to S4.12 present predictions of the selected model against the raw observations. Because of the multi-dimensional nature of the data, the observations are partitioned by parasitoid treatment, and by the type of competition. 
 
 ```{r}
 SimpleData$PostPred_Median <-apply(yrep_orig, 2, FUN = median)
@@ -215,47 +252,49 @@ SimpleData$PostPred_ci95  <- apply(yrep_orig,  2, quantile, probs=c(0.95))
 ```{r }
 SimpleData %>%
   mutate(NumSp = ifelse(Type == 'Intra','Single-Species', 'Multi-Species' ))%>%
-   mutate(Parasitism = recode(Parasitism,
-                              Safe = 'No-Parasitoid',
-                            Para = 'Parasitoid'))%>%
-  ggplot(aes(x = ObsGrRate, y = PostPred_Median ,
+  mutate(Parasitism = recode(Parasitism,
+                             Safe = 'No-Parasitoid',
+                             Para = 'Parasitoid'))%>%
+  ggplot(aes(x = ObsCount_Total, y = PostPred_Median ,
              col = Focal))+
   geom_point()+
   geom_abline(slope = 1)+
   scale_color_manual(values = cols, name = 'Species')+
   coord_fixed()+
-  ylab('Median Predicted Growth Rate')+
-  xlab('Observed Growth Rate')+
+  ylab('Median Predicted Count')+
+  xlab('Observed Count')+
   ggtitle('') +
+  theme_classic()+
   theme(legend.position = 'bottom')+
   facet_grid(NumSp~Parasitism) -> OverallAccuracy
 
 OverallAccuracy
+
 ```
 
-**FigS4.6** Overall model predictive accuracy using median posterior values. Plot is faceted by treatment and whether the count was from a single-species or a multi-species trial. Focal species are coloured. In general the model performs well given the inevitable variation, but struggles to capture low-observed counts across all species.
+**FigS4.7** Overall model predictive accuracy using median posterior values. Plot is faceted by treatment and whether the count was from a single-species or a multi-species trial. Focal species are coloured. In general the model performs well given the inevitable variation, but struggles to capture outlier values across all species.
 
 ```{r fig.height=7, fig.width=6}
 Intra <- SimpleData %>%
   filter(Type == 'Intra' ) %>%
-   mutate(Parasitism = recode(Parasitism,
-                              Safe = 'No-Parasitoid',
-                            Para = 'Parasitoid'))%>%
+  mutate(Parasitism = recode(Parasitism,
+                             Safe = 'No-Parasitoid',
+                             Para = 'Parasitoid'))%>%
   ggplot(aes(x = factor(FocalSpeciesStartDens),group=1)) +
   geom_point(aes(y = PostPred_Median), size = 1, col = 'red')+
   geom_path(aes(y = PostPred_Median), size = 1, col = 'pink')+
   geom_errorbar(aes(ymin=PostPred_ci05, ymax =PostPred_ci95), width = 0, col = 'red' )+
-  geom_point(aes(y = ObsGrRate), shape = 4)+
+  geom_point(aes(y = ObsCount_Total), shape = 4)+
   facet_grid(Focal~Parasitism, labeller = label_both )+
-  xlab('Number of Pairs')+
+  xlab('Number of Founder Pairs')+
   #  ggtitle('Intraspecific Competition')+
-  ylab('Growth Rate')
+  ylab('Count')
 Intra
 
 
 ```
 
-**Figure S4.7** Posterior predictions of intraspecific competition. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
+**Figure S4.8** Posterior predictions of intraspecific competition. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
 
 ```{r fig.height=7, fig.width=6}
 
@@ -267,17 +306,17 @@ ParaInter<-SimpleData %>%
   geom_path(aes(y = PostPred_Median), size = 1, col = 'pink')+
   geom_point(aes(y = PostPred_Median), size = 1, col = 'red')+
   geom_errorbar(aes(ymin=PostPred_ci05, ymax =PostPred_ci95), width = 0, col = 'red' )+
-  geom_point(aes(y = ObsGrRate), shape = 4)+
+  geom_point(aes(y = ObsCount_Total), shape = 4)+
   facet_grid(Other~Focal , labeller = label_both )+
-  xlab('Number of competing species pairs')+
+  xlab('Number of founder pairs of competing species')+
   # ggtitle('Inter-specific Competition\n(With Parasitoid)')+
-  ylab('Growth rate of focal species')
+  ylab('Count of focal species')
 
 ParaInter
 
 ```
 
-**Figure S4.8**  Posterior predictions of interspecific competition in the presence of the parasitoid. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
+**Figure S4.9**  Posterior predictions of interspecific competition in the presence of the parasitoid. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
 
 ```{r fig.height=7, fig.width=7}
 
@@ -289,16 +328,15 @@ SafeInter<-SimpleData %>%
   geom_path(aes(y = PostPred_Median), size = 1, col = 'pink')+
   geom_point(aes(y = PostPred_Median), size = 1, col = 'red')+
   geom_errorbar(aes(ymin=PostPred_ci05, ymax =PostPred_ci95), width = 0, col = 'red' )+
-  geom_point(aes(y = ObsGrRate), shape = 4)+
+  geom_point(aes(y = ObsCount_Total), shape = 4)+
   facet_grid(Other~Focal, labeller = label_both )+
-  xlab('Number of competing species pairs')+
-  #ggtitle('Inter-specific Competition\n(Without Parasitoid)')+
-  ylab('Growth rate of focal species')
+  xlab('Number of founder pairs of competing species')+
+  ylab('Count of focal species')
 SafeInter
 
 ```
 
-**FigS4.9** Posterior predictions of interspecific competition without the parasitoid. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
+**FigS4.10** Posterior predictions of interspecific competition without the parasitoid. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
 
 ```{r fig.height=7, fig.width=7}
 ParaInter_2<-SimpleData %>%
@@ -309,16 +347,16 @@ ParaInter_2<-SimpleData %>%
   geom_path(aes(y = PostPred_Median), size = 1, col = 'pink')+
   geom_point(aes(y = PostPred_Median), size = 1, col = 'red')+
   geom_errorbar(aes(ymin=PostPred_ci05, ymax =PostPred_ci95), width = 0, col = 'red' )+
-  geom_point(aes(y = ObsGrRate), shape = 4)+
+  geom_point(aes(y = ObsCount_Total), shape = 4)+
   facet_grid(Other~Focal , labeller = label_both )+
-  xlab('Number of focal species pairs\n(three competitor pairs)')+
+  xlab('Number of focal species pairs\n(three pairs of competitors)')+
   #ggtitle('Inter-specific Competition (three competitor pairs)\n(With Parasitoid)')+
-  ylab('Growth rate of focal species')
+  ylab('Count of focal species')
 
 ParaInter_2
 ```
 
-**FigS4.10** Posterior predictions covering remaining observations from the parasitoid treatment not easily displayed in previous plots, where the density of the focal species varies and the competing species is represented by 3 founder pairs. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
+**FigS4.11** Posterior predictions covering remaining observations from the parasitoid treatment not easily displayed in previous plots, where the density of the focal species varies and the competing species is represented by 3 founder pairs. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
 
 ```{r fig.height=7, fig.width=7}
 SafeInter_2<-SimpleData %>%
@@ -329,16 +367,16 @@ SafeInter_2<-SimpleData %>%
   geom_path(aes(y = PostPred_Median), size = 1, col = 'pink')+
   geom_point(aes(y = PostPred_Median), size = 1, col = 'red')+
   geom_errorbar(aes(ymin=PostPred_ci05, ymax =PostPred_ci95), width = 0, col = 'red' )+
-  geom_point(aes(y = ObsGrRate), shape = 4)+
+  geom_point(aes(y = ObsCount_Total), shape = 4)+
   facet_grid(Other~Focal , labeller = label_both )+
   xlab('Number of focal species pairs\n(three competitor pairs)')+
   #  ggtitle('Inter-specific Competition\n(Without Parasitoid)')+
-  ylab('Growth rate of focal species')
+  ylab('Count of focal species')
 
 SafeInter_2
 ```
 
-**FigS4.11** Posterior predictions covering remaining observations from the no-parasitoid treatment not easily displayed in previous plots, where the density of the focal species varies and the competing species is represented by 3 founder pairs. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
+**FigS4.12** Posterior predictions covering remaining observations from the no-parasitoid treatment not easily displayed in previous plots, where the density of the focal species varies and the competing species is represented by 3 founder pairs. Red dots show median predictions, red lines span central 90% of posterior distribution. Black crosses show observations. 
 
 
 ```{r eval = FALSE}
@@ -359,20 +397,16 @@ ggsave(  'Plots/PostPred_Gaus_ParaInter_2.png',ParaInter_2 , height = 8, width =
 ggsave( 'Plots/PostPred_Gaus_SafeInter_2.png', SafeInter_2 , height = 8, width = 8)
 ```
 
-# Maximal model
+\pagebreak
+# E. Maximal model
 
-Model comparison indicates that there is little support for fitting changes in competitive coefficients due to the parasitism treatment. For completeness, we explore this 'maximal' model here. As discussed in the main text, it is possible that an intermediate model, where some competition terms vary, but others are fixed. An equivalent coexistence-plane plot to main text Fig.3c is given in the section below. Fig. S4.12 shows the divergences in  fitted $\alpha$ values between treatments. Most show only small divergences that could be explained as noise, but a few show larger divergences that could be indicative of an cometitive interaction modification effect. These strong divergences all show weakening of competition in the presence of the parasitoid (the leftwards skew in Fig. S4.13). The six larges divergences include a wide range of species, 
-PSA      SIM 
-BIR      SIM 
-PAL      SUL 
-PAN      PAL 
-PAL      SIM 
-PSA      SUL 
+Model comparison indicates that there is little support for fitting changes in competitive coefficients due to the parasitism treatment. For completeness, we explore this 'maximal' model here. As discussed in the main text, it is possible that an intermediate model, where some competition terms vary, but others are fixed. Fig. S4.13-14  show the divergences in  fitted $\alpha$ values between treatments. On average, competition coefficients are larger under parsistism than without. 
+
 
 ```{R, fig.height = 6}
-As_HS_Gau <- extract(fit_both_doubleA, pars = c("A1"))$A1
-As_HP_Gau <- extract(fit_both_doubleA, pars = c("A2"))$A2
-As_both_Gau <- extract(fit_both_singleA, pars = c("A"))$A
+As_HS_Gau <- extract(fit_2R_2A, pars = c("A1"))$A1
+As_HP_Gau <- extract(fit_2R_2A, pars = c("A2"))$A2
+As_both_Gau <- extract(fit_2R_1A, pars = c("A"))$A
 
 params.combo <- expand.grid(focal.sp = species, other.sp = species)
 As_HS_summary_Gau <- params.combo %>%
@@ -412,14 +446,16 @@ As_summary_Gau %>%
   geom_hline(aes(yintercept = med), 
              data = As_both_summary_Gau, 
              linetype = 'dashed')+
-  facet_grid(focal.sp~other.sp) +
+  facet_grid(focal.sp~other.sp)+
+  theme_classic() +
   theme(axis.text.x=element_blank(), legend.position = 'bottom')+
   ylab('Competition coefficient')+
-  xlab('')
+  xlab('')+
+  scale_y_log10()
 
 ```
 
-**Fig S4.12.** Comparison of fitted $\alpha$ values  between Model 2 (where a single A matrix is fitted accross both treatments) and Model 1 (where a separate $A$ matrix is fitted for each treatment). Dotted line shows median value for Model 2 to allow easier comparison. Competition effects of PAL on PAN, SIM on PSA, SIM on PAL, SUL on PSA, SUL on PAL show large divergence between parasitoid treatments. Error bars show 90% CI.
+**Fig S4.13** Comparison of fitted $\alpha$ values  between Model 2 (where a single $A$ matrix is fitted across both treatments) and Model 1 (where a separate $A$ matrix is fitted for each treatment). Dotted line shows median value for Model 2 to allow easier comparison. Error bars show 90% CI.
 
 ```{r fig.height=4}
 As_summary_Gau %>%
@@ -435,319 +471,15 @@ As_summary_Gau %>%
   guides(col = FALSE)+
   xlab('Change in fitted alpha value betweeen treatments\n(Safe - Parasitism)')+
   ylab('')+
-  scale_y_continuous(breaks = 1:9)
+  scale_y_continuous(breaks = 1:9)+
+  theme_classic()
 ```
 
-**Figure S4.13.**   Distribution of shifts in median fitted $\alpha$ value between treatments in Model 3. Intraspecific terms are shown in blue, interspecific in red.')
+**Figure S4.14.**   Distribution of shifts in median fitted $\alpha$ value between treatments in Model 1. Intraspecific terms are shown in blue, interspecific in red.')
 
-```{r}
-Rs_Safe_doubleA <- rstan::extract(fit_both_doubleA, pars = c("r1"))$r1
-Rs_Safe_singleA <- rstan::extract(fit_both_singleA, pars = c("r1"))$r1
-Rs_Para_doubleA <- rstan::extract(fit_both_doubleA, pars = c("r2"))$r2
-Rs_Para_singleA <- rstan::extract(fit_both_singleA, pars = c("r2"))$r2
-
-data.frame( Species = species,
-            `Median R safe Model 2` = apply(Rs_Safe_singleA, 2, FUN = median),
-            `Median R safe Model 1` = apply(Rs_Safe_doubleA, 2, FUN = median),
-            `Median R Parasitoid Model 2` = apply(Rs_Para_singleA, 2, FUN = median),
-            `Median R Parasitoid Model 1` = apply(Rs_Para_doubleA, 2, FUN = median)
-)%>%
-  kable(digits=3, format = "latex",
-        booktabs = TRUE ,
-  linesep = "", col.names = c('Species', 'Model 2', 'Model 1', 'Model 2', 'Model 1'))%>%
-  add_header_above(c('', 'No Parasitoid' = 2, 'Parasitoid' =2 ) ) %>%
-  add_header_above(c('', 'Median R' = 4 ) )
-
-```
-
-**Table S4.3** Comparison of fitted growth rate ($r$) parameters between the maximal model ('Model 1', which included changes in $\alpha$ values between treatments) and the better-supported model discussed in the main text (Model 2). Differences in growth rate terms are small. 
-
-```{r}
-draws_both_doubleA<-extract(fit_both_doubleA )
-HS_NiFi_draws_doubleA<-CalcNicheFitDiffs_fromSTANfit(A_draws = draws_both_doubleA$A1,
-                                                     R_draws = draws_both_doubleA$r1)
-HP_NiFi_draws_doubleA<-CalcNicheFitDiffs_fromSTANfit(A_draws = draws_both_doubleA$A2,
-                                                     R_draws = draws_both_doubleA$r2)
-
-bind_rows(mutate(map_df(1:15, ExtractDiffs, HS_NiFi_draws_doubleA   ), Treatment = 'Safe'),
-          mutate(map_df(1:15, ExtractDiffs, HP_NiFi_draws_doubleA   ), Treatment = 'Para')) %>%
-  mutate(Rho = 1- NicheDiff, 
-         Priority         = 1/Rho < FitnessDiff &  FitnessDiff < Rho   &  NicheDiff <0,
-         AboveBoundary_A1 = 1/Rho < FitnessDiff &  FitnessDiff > Rho   &  NicheDiff <0, 
-         BelowBoundary_B1 = 1/Rho > FitnessDiff                        &  NicheDiff <0, 
-         Coexistence      =   Rho < FitnessDiff &  FitnessDiff < 1/Rho &  NicheDiff >0,
-         AboveBoundary_A2 =                        FitnessDiff > 1/Rho &  NicheDiff >0,
-         BelowBoundary_B2 =   Rho > FitnessDiff                        &  NicheDiff >0, 
-         Check = AboveBoundary_A1+AboveBoundary_A2+BelowBoundary_B1+BelowBoundary_B2+Coexistence+Priority
-  ) -> Categorisation_DoubleA
-
-
-Categorisation_DoubleA%>% 
-  group_by(Combination, Treatment)%>%
-  summarise(MedianNicheDiff = median(NicheDiff),
-            MedianFitnessDiff = median(FitnessDiff),
-            MedianRho = median(Rho),
-            MedianStable =  MedianRho<MedianFitnessDiff & MedianFitnessDiff<(1/(MedianRho))  & MedianNicheDiff>0,
-            Above = mean(AboveBoundary_A1+AboveBoundary_A2)*100,
-            Below = mean(BelowBoundary_B1+BelowBoundary_B2)*100, 
-            Coexistence=mean(Coexistence)*100,
-            Priority=mean(Priority)*100,
-            Check = mean(Check))-> FullDoubleATable
-
-FullDoubleATable%>%
-  select(Combination, Treatment , Coexistence)%>%
-  spread(Treatment, Coexistence) %>% 
-  ungroup()%>%
-  mutate(Improved = Para>Safe)-> ImprovedOrNotData_doubleA
-
-
-### Ordering 
-ImprovedOrNotData_doubleA%>%
-  mutate(Shift = Safe-Para )%>%
-  arrange(desc(Shift))-> OrderedCombs
-Categorisation_DoubleA$CombinationOrdered <- factor(Categorisation_DoubleA$Combination,
-                                                    levels = OrderedCombs$Combination)
-
-BoundaryValues<-data.frame(x = seq(0,0.99,l=100), 
-                           y1 =   1/ (1-seq(0,0.99,l=100)),
-                           y2 = (1-seq(0,0.99,l=100)))      
-
-BoundaryValues_P<-data.frame(x = seq(0,-0.5,l=100), 
-                             y1 =   1/ (1-seq(0,-0.5,l=100)),
-                             y2 = (1-seq(0,-0.5,l=100)))      
-
-
-```
-
-
-```{r fig.height=10, fig.width=6, warning=FALSE}
-TidyName<-  function(name){
-  parts<- str_split_fixed(name, '_', 2)
-  nicename<- paste0('italic(i):~', parts[,1], '~italic(j):~',  parts[,2])
-  return(nicename)
-}
-
-sorter<-   mutate(OrderedCombs, Combination=TidyName(Combination) )
-sorter$numerals <- str_replace_all(formatOL(sorter$Combination, type = 'roman'), pattern = ' ', replacement = '~')
-
-###Not shown as would duplicate figure below. 
-
-# Categorisation_DoubleA %>%
-#   mutate(Combination=TidyName(Combination) )%>%
-#   left_join(sorter, by = "Combination") %>%
-#   filter(NicheDiff>-1)%>%
-#   ggplot(aes(NicheDiff,FitnessDiff ))+
-#   geom_ribbon(data = BoundaryValues,
-#               aes(x = x, ymin = y2, ymax = y1), inherit.aes = FALSE, fill = 'grey75')+
-#   geom_ribbon(data = BoundaryValues_P,
-#               aes(x = x, ymin = y1, ymax = y2), inherit.aes = FALSE, fill = 'grey90')+
-#   stat_density_2d(aes(col =Treatment),bins = 3)+
-#   scale_y_log10()+
-#   scale_colour_manual(values = c('darkred', 'blue'))+
-#   facet_wrap(~Combination, ncol = 3, labeller = label_parsed)+
-#   coord_cartesian(xlim = c(-0.25, 1), ylim = c(0.1, 10))+
-#   theme(strip.background = element_rect(fill = 'white'),
-#         strip.text = element_text(hjust = 0.1, vjust = 1),
-#         panel.spacing = unit(2, 'lines'),
-#         axis.line.y = element_blank(),
-#         axis.ticks.y = element_blank())+
-#   ylab(expression(paste("Fitness difference: ",kappa[i]/kappa[j])))+
-#   xlab(expression(paste("Niche Difference: ", 1-rho)))+
-#   theme(legend.position = "bottom")+
-#   ggtitle(label = 'Contour plots, using model 1',
-#             subtitle =' (fits changes to both α and r)')
-```
-
-
-# Maximum-Likelihood Point Estimates
-
-The `cxr` package (García-Callejas *et al.* 2019) provides tools to fit various population models to observation data and extract metrics relevant to coexistence in a direct frequentist framework. We include the results here for comparison as a representative alternative approach.
-
-We fit separate sets of $r$ and $\alpha$ terms for the two treatments (analagous to our 'Model 1') to order to provide a direct comparison. `cxr` does not at present (version 0.1) allow variable impacts of environmental co-variables (in our case predation) on intrinsic growth rate, only a global effect, which would not allow the possibility of fitting our parasitism treatments together and modelling a fecundity-susceptibility trade-off. We place a minimum value for $\alpha$ to prevent very large competitive response ratio's.
-
-The fitted values for Niche and finess differences closely match between the two models (Fig S.14). The largest deviations occur at strongly negative niche-differences, where the maximum likelihood estimates of the competition parameters abutt the lower boundary placed upon them Fig S4.15. 
-
-```{r message=FALSE, warning=FALSE}
-#devtools::install_github("RadicalCommEcol/cxr")
-library("cxr")
-```
-
-```{r}
-### Arranging our data to match cxr requirements
-d_both%>%
-  select(fitness = ObsGrRate, BIR= BIR_0, PAL=PAL_0 , PAN=PAN_0 ,PSA=PSA_0 ,SIM=SIM_0, SUL=SUL_0,
-         Parasitism, 
-         FocalSpecies )-> Data_for_CXR
-
-
-map <- purrr::map
-
-Safe_CXR <- map(species, function(sp){  filter(Data_for_CXR,FocalSpecies == sp, Parasitism == 'Safe')%>%
-    select(-FocalSpecies, -Parasitism)})
-
-names(Safe_CXR)<- species
-
-Para_CXR <- map(species, function(sp){  filter(Data_for_CXR,FocalSpecies == sp, Parasitism == 'Para')%>%
-    select(-FocalSpecies, -Parasitism)})
-
-names(Para_CXR)<- species
-
-```
-
-```{r, echo = TRUE}
-### Fitting settings:
-initial_values <- list(lambda = 10,
-                       alpha_intra = 0.01,
-                       alpha_inter = 0.01)
-lower_bounds <- list(lambda = 1,
-                     alpha_intra = 0.001,
-                     alpha_inter = 0.001)
-upper_bounds <- list(lambda = 10,
-                     alpha_intra = 1,
-                     alpha_inter = 1)
-
-```
-
-```{r, message = FALSE, results='hide', echo = TRUE, include=FALSE}
-### Safe (no-parasitoid) Treatment
-
-cxr_fit_safe <- cxr_pm_multifit(data = Safe_CXR,
-                                focal_column = species,
-                                model_family = 'BH',
-                                optimization_method = "bobyqa",
-                                alpha_form = "pairwise",
-                                lambda_cov_form = "none",
-                                alpha_cov_form = "none",
-                                initial_values = initial_values,
-                                lower_bounds = lower_bounds,
-                                upper_bounds = upper_bounds,
-                                fixed_terms = NULL,
-                                bootstrap_samples = 0)
-```
-
-
-```{r, echo = TRUE, message=FALSE, results='hide', include=FALSE}
-### Parasitoid Treatment
-cxr_fit_para <- cxr_pm_multifit(data = Para_CXR,
-                                focal_column = species,
-                                model_family = 'BH',
-                                optimization_method = "bobyqa",
-                                alpha_form = "pairwise",
-                                lambda_cov_form = "none",
-                                alpha_cov_form = "none",
-                                initial_values = initial_values,
-                                lower_bounds = lower_bounds,
-                                upper_bounds = upper_bounds,
-                                fixed_terms = NULL,
-                                bootstrap_samples = 0)
-
-```
-
-```{r}
-# cxr_fit_safe$lambda 
-# cxr_fit_safe$alpha_matrix
-# cxr_fit_para$lambda 
-# cxr_fit_para$alpha_matrix
-```
-
-
-```{r, message = FALSE, include=FALSE, warning = FALSE}
-### Extracting coexistence components
-CXR_Safe_NO <- niche_overlap(cxr_fit_safe)
-CXR_Safe_FD <- avg_fitness_diff(cxr_fit_safe)
-
-CXR_Para_NO <- niche_overlap(cxr_fit_para)
-CXR_Para_FD <- avg_fitness_diff(cxr_fit_para)
-
-```
-
-
-```{r, fig.height=6, fig.width=4}
-FullDoubleATable %>%
-  left_join(by = c("Combination", "Treatment"),
-            bind_rows(mutate(CXR_Safe_NO, Combination = paste(sp1, sp2,sep =  '_'), Treatment = 'Safe'),
-                      mutate(CXR_Safe_NO, Combination = paste(sp2, sp1,sep =  '_'), Treatment = 'Safe'),
-                      mutate(CXR_Para_NO, Combination = paste(sp1, sp2,sep =  '_'), Treatment = 'Para'),
-                      mutate(CXR_Para_NO, Combination = paste(sp2, sp1,sep =  '_'), Treatment = 'Para') ))%>%
-  left_join(by = c("Combination", "Treatment"),
-            bind_rows(mutate(CXR_Safe_FD, Combination = paste(sp1, sp2,sep =  '_'), Treatment = 'Safe'),
-                      mutate(CXR_Para_FD, Combination = paste(sp1, sp2,sep =  '_'), Treatment = 'Para') ))%>%
-  mutate(niche_difference_MCT_cxr = 1- niche_overlap_MCT)%>%
-  ungroup()%>%
-  mutate(Combination=TidyName(Combination) )%>%
-  select(Combination, Treatment, MedianNicheDiff,
-         niche_difference_MCT_cxr, MedianFitnessDiff,
-         average_fitness_ratio_cxr =average_fitness_ratio ) %>%
-  mutate(Treatment = recode(Treatment,
-                            Safe = 'No-Parasitoid',
-                            Para = 'Parasitoid'))->cxr_comparison_data
-
-cxr_comparison_data%>%
-  ggplot(aes(x = MedianNicheDiff, y = niche_difference_MCT_cxr))+
-  geom_point()+
-  facet_wrap(~Treatment)+
-  geom_abline(slope = 1)+
-  ylab('Niche difference\n(Maximum liklihood)')+
-  xlab('Niche difference\n(Median, Model 1)') -> Plot_cxr1
-
-cxr_comparison_data%>%
-  ggplot(aes(MedianFitnessDiff, average_fitness_ratio_cxr))+
-  geom_point()+
-  facet_wrap(~Treatment)+
-  geom_abline(slope = 1)+
-  ylab('Fitness difference\n(Maximum liklihood)')+
-  xlab('Fitness difference\n(Median, Model 1)')-> Plot_cxr2
-
-
-cowplot::plot_grid(Plot_cxr1, Plot_cxr2, labels = c('a)', 'b)'), ncol = 1)
-
-```
-
-**Figure S4.14** Comparison of maximum likelihood estimates of niche and fitness differences found through the `cxr` package and median estimates from the closest comparable Bayesian model presented in this paper. The estimates are very similarly ranked, although there are some deviations from exact equivalence, particularly in the estimation of fitness differences.  
-
-
-```{r fig.height=8, fig.width=6, warning=FALSE}
-
-BoundaryValues_P2<-data.frame(x = seq(0,-1,l=100), 
-                              y1 =   1/ (1-seq(0,-0.5,l=100)),
-                              y2 = (1-seq(0,-0.5,l=100)))     
-
-Categorisation_DoubleA %>%
-  mutate(Combination=TidyName(Combination) )%>%
-  left_join(sorter, by = "Combination") %>%
-  mutate(Treatment = recode(Treatment,
-                            Safe = 'No-Parasitoid',
-                            Para = 'Parasitoid'))%>%
-  filter(NicheDiff>-1)%>%
-  ggplot(aes(NicheDiff,FitnessDiff ))+
-  geom_ribbon(data = BoundaryValues,
-              aes(x = x, ymin = y2, ymax = y1), inherit.aes = FALSE, fill = 'grey75')+
-  geom_ribbon(data = BoundaryValues_P2,
-              aes(x = x, ymin = y1, ymax = y2), inherit.aes = FALSE, fill = 'grey90')+
-  stat_density_2d(aes(col =Treatment),bins = 3)+
-  geom_point(data = cxr_comparison_data,
-             aes(niche_difference_MCT_cxr,average_fitness_ratio_cxr, col = Treatment), shape =4, stroke =3 )+
-  scale_y_log10()+
-  scale_colour_manual(values = c('darkred', 'blue'))+
-  facet_wrap(~Combination, ncol = 3, labeller = label_parsed)+
-  coord_cartesian(xlim = c(-1, 1), ylim = c(0.1, 10))+
-  theme(strip.background = element_rect(fill = 'white'),
-        strip.text = element_text(hjust = 0.1, vjust = 1),
-        panel.spacing = unit(2, 'lines'),
-        axis.line.y = element_blank(),
-        axis.ticks.y = element_blank())+
-  ylab(expression(paste("Fitness difference: ",kappa[i]/kappa[j])))+
-  xlab(expression(paste("Niche Difference: ", 1-rho)))+
-  theme(legend.position = "bottom")
-
-
-```
-
-**Figure S4.15** Coexistence planes, using 'Model 1' (separate $\alpha$ and $r$ values between treatments). Contours show posterior estimates of niche and fitness differences. Crosses show maximum likelihood values independently fit using `cxr` package.
 
 
 # References
 
 1. Gabry, J., Simpson, D., Vehtari, A., Betancourt, M. & Gelman, A. *Visualization in Bayesian workflow.* J. R. Stat. Soc. Ser. A Stat. Soc. 182, 389–402 (2019).
 
-2. García‐Callejas, D., Godoy, O. & Bartomeus, I. *cxr : A toolbox for modelling species coexistence in R.* Methods Ecol. Evol. 1, 2041–210X.13443 (2020).

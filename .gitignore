@@ -1,6 +1,9 @@
-
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
 StanFits/
 StanFitsPriorTest/
-LOO/
-*.pdf
-*.png
+fit_*
+Main-Text-Analyses.html
+*.html
