@@ -354,7 +354,7 @@ Both_TreatmentsValues %>%
             aes(x, y), col = 'red', size = 1.5)+
   geom_line(data = BoundaryValues,
             aes(x, y2), col = 'red', size = 1.5)+
-  scale_fill_gradient(low = 'darkred', high= 'white', guide = FALSE,  )+
+  scale_fill_gradient(low = 'bisque', high= 'darkred', guide = FALSE,  )+
   theme_classic()-> focal_Para
 
 Both_TreatmentsValues %>%
@@ -374,7 +374,7 @@ Both_TreatmentsValues %>%
             aes(x, y), col = 'red', size = 1.5)+
   geom_line(data = BoundaryValues,
             aes(x, y2), col = 'red', size = 1.5)+
-  scale_fill_gradient(low = 'blue', high= 'white', guide = FALSE,  )+
+  scale_fill_gradient(low = 'slategray1', high= 'blue', guide = FALSE,  )+
    theme_classic()-> focal_Safe
 
 
@@ -410,7 +410,7 @@ Both_TreatmentsValues %>%
   geom_point(aes(col = Treatment), alpha = 0.05, size = 0.5)+
   geom_point(aes(fill = Treatment, NicheDiff, FitnessDifference), shape = 23, col = 'yellow',
              data = mutate(MedianValues,Combination=TidyName(Combination) ))+
-  scale_y_log10()+
+  scale_y_log10(labels = function(x) sprintf("%g", x))+
   scale_colour_manual(values = c('red', 'blue'),
                       labels = c('With Parasitoid', 'No Parasitoid'),
                       name = 'Treatment')+
@@ -435,16 +435,20 @@ ContourPlot
 ### Combining plots to make figure 3
 
 CombinedPlot<- grid.arrange(Fig2_Explainer + ggtitle( 'a) Guide to coexistence plane'),
-             focal_Safe + ggtitle( '        b) Example Pair:\n              D. sulfurigaster and D. birchii',
-                                   subtitle =  'i) Without Parasitoids') ,
-             focal_Para + ggtitle( '',subtitle ='ii) With Parasitoids'),
-             ContourPlot +   ggtitle('c) All Species Combinations'), 
-             layout_matrix =  rbind(c(1,1,4,4,4),
-                                    c(1,1,4,4,4),
-                                    c(2,2,4,4,4),
-                                    c(2,2,4,4,4),
-                                    c(3,3,4,4,4),
-                                    c(3,3,4,4,4)))
+                            focal_Safe + ggtitle( expression(paste("     b) Example:",
+                                                                   italic("D. sulfurigaster"),
+                                                                   ' & ',
+                                                                   italic("D. birchii"))),
+                                                  
+                                                  subtitle =  'i) Without Parasitoids') ,
+                            focal_Para + ggtitle( '',subtitle ='ii) With Parasitoids'),
+                            ContourPlot +   ggtitle('c) All Species Combinations'), 
+                            layout_matrix =  rbind(c(1,1,4,4,4),
+                                                   c(1,1,4,4,4),
+                                                   c(2,2,4,4,4),
+                                                   c(2,2,4,4,4),
+                                                   c(3,3,4,4,4),
+                                                   c(3,3,4,4,4)))
 ggsave('Plots/CoexistencePlots.png',CombinedPlot, width = 10, height = 10)
 ggsave('Plots/CoexistencePlots.pdf',CombinedPlot, width = 10, height = 10)
 
@@ -452,6 +456,8 @@ ggsave('Plots/CoexistencePlots.pdf',CombinedPlot, width = 10, height = 10)
 
 
 ### Usefullness of fecundity - susceptibility tradeoffs
+
+Assessment of reproductive rate – susceptibility relationships as a heuristic for the impact of parasitism on pairwise coexistence. 7/15 were in the ‘correct’ direction, strongly suggesting that such tradeoffs are not useful shortcuts ion practice, once the impact of competitive coefficients are taken into account. 
 
 ```{r}
 Susceptibility = ((r_safe)-(r_para))/(r_safe)*100
@@ -488,6 +494,5 @@ ExpectParaToHelp %>%
 
 ```
 
-**Table SXXXXX**: Assessment of reproductive rate – susceptibility relationships as a heuristic for the impact of parasitism on pairwise coexistence. 7/15 were in the ‘correct’ direction, strongly suggesting that such tradeoffs are not useful shortcuts ion practice, once the impact of competitive coefficients are taken into account. [MOVE TO A MAIN SI ]
 
 

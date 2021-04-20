@@ -36,8 +36,8 @@ data.frame( Species =   cell_spec(c('D. birchii'	, 'D. pallidifrons',	'D. pandor
 
 **Table SI 1.** Details of *Drosophila* species used in laboratory experiment. Although all the species co-occur within their Australian rainforest habitat, different species are more abundant at particular elevations.    
 
-The parasitoid wasp used is as-yet unnamed, but belongs to the *Trichopria* genus (Hymenoptera: Diapriidae). Its Smithsonian National Museum of Natural History (NMNH) reference vouchers are 
-USNMENT01557121, USNMENT01557273 and USNMENT01557254. The parasitoid has been maintained in laboratory monocultures (as lab strain 66LD) for 2 years after collection from the field from the same community as the hosts. During culturing, *Drosophila melanogaster* was used as a host species to reduce specific selection between the parasitoid and the experimental *Drosophila* species used in the laboratory.
+The parasitoid wasp used is as-yet unnamed (Lue *et al.* 2021), but belongs to the *Trichopria* genus (Hymenoptera: Diapriidae). Its Smithsonian National Museum of Natural History (NMNH) reference vouchers are 
+USNMENT01557121, USNMENT01557273 and USNMENT01557254 (see also http://www.boldsystems.org/index.php/Public_SearchTerms?query=DS-AUSPTOID). The parasitoid has been maintained in laboratory monocultures (as lab strain 66LD) for 2 years after collection from the field from the same community as the hosts. During culturing, *Drosophila melanogaster* was used as a host species to reduce specific selection between the parasitoid and the experimental *Drosophila* species used in the laboratory.
 
 
 # Images of experimental set-up. 
@@ -123,3 +123,6 @@ Our initial experimental design included a low-temperature treatment (20°C). Th
 
 
 
+# References
+
+Lue, C.-H., Buffington, M. L., Scheffer, S., Lewis, M., Elliott, T. A., Lindsey, A. R. I., … Hrcek, J. (2021). DROP: Molecular voucher database for identification of Drosophila parasitoids. BioRxiv. https://doi.org/10.1101/2021.02.09.430471

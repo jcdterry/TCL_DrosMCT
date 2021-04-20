@@ -15,6 +15,9 @@ library(shinystan)
 library(knitr)
 library(scales)
 library(bayesplot)
+library(loo)
+library(kableExtra)
+
 
 source('Scripts/Stanfunctions.R') 
 
@@ -63,7 +66,7 @@ save(fit_PriorTest_10, file = 'StanFitsPriorTest/fit_PriorTest_10')
 
 ```
 
-In our model, the $r$ parameters were relatively straightforward to estimate, and there is good reason to be confident that the choice of prior is not particularly influential. However, for the competitive coefficents ($\alpha$) the fits were considerably more uncertain, and there is a greater potential for the choice of prior to be influential. In the main text, we present results where the prior on each $\alpha$ parameter is constrained to be positive (i.e. exclude the possibility for facilitation) and conditioned on a zero-centered Gaussian distribution with standard deviation 1. To confirm that the choice of prior is not having an outsized effect, we tested tighter ($\sigma$ = 0.1) and looser ($\sigma$ = 10) priors on the $\alpha$ values, as well as a test where the lower $\alpha$ limit was reduced from 0 to -0.025 (lower values could lead to negative growth rates which are incompatible with the negative binomial error distribution). 
+In our model, the $R_0$ parameters were relatively straightforward to estimate, and there is good reason to be confident that the choice of prior is not particularly influential. However, for the competitive coefficents ($\alpha$) the fits were considerably more uncertain, and there is a greater potential for the choice of prior to be influential. In the main text, we present results where the prior on each $\alpha$ parameter is constrained to be positive (i.e. exclude the possibility for facilitation) and conditioned on a zero-centered Gaussian distribution with standard deviation 1. To confirm that the choice of prior is not having an outsized effect, we tested tighter ($\sigma$ = 0.1) and looser ($\sigma$ = 10) priors on the $\alpha$ values, as well as a test where the lower $\alpha$ limit was reduced from 0 to -0.025 (lower values could lead to negative growth rates which are incompatible with the negative binomial error distribution). 
 
 
 Only the very tight prior resulted in markedly different $\alpha$ posterior distributions, indicating that our results are not overly influences by our choice of priors (Fig S3.1). Only one interaction coefficient had a posterior that notably included facilitatory values ($\alpha_{PAN,BIR}$). We have no particular explanation about why this interaction is negative, and can only assume it derives from data variability. As it is only a single term, we consider it unlikely to have a large influence on our overall results. 
@@ -118,3 +121,72 @@ As_PriorCompare %>%
 ```
 
 **Figure S3.1** Fitted posterior distributions of competitive coefficient terms under different prior assumptions. 
+
+\newpage 
+
+
+To check that the positive bounding of $\alpha$ did not affect the model selection, we refit all three models with the possibility for negative values and repeated the model comparison (Table S3.1). The same result as presented in the main text was refound.
+
+```{r results='hide'}
+### Code for writing STAN code for rerunning fits with different priors::
+###  Unbounding alpha for model 1
+
+Write_Stan_NegB_2R_2A(d_both, 'PriorTest_NegAlpha_Model1', AlphaLowerBound = -0.025, AlphaSD= 1)
+Write_Stan_NegB_1R_1A(d_both, 'PriorTest_NegAlpha_Model3', AlphaLowerBound = -0.025, AlphaSD= 1)
+
+```
+
+```{r eval = FALSE}
+fit_PriorTest_NegAlpha_Model1 <- stan( file = 'StanModels/BuiltModel_NegB_PriorTest_NegAlpha_Model1.stan',
+                               data = STAN_data, 
+                               chains = 4,  seed = 1,cores = 2, iter = Num_Draws)
+
+save(fit_PriorTest_NegAlpha_Model1, file = 'StanFits/fit_PriorTest_NegAlpha_Model1')
+
+fit_PriorTest_NegAlpha_Model3 <- stan( file = 'StanModels/BuiltModel_NegB_PriorTest_NegAlpha_Model3.stan',
+                               data = STAN_data, 
+                               chains = 4,  seed = 1,cores = 2, iter = Num_Draws)
+
+save(fit_PriorTest_NegAlpha_Model3, file = 'StanFits/fit_PriorTest_NegAlpha_Model3')
+
+```
+
+
+```{r eval = FALSE}
+load('StanFits/fit_PriorTest_NegAlpha_Model1')
+load('StanFits/fit_PriorTest_NegAlpha_Model3')
+
+LOO_NegPrior_Mod1<-loo(fit_PriorTest_NegAlpha_Model1)
+LOO_NegPrior_Mod2<-loo(fit_PriorTest_NegAlpha)
+LOO_NegPrior_Mod3<-loo(fit_PriorTest_NegAlpha_Model3)
+
+save(LOO_NegPrior_Mod1, file='LOO/LOO_NegPrior_Mod1')
+save(LOO_NegPrior_Mod2, file='LOO/LOO_NegPrior_Mod2')
+save(LOO_NegPrior_Mod3, file='LOO/LOO_NegPrior_Mod3')
+
+```
+
+**Table S3.1** Model comparison with the possibility of moderate facilitation  between species. 
+```{r}
+
+load('LOO/LOO_NegPrior_Mod1')
+load('LOO/LOO_NegPrior_Mod2')
+load('LOO/LOO_NegPrior_Mod3')
+
+loo_compare(LOO_NegPrior_Mod1,LOO_NegPrior_Mod2, LOO_NegPrior_Mod3) %>%
+  as.data.frame()%>%
+  select(  elpd_diff,  se_diff,p_loo, se_p_loo)%>%
+  kable(digits =4, col.names = c('$\\Delta$ ELPD', 'Standard Error of Difference',
+                                 'Effective Number of Parameters',  'Standard Error' ) ,
+        format = "latex", booktabs = TRUE ,
+        linesep = "", escape= FALSE)%>%
+  kable_styling()
+
+```
+
+
+
+
+
+
+

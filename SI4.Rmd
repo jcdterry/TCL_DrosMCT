@@ -77,7 +77,7 @@ loo_compare(LOO_2R_2A,LOO_2R_1A,LOO_1R_1A ) %>%
   kable_styling()
 ```
 
-**Table S4.1** Results from model comparison through expected log-pointwise predictive density (ELPD), computed using Pareto-smoothed importance sampling with the loo R package (Vehtari *et al* 2019). Models differ in the degree of divergence in fitted parameters between parasitism treatments. Model 1: separate $\alpha$ and $r$ values (representing the hypothesis that parasitism affects both growth rate and competition terms between species.) Model 2: joint $\alpha$ values, but variable $r$ (the hypothesis that parasitism affects growth rates, but not competition terms), Model 3: joint $\alpha$ and $r$ values (the hypothesis that parasitism has no effect). Differences in ELPD suggest strongest support for Model 2.
+**Table S4.1** Results from model comparison through expected log-pointwise predictive density (ELPD), computed using Pareto-smoothed importance sampling with the loo R package (Vehtari *et al* 2019). Models differ in the degree of divergence in fitted parameters between parasitism treatments. Model 1: separate $\alpha$ and $R_0$ values (representing the hypothesis that parasitism affects both growth rate and competition terms between species.) Model 2: joint $\alpha$ values, but variable $R_0$ (the hypothesis that parasitism affects growth rates, but not competition terms), Model 3: joint $\alpha$ and $r$ values (the hypothesis that parasitism has no effect). Differences in ELPD suggest strongest support for Model 2.
 
 
 ```{r eval = FALSE, include = FALSE}
@@ -117,7 +117,7 @@ data.frame(Median=apply(r_draw_matrix,2, median),
 ```
 
 
-**Table S4.2** Median values for growth rates ($r$) in the two treatments
+**Table S4.2** Median values for growth rates ($R_0$) in the two treatments
 
 ```{r}
 apply(A_draw_matrix,2, median) %>%
@@ -476,7 +476,6 @@ As_summary_Gau %>%
 ```
 
 **Figure S4.14.**   Distribution of shifts in median fitted $\alpha$ value between treatments in Model 1. Intraspecific terms are shown in blue, interspecific in red.')
-
 
 
 # References

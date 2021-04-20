@@ -1,5 +1,5 @@
 ---
-title: "SI 2 - Model Design - Allee Effect & Sex Ratio"
+title: "SI 2 - Model Design - Allee Effect, Sex Ratio & Vial-Level Effects"
 author: "Chris Terry, Jinlin Chen & Owen Lewis"
 output:
   pdf_document: default
@@ -14,6 +14,9 @@ library(tidyverse)
 library(knitr)
 library(cowplot)
 library(ggpubr)
+library(rstan)
+library(randomcoloR)
+
 
 # Loading raw data:
 Clean_IntraData<- read_csv('Data/Clean_IntraData.csv')
@@ -122,4 +125,53 @@ AlleeEffectData%>%
 ```
 
 **Figure S2.2.** Per-female offspring is consistently lower for singleton founder pairs than triplets in the monoculture trials.
+
+\newpage
+
+# Vial level effects
+
+As mentioned in the main text, because we take two measurements from each vial there is a possibility that this would lead to within vial non-independence in residual error of our models. Positive correlations could arise from unaccountable differences in the inherent suitability of vials, or negative within-vial correlations could derive from the competition between species. This would necessitate introducing a more complex error structure including group (vial) level structures. However, an inspection of the residual error of the selected model (Fig. 2.3) shows essentially no correlation in the residual error within the multi-species trial vials, justifying our use of a simpler model. 
+
+```{r message = FALSE}
+
+d_both<- read_csv('Data/LongFormData.csv') %>%
+  mutate(ObsCount_Total =  ObsCount_Pairs*2)
+
+load('StanFits/fit_2R_1A')
+xx <- draws_singleA<-rstan::extract(fit_2R_1A )
+
+MeanSimVals <- colMeans(xx$y_sim)
+LogLiks<-colMeans(xx$log_lik)
+
+data.frame(Observed= d_both$ObsCount_Total,
+           MeanSim = MeanSimVals,
+           FocalSpecies = d_both$FocalSpecies ,
+           Vial = d_both$tubeID ) %>%
+  group_by(Vial) %>%
+  add_count(name = 'N_Samples_in_Vial') %>%
+  filter(N_Samples_in_Vial >1 ) %>%
+  mutate( Error =  MeanSim-Observed  ) %>%
+  mutate( Sp_i = row_number()) %>%
+  select(Vial,  FocalSpecies, Error , Sp_i ) %>%
+  pivot_wider(names_from = Sp_i, values_from = c(Error  , FocalSpecies  )  ) %>%
+  rowwise %>%
+  mutate( Species = paste(sort(c( FocalSpecies_1, FocalSpecies_2)), collapse = '_')) %>% 
+  ungroup %>%
+  arrange(Vial) -> CorrelationsInErrors
+
+# cor(CorrelationsInErrors$Error_1, CorrelationsInErrors$Error_2)
+
+CorrelationsInErrors %>%
+  ggplot( aes( x =Error_1, y = Error_2, col = Species))+
+  geom_hline(yintercept = 0)+
+    geom_vline(xintercept = 0)+ 
+  geom_point()+
+  theme_classic()+
+  scale_colour_manual(values = distinctColorPalette(15))+
+  coord_fixed()+
+  xlab( 'Difference between prediction and observed, Species 1')+
+  ylab( 'Difference between prediction and observed, Species 2')
+```
+
+**Figure S2.3.** No within-vial correlation in residual error in best-fit model (Model 2). Each dot is a single multispecies vial, coloured by the species pair. Assignment to species 1 or 2 was arbitrary. Overall correlation is 0.0012, and facetting by species pair (not shown) also indicates no correlation. 
 

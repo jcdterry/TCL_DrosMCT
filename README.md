@@ -32,7 +32,7 @@ The fitted STAN models are not included, as they are nearly a gigabyte in size. 
 
 Feel free to use these code and data as you wish, but please do cite the paper or preprint (https://doi.org/10.1101/2020.08.27.270389). Any questions regarding the code or data here should be directed to Chris Terry. 
 
-Note that this is 'version 2' of the repository, made public in February 2021 to accompany a revised preprint. Code relating to the original preprint (published August 2020) is accessible by reverting commits. 
+Note that this is 'version 3' of the repository, made public in April 2021 to accompany a journal minor-revision. Earlier code relating to the original preprints is accessible by reverting commits. 
 
 
 ## Version information:
